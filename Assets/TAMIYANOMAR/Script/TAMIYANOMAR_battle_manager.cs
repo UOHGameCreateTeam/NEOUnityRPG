@@ -8,7 +8,8 @@ public class TAMIYANOMAR_battle_manager : MonoBehaviour
     [SerializeField] private GameObject Enemy_2;
     [SerializeField] private GameObject Enemy_3;
 
-    [SerializeField] private Vector2 battlePosition;
+    [SerializeField] private GameObject battleDestination;
+    private Vector2 battlePosition;
     [SerializeField] private GameObject preManager;
 
     private bool battleClear = false;
@@ -16,6 +17,12 @@ public class TAMIYANOMAR_battle_manager : MonoBehaviour
     private bool battleActive = false;
 
     private bool battleStart = false;
+
+    private void Start()
+    {
+        battlePosition = new Vector2(battleDestination.transform.position.x, battleDestination.transform.position.z);
+    }
+
     void Update()
     {
         if(battleActive == true)
