@@ -8,12 +8,14 @@ public class TAMIYANOMAR_quest_manager : MonoBehaviour
     [SerializeField] private GameObject battleManager2;
     [SerializeField] private GameObject battleManager3;
 
+    [SerializeField] private Vector2 questPosition;
+
     private bool questClear = false;
 
     private bool questActive = false;
 
+    private bool questStart = false;
 
-    // Update is called once per frame
     void Update()
     {
         TAMIYANOMAR_battle_manager t_battle_manager_1 = battleManager1.GetComponent<TAMIYANOMAR_battle_manager>();

@@ -8,12 +8,23 @@ public class TAMIYANOMAR_battle_manager : MonoBehaviour
     [SerializeField] private GameObject Enemy_2;
     [SerializeField] private GameObject Enemy_3;
 
+    [SerializeField] private Vector2 battlePosition;
+    [SerializeField] private GameObject preManager;
+
     private bool battleClear = false;
 
     private bool battleActive = false;
+
+    private bool battleStart = false;
     void Update()
     {
         if(battleActive == true)
+        {
+            TAMIYANOMAR_pre_manager t_pre_Manager = preManager.GetComponent<TAMIYANOMAR_pre_manager>();
+            t_pre_Manager.setActive(battlePosition);
+        }
+
+        if(battleStart == true)
         {
             Enemy_1.SetActive(true);
             Enemy_2.SetActive(true);
@@ -31,6 +42,6 @@ public class TAMIYANOMAR_battle_manager : MonoBehaviour
 
     public void setActive()
     {
-        battleClear = true;
+        battleActive = true;
     }    
 }
