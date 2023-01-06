@@ -3,7 +3,9 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - test_cube_1
+  - ground
   layers:
   - Default
   - TransparentFX
