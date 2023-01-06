@@ -43,20 +43,23 @@ public class tkp_caemra_work : MonoBehaviour
 
         mouse_delta = mouse_position.x;
 
-        
-        if (Input.GetKey(KeyCode.Z))
+        var screenPosition = Input.mousePosition;
+
+        // クリックしたときのスクリーン座標の取得  
+        if (Input.GetMouseButtonDown(0))
         {
-            Debug.Log("Z");
-            Application.Quit();
-            UnityEditor.EditorApplication.isPlaying = false;
+            screenPosition = Input.GetTouch(0).position;
+            Debug.Log(screenPosition);
         }
-        else
+        //SetCursorPos(960, 540);
+
+        /*else
         {
             // Debug.Log(mouse_position);
-            //SetCursorPos(960, 540);
+        
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.lockState = CursorLockMode.None;
-        }
-        
+        }*/
+
     }
 }

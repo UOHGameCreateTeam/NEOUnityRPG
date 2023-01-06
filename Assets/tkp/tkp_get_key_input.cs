@@ -41,7 +41,7 @@ public class tkp_get_key_input : MonoBehaviour
                 {
                     // “ü—Í‚³‚ê‚½ƒL[–¼‚ğ•\¦
                     input_key = code.ToString();
-                    Debug.Log(input_key);
+                    //Debug.Log(input_key);
                 }
             }
 
