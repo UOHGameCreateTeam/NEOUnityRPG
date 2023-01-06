@@ -85,7 +85,7 @@ public class tkp_get_key_input : MonoBehaviour
                 default:
                     break;
             }
-            Debug.Log(cube_position);
+            //Debug.Log(cube_position);
         }
         cube_game_object.transform.position = cube_position;
 

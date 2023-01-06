@@ -3,63 +3,104 @@ using System.Collections.Generic;
 using System.Runtime.InteropServices;
 using UnityEngine;
 
+using System;
+
 
 public class tkp_caemra_work : MonoBehaviour
 {
     private Vector3 mouse_position;
+    private Vector3 screen_center_position;
+    private Vector3 offset;
+    private Vector3 inital_camera_position;
     private GameObject camera_obj;
-    private float mouse_delta;
-
-    [DllImport("user32.dll")]
-    public static extern bool SetCursorPos(int x, int y);
-    
-
+    private GameObject cube_obj;
+    private float camera_rotate;
+    private float sensitivity;
 
     // Start is called before the first frame update
     void Start()
     {
-        camera_obj = this.gameObject;
+        Cursor.lockState = CursorLockMode.Locked;
+        screen_center_position = Input.mousePosition;
         mouse_position = Input.mousePosition;
-        mouse_delta = 0;
+        Cursor.lockState = CursorLockMode.None;
 
+        camera_obj = this.gameObject;
+        cube_obj = GameObject.Find("test_cube_1");
+        offset = camera_obj.transform.position - cube_obj.transform.position;
+        inital_camera_position = camera_obj.transform.position;
+        
+        camera_rotate = 0;
+        sensitivity = 0;
+        
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        
-        Vector3 delta_camera = camera_obj.transform.position;
+        Vector3 delta_camera;
+        double tmp_sin, tmp_cos;
+
+        camera_obj.transform.position = inital_camera_position;
+        Cursor.lockState = CursorLockMode.None;
+
         mouse_position = Input.mousePosition;
-        mouse_delta = mouse_delta - mouse_position.x;
-        if(mouse_position.x > 0)
+
+        if(mouse_position.x > screen_center_position.x)
         {
-            delta_camera.x += 0.01f;
+            camera_rotate += 0.01f;
+
+            tmp_sin = 5 * Math.Sin(camera_rotate * (Math.PI / 180));
+            tmp_cos = 5 * Math.Sin(camera_rotate * (Math.PI / 180));
+
+            delta_camera.x = (float)tmp_cos;
+            delta_camera.y = 0;
+            delta_camera.z = (float)tmp_sin;
+            //delta_camera -= cube_obj.transform.position;
+
+            camera_obj.transform.position = cube_obj.transform.position + offset + delta_camera;
+            //Debug.Log(delta_camera);
         }
-        else if(mouse_position.x < 0)
+        else if (mouse_position.x == screen_center_position.x)
         {
-            delta_camera.x -= 0.01f;
+            //Debug.Log("c");
         }
-        camera_obj.transform.position = delta_camera;
-
-        mouse_delta = mouse_position.x;
-
-        var screenPosition = Input.mousePosition;
-
-        // クリックしたときのスクリーン座標の取得  
-        if (Input.GetMouseButtonDown(0))
+        else if(mouse_position.x < screen_center_position.x)
         {
-            screenPosition = Input.GetTouch(0).position;
-            Debug.Log(screenPosition);
+            camera_rotate -= 0.01f;
+
+            tmp_sin = 5 * Math.Sin(camera_rotate * (Math.PI / 180));
+            tmp_cos = 5 * Math.Sin(camera_rotate * (Math.PI / 180));
+
+            delta_camera.x = (float)tmp_sin;
+            delta_camera.y = 0;
+            delta_camera.z = (float)tmp_sin;
+            //delta_camera -= cube_obj.transform.position;
+
+            camera_obj.transform.position = cube_obj.transform.position + offset + delta_camera;
         }
-        //SetCursorPos(960, 540);
 
-        /*else
+        /*tmp_sin = 5 * Math.Sin(camera_rotate * (Math.PI / 180));
+        tmp_cos = 5 * Math.Sin(camera_rotate * (Math.PI / 180));
+
+        delta_camera.x = (float)tmp_cos;
+        delta_camera.y = 0;
+        delta_camera.z = (float)tmp_sin;
+        delta_camera -= cube_obj.transform.position;
+
+        camera_obj.transform.position = cube_obj.transform.position + offset + delta_camera;*/
+
+        sensitivity += 0.1f;
+        if(sensitivity >= 1.5)
         {
-            // Debug.Log(mouse_position);
-        
             Cursor.lockState = CursorLockMode.Locked;
-            Cursor.lockState = CursorLockMode.None;
-        }*/
+            screen_center_position = Input.mousePosition;
+            sensitivity = 0;
+            Debug.Log(camera_rotate);
+        }
+        
+
 
     }
 }
