@@ -16,10 +16,13 @@ public class tkp_player_tkp : MonoBehaviour
     {
         
     }
+    //hpŠÇ——pŠÖ”
+    //get_hp()@hpæ“¾
     public int get_hp()
     {
         return hp;
     }
+    //set_hp() hp‘‚«Š·‚¦
     public void set_hp(int set_values)
     {
         hp = set_values;

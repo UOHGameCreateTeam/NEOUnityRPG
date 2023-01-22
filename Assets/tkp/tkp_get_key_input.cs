@@ -10,7 +10,7 @@ public class tkp_get_key_input : MonoBehaviour
     private Rigidbody rb;
     private string input_key;
     private Vector3 cube_position;
-    private float velocity = 0.01f;
+    [SerializeField] private float velocity = 0.01f;
     private float obj_rotation = 0.1f;
     private bool isground = false;
     // Start is called before the first frame update
