@@ -10,7 +10,6 @@ public class tkp_get_key_input : MonoBehaviour
     private Rigidbody rb;
     private string input_key;
     private Vector3 cube_position;
-    private Vector3 cube_rotation;
     private float velocity = 0.01f;
     private float obj_rotation = 0.1f;
     private bool isground = false;
@@ -19,9 +18,7 @@ public class tkp_get_key_input : MonoBehaviour
     {
         cube_game_object = this.gameObject;
         rb = GetComponent<Rigidbody>();
-        cube_rotation = new Vector3(0, obj_rotation, 0);
         ground_object = GameObject.Find("ground");
-        Debug.Log(cube_game_object.name);
     }
 
     // Update is called once per frame
@@ -29,9 +26,6 @@ public class tkp_get_key_input : MonoBehaviour
     {
         cube_position = cube_game_object.transform.position;
         
-        /*cube_position.x += velocity;
-        cube_game_object.transform.position = cube_position;
-        Debug.Log(cube_position);*/
 
         if (Input.anyKey)
         {

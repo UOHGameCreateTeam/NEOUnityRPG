@@ -472,6 +472,8 @@ GameObject:
   - component: {fileID: 2060296312}
   - component: {fileID: 2060296313}
   - component: {fileID: 2060296314}
+  - component: {fileID: 2060296315}
+  - component: {fileID: 2060296316}
   m_Layer: 0
   m_Name: test_cube_1
   m_TagString: test_cube_1
@@ -598,3 +600,29 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &2060296315
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2060296307}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2fa05622115ecdb4b9e30c7830046096, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hp: 100
+--- !u!114 &2060296316
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2060296307}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9be9ff101cc44a4b81eb671e77b3848, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player_weapon: {fileID: 4562210926572592196, guid: 6a80167c262c8b04d80b19e43a553d51, type: 3}
