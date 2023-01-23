@@ -7,6 +7,7 @@ public class TAMIYANOMAR_stage_manager : MonoBehaviour
     [SerializeField] private GameObject questManager1;
     [SerializeField] private GameObject questManager2;
     [SerializeField] private GameObject questManager3;
+    [SerializeField] private string stageName;
 
     private bool stageClear = false;
 
@@ -19,7 +20,7 @@ public class TAMIYANOMAR_stage_manager : MonoBehaviour
     {
         TAMIYANOMAR_quest_manager t_quest_manager_1 = questManager1.GetComponent<TAMIYANOMAR_quest_manager>();
         TAMIYANOMAR_quest_manager t_quest_manager_2 = questManager2.GetComponent<TAMIYANOMAR_quest_manager>();
-        TAMIYANOMAR_quest_manager t_quest_manager_3 = questManager2.GetComponent<TAMIYANOMAR_quest_manager>();
+        TAMIYANOMAR_quest_manager t_quest_manager_3 = questManager3.GetComponent<TAMIYANOMAR_quest_manager>();
 
         if (stageActive == true &&quest1 ==false )
         {  
