@@ -27,7 +27,7 @@ public class TAMIYANOMAR_pre_manager : MonoBehaviour
 
             if(gap_x < 10f && gap_z < 10f)
             {
-                Debug.Log("arrived true");
+                //Debug.Log("arrived true");
                 arrived = true;
                 activated = false;
                 TAMIYANOMAR_destination_manager destination_Manager = this.gameObject.GetComponent<TAMIYANOMAR_destination_manager>();
@@ -38,7 +38,7 @@ public class TAMIYANOMAR_pre_manager : MonoBehaviour
 
     public void setActive(Vector2 dest)
     {
-        Debug.Log("activate dest");
+        //Debug.Log("activate dest");
         activated = true;
         destination = dest;
         arrived = false;

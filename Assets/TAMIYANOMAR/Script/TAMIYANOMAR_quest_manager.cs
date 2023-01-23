@@ -38,7 +38,7 @@ public class TAMIYANOMAR_quest_manager : MonoBehaviour
 
         if (t_battle_manager_1.getBattleClear() == true && t_battle_manager_2.activated() == false && firstActive2 == false)
         {
-            Debug.Log("setactive 2");
+            //Debug.Log("setactive 2");
             battleManager1.SetActive(false);
             battleManager2.SetActive(true);
             t_battle_manager_2.setActive();
