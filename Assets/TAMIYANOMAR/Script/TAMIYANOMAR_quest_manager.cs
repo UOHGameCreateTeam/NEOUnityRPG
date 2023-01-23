@@ -7,6 +7,7 @@ public class TAMIYANOMAR_quest_manager : MonoBehaviour
     [SerializeField] private GameObject battleManager1;
     [SerializeField] private GameObject battleManager2;
     [SerializeField] private GameObject battleManager3;
+    [SerializeField] private string questName;
 
     [SerializeField] private Vector2 questPosition;
 
