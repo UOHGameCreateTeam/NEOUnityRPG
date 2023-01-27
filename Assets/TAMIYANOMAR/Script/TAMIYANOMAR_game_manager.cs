@@ -17,11 +17,20 @@ public class TAMIYANOMAR_game_manager : MonoBehaviour
 
     void Update()
     {
+        tkp_player_tkp player_class = playerObj.GetComponent<tkp_player_tkp>();
+        int player_hp = player_class.get_hp();
+        if(player_hp <= 0)
+        {
+            gameOver = true;
+            SceneManager.LoadScene("Gameover Scene");
+        }
+
         //ƒvƒŒƒCƒ„[‚ªŽ€‚ñ‚Å‚½‚ç
         TAMIYANOMAR_stage_manager t_stage_manager_1 =  stageManager1.GetComponent<TAMIYANOMAR_stage_manager>();
         if(t_stage_manager_1.getStageClear() == true)
         {
             gameClear = true;
+            SceneManager.LoadScene("StageClearScene");
         }
     }
 
@@ -34,4 +43,5 @@ public class TAMIYANOMAR_game_manager : MonoBehaviour
     {
         return gameOver;
     }
+
 }
