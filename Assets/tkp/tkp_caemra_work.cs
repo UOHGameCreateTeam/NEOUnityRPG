@@ -23,6 +23,7 @@ public class tkp_caemra_work : MonoBehaviour
     //カメラと被写体の距離
     private float r = 3.5f;
     //感度？
+    private bool mouse_lock = true;
     private float sensitivity;
     //この値を超えるとカメラが動く
     public float sensitivity_theta = 1;
@@ -32,11 +33,11 @@ public class tkp_caemra_work : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //おまじない
-        Cursor.lockState = CursorLockMode.Locked;
-        screen_center_position = Input.mousePosition;
+        //画面中央の座標を取得
+        screen_center_position.x = Screen.width / 2;
+        screen_center_position.y = Screen.height / 2;
+
         mouse_position = Input.mousePosition;
-        Cursor.lockState = CursorLockMode.None;
 
         //オブジェクト取得
         camera_obj = this.gameObject;
@@ -45,7 +46,10 @@ public class tkp_caemra_work : MonoBehaviour
         //初期設定
         camera_rotate_h = 0;
         camera_rotate_v = 0;
-        sensitivity = 0;        
+        sensitivity = 0;
+
+        //カーソルを消す
+        Cursor.visible = true;
 
     }
 
@@ -57,17 +61,34 @@ public class tkp_caemra_work : MonoBehaviour
         float theta, phi;
 
         delta_camera = cube_obj.transform.position;
-        //カーソルロック解除
-        //Cursor.lockState = CursorLockMode.None;
+        delta_camera.y += 1;
 
-        mouse_position = Input.mousePosition;
+        if (mouse_lock)
+        {
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = true;
+            screen_center_position = Input.mousePosition;
+            mouse_lock = false;
+
+           
+        }
+        else
+        {
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+            mouse_position = Input.mousePosition;
+            mouse_lock = true;
+
+        }
 
         //マウスが左右どちらに動いたのかを取得、カメラの回転方向を決定
-        if((mouse_position.x - screen_center_position.x) > sensitivity_theta || (mouse_position.x - screen_center_position.x) < sensitivity_theta)
+        if ((mouse_position.x - screen_center_position.x) > sensitivity_theta || (mouse_position.x - screen_center_position.x) < (-sensitivity_theta))
         {
+            Debug.Log((float)(mouse_position.x - screen_center_position.x));
             if (mouse_position.x > screen_center_position.x)
             {
                 camera_rotate_h += camera_velocity;
+
             }
             else if (mouse_position.x == screen_center_position.x)
             {
@@ -79,20 +100,20 @@ public class tkp_caemra_work : MonoBehaviour
             }
         }
         //マウスが上下どちらに動いたのかを取得、カメラの回転方向を決定
-        if ((mouse_position.y - screen_center_position.y) > sensitivity_theta || (mouse_position.y - screen_center_position.y) < sensitivity_theta)
+        if ((mouse_position.y - screen_center_position.y) > sensitivity_theta || (mouse_position.y - screen_center_position.y) < (-sensitivity_theta))
         {
             if (mouse_position.y > screen_center_position.y)
             {
-                if(camera_rotate_v < 90)
+                if (camera_rotate_v < 90)
                 {
                     camera_rotate_v += camera_velocity;
                 }
-                
+
             }
 
             else if (mouse_position.y < screen_center_position.y)
             {
-                if(camera_rotate_v > 0)
+                if (camera_rotate_v > 0)
                 {
                     camera_rotate_v -= camera_velocity;
                 }
@@ -107,7 +128,7 @@ public class tkp_caemra_work : MonoBehaviour
         tmp_y = r * Math.Sin(camera_rotate_v * (Math.PI / 180));
         //水平方向
         tmp_z = r_dash * Math.Sin(camera_rotate_h * (Math.PI / 180));
-        tmp_x = r_dash* Math.Cos(camera_rotate_h * (Math.PI / 180));
+        tmp_x = r_dash * Math.Cos(camera_rotate_h * (Math.PI / 180));
 
         delta_camera.x += (float)tmp_x;
         delta_camera.y += (float)tmp_y;
@@ -118,24 +139,11 @@ public class tkp_caemra_work : MonoBehaviour
         //カメラの移動
         camera_obj.transform.position = delta_camera;
         //カメラ本体の回転
-        camera_obj.transform.rotation = Quaternion.Euler(phi, -(90+theta), 0f);
+        camera_obj.transform.rotation = Quaternion.Euler(phi, -(90 + theta), 0f);
 
-        Cursor.lockState = CursorLockMode.Locked;
-        screen_center_position = Input.mousePosition;
-        Cursor.lockState = CursorLockMode.None;
 
-        //感度の処理
-        sensitivity += 0.001f;
-        if(sensitivity >= 0.01f)
-        {
-            //Cursor.lockState = CursorLockMode.Locked;
-            //screen_center_position = Input.mousePosition;
-            //Cursor.lockState = CursorLockMode.None;
-            sensitivity = 0;
-           
-        }
         //オーバーフロー防止
-        if(camera_rotate_h >= 360)
+        if (camera_rotate_h >= 360)
         {
             camera_rotate_h = 0;
         }
@@ -143,7 +151,6 @@ public class tkp_caemra_work : MonoBehaviour
         {
             camera_rotate_h = 360;
         }
-
 
     }
 }
