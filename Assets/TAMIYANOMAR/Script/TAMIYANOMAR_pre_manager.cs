@@ -24,9 +24,17 @@ public class TAMIYANOMAR_pre_manager : MonoBehaviour
             float gap_x = Mathf.Abs(playerObj.transform.position.x - destination.x);
             float gap_z = Mathf.Abs(playerObj.transform.position.z - destination.y);
 
+            //サウンドをシームレスに変化
+            float dis = Mathf.Pow(gap_x * gap_z, 0.5f);
 
-            if(gap_x < 15f && gap_z < 15f)
+            if(dis <= 25f)
             {
+                //サウンド切り替え期間
+            }
+
+            if (dis <= 15f)
+            {
+                //バトルサウンドにする
                 //Debug.Log("arrived true");
                 arrived = true;
                 activated = false;
