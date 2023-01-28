@@ -6,6 +6,7 @@ TagManager:
   tags:
   - test_cube_1
   - ground
+  - enemy_body
   layers:
   - Default
   - TransparentFX

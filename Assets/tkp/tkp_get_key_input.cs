@@ -18,7 +18,7 @@ public class tkp_get_key_input : MonoBehaviour
     {
         cube_game_object = this.gameObject;
         rb = GetComponent<Rigidbody>();
-        ground_object = GameObject.Find("ground");
+        ground_object = GameObject.Find("Stage");
     }
 
     // Update is called once per frame
@@ -42,11 +42,11 @@ public class tkp_get_key_input : MonoBehaviour
             switch (input_key)
             {
                 case "A":
-                    cube_position.x += velocity;
+                    cube_position.x -= velocity;
                     break;
 
                 case "D":
-                    cube_position.x -= velocity;
+                    cube_position.x += velocity;
                     break;
 
                 case "S":
@@ -88,14 +88,14 @@ public class tkp_get_key_input : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        if(other.gameObject.name == "ground")
+        if(other.gameObject.name == "Stage")
         {
             isground = true;
         }
     }
     private void OnTriggerExit(Collider other)
     {
-        if (other.gameObject.name == "ground")
+        if (other.gameObject.name == "Stage")
         {
             isground = false;
         }
