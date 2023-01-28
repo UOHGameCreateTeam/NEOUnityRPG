@@ -22,6 +22,7 @@ public class tkp_caemra_work : MonoBehaviour
     private float camera_rotate_v;
     //ƒJƒƒ‰‚Æ”íÊ‘Ì‚Ì‹——£
     private float r = 3.5f;
+    public float camera_offset = 1;
     //Š´“xH
     private bool mouse_lock = true;
     private float sensitivity;
@@ -61,7 +62,7 @@ public class tkp_caemra_work : MonoBehaviour
         float theta, phi;
 
         delta_camera = cube_obj.transform.position;
-        delta_camera.y += 1;
+        delta_camera.y += camera_offset;
 
         if (mouse_lock)
         {
