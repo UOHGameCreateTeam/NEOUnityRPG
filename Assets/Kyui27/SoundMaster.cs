@@ -6,6 +6,7 @@ public class SoundMaster : MonoBehaviour
 {
     public static SoundMaster instance = null;
     AudioSource audioSource = null;
+    AudioSource BGM = null;
 
     private void Awake(){
         if(instance == null){
@@ -21,6 +22,7 @@ public class SoundMaster : MonoBehaviour
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
+        BGM = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -31,6 +33,15 @@ public class SoundMaster : MonoBehaviour
 
     public void PlaySE(AudioClip clip)
     {
-       audioSource.PlayOneShot(clip) ;
+        if(clip != null){
+            audioSource.PlayOneShot(clip) ;
+        }
+    }
+    public void PlayBGM(AudioClip clip)
+    {
+        BGM.clip = clip;
+        if(BGM != null){
+            BGM.Play() ;
+        }
     }
 }
