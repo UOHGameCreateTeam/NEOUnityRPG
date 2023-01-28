@@ -25,7 +25,7 @@ public class TAMIYANOMAR_pre_manager : MonoBehaviour
             float gap_z = Mathf.Abs(playerObj.transform.position.z - destination.y);
 
 
-            if(gap_x < 10f && gap_z < 10f)
+            if(gap_x < 15f && gap_z < 15f)
             {
                 //Debug.Log("arrived true");
                 arrived = true;
