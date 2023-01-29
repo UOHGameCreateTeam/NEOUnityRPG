@@ -12,8 +12,6 @@ public class TAMIYANOMAR_battle_manager : MonoBehaviour
     private Vector2 battlePosition;
     [SerializeField] private GameObject preManager;
 
-    [SerializeField] private GameObject soundManager;
-
     [SerializeField] private GameObject poseManager;
 
     [SerializeField] float poseTime = 2.0f;
@@ -28,7 +26,7 @@ public class TAMIYANOMAR_battle_manager : MonoBehaviour
 
     private bool posestarted = false;
 
-    
+
     private void Start()
     {
         battlePosition = new Vector2(battleDestination.transform.position.x, battleDestination.transform.position.z);
@@ -104,8 +102,6 @@ public class TAMIYANOMAR_battle_manager : MonoBehaviour
                     battleStart = false;
                     battleActive = false;
                     posestarted = false;
-                    //バトル音楽を止める処理
-                    //フィールド音楽をスタート
                 }
             }
         }
