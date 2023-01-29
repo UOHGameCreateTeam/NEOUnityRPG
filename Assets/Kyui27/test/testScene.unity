@@ -475,6 +475,10 @@ MonoBehaviour:
   SE2: {fileID: 8300000, guid: 96680f87dfd4d0b468a0559a57c7c0c9, type: 3}
   SE3: {fileID: 8300000, guid: 0fb67b7083bb04542ba0a81783016c01, type: 3}
   SE4: {fileID: 8300000, guid: d78dc73a841be11429fe2e166bbd3a8b, type: 3}
+  BGM1: {fileID: 8300000, guid: 8d19392aa9ac81743bde8f79511ad1e3, type: 3}
+  BGM2: {fileID: 8300000, guid: efab110be35eb2b468677246347bd3c7, type: 3}
+  Intro1: {fileID: 8300000, guid: 01f7c7b72e0b22742a18768fdbb61127, type: 3}
+  Intro2: {fileID: 8300000, guid: 3dfc29a5805149d4fbf4be5facb9c5e9, type: 3}
 --- !u!4 &832731262
 Transform:
   m_ObjectHideFlags: 0
