@@ -676,7 +676,7 @@ MonoBehaviour:
   battleManager1: {fileID: 1276066840}
   battleManager2: {fileID: 2022489057}
   battleManager3: {fileID: 912242875}
-  questName: 
+  questName: quest_beta
   questPosition: {x: 0, y: 0}
 --- !u!1 &228473126
 GameObject:
@@ -905,7 +905,7 @@ MonoBehaviour:
   battleManager1: {fileID: 1533738922}
   battleManager2: {fileID: 2022279127}
   battleManager3: {fileID: 538824713}
-  questName: 
+  questName: quest_gamma
   questPosition: {x: 0, y: 0}
 --- !u!1 &293804219
 GameObject:
@@ -3681,7 +3681,7 @@ MonoBehaviour:
   questManager1: {fileID: 1037013150}
   questManager2: {fileID: 216802338}
   questManager3: {fileID: 239211072}
-  stageName: alfa
+  stageName: stage_alfa
 --- !u!4 &923360895
 Transform:
   m_ObjectHideFlags: 0
@@ -3988,7 +3988,7 @@ MonoBehaviour:
   battleManager1: {fileID: 108083526}
   battleManager2: {fileID: 2012627442}
   battleManager3: {fileID: 1602492176}
-  questName: 
+  questName: quest_alfa
   questPosition: {x: 0, y: 0}
 --- !u!1 &1043109639
 GameObject:

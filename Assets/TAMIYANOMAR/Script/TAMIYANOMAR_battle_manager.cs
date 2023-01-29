@@ -7,23 +7,16 @@ public class TAMIYANOMAR_battle_manager : MonoBehaviour
     [SerializeField] private GameObject Enemy_1;
     [SerializeField] private GameObject Enemy_2;
     [SerializeField] private GameObject Enemy_3;
-
     [SerializeField] private GameObject battleDestination;
     private Vector2 battlePosition;
     [SerializeField] private GameObject preManager;
-
     [SerializeField] private GameObject poseManager;
-
     [SerializeField] float poseTime = 2.0f;
 
     private bool battleClear = false;
-
     private bool battleActive = false;
-
     private bool battleStart = false;
-
     private bool firstActive = false;
-
     private bool posestarted = false;
 
 
@@ -34,27 +27,20 @@ public class TAMIYANOMAR_battle_manager : MonoBehaviour
 
     void Update()
     {
-        //Debug.Log("battlestart = " + battleStart);
-        //Debug.Log("battleClear = " + battleClear);
-        //Debug.Log("battleActivate = " + battleActive);
 
         TAMIYANOMAR_poseManager t_poseManager = poseManager.GetComponent<TAMIYANOMAR_poseManager>();
         if(t_poseManager.GetPosed())
         {
-            //Debug.Log("Posed");
             return;
         }
 
         TAMIYANOMAR_pre_manager t_premanager = preManager.GetComponent<TAMIYANOMAR_pre_manager>();
 
-
-
         if (battleActive == true)
         {
             if (battleStart == false && firstActive == false)
             {
-                TAMIYANOMAR_pre_manager t_pre_Manager = preManager.GetComponent<TAMIYANOMAR_pre_manager>();
-                t_pre_Manager.setActive(battlePosition);
+                t_premanager.setActive(battlePosition);
                 firstActive = true;
             }
 
@@ -105,8 +91,6 @@ public class TAMIYANOMAR_battle_manager : MonoBehaviour
                 }
             }
         }
-
-
 
     }
 

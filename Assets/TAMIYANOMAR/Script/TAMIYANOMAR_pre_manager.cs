@@ -49,8 +49,6 @@ public class TAMIYANOMAR_pre_manager : MonoBehaviour
             float gap_x = Mathf.Abs(playerObj.transform.position.x - destination.x);
             float gap_z = Mathf.Abs(playerObj.transform.position.z - destination.y);
 
-
-            
             float dis = Mathf.Pow((gap_x * gap_x)+(gap_z * gap_z), 0.5f);
 
             //サウンドをシームレスに変化
