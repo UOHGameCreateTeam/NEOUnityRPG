@@ -28,7 +28,6 @@ public class TAMIYANOMAR_battle_manager : MonoBehaviour
 
     private bool posestarted = false;
 
-    private bool musicStarted = false;
     
     private void Start()
     {
@@ -77,12 +76,6 @@ public class TAMIYANOMAR_battle_manager : MonoBehaviour
                     return;
                 }
 
-                if(musicStarted == false)
-                {
-                    musicStarted = true;
-                    //battlemusicのスタート
-                }
-
                 //Debug.Log("battle start");
                 Enemy_1.SetActive(true);
                 Enemy_2.SetActive(true);
@@ -111,7 +104,6 @@ public class TAMIYANOMAR_battle_manager : MonoBehaviour
                     battleStart = false;
                     battleActive = false;
                     posestarted = false;
-                    musicStarted = false;
                     //バトル音楽を止める処理
                     //フィールド音楽をスタート
                 }
@@ -143,7 +135,6 @@ public class TAMIYANOMAR_battle_manager : MonoBehaviour
         battleStart = false;
         firstActive = false;
         posestarted = false;
-        musicStarted = false;
     }
 
     public bool activated()

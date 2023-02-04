@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 7788925778661893429}
   - component: {fileID: 984389539922446920}
   - component: {fileID: 8748200469232364189}
+  - component: {fileID: -6694908290982710449}
   m_Layer: 0
   m_Name: player_weapon
   m_TagString: Untagged
@@ -93,7 +94,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4562210926572592196}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
@@ -110,3 +111,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a6364bb4c1b4804faeb46e4937d172c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &-6694908290982710449
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4562210926572592196}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd75f6c92027e0646a965bd53510adf9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player_weapon_dmg: 10
