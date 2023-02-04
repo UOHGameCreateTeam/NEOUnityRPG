@@ -358,6 +358,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2c5ef01da267b843b7d5c0d4705d7f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  camera_offset: 1
   sensitivity_theta: 1
   camera_velocity: 1
 --- !u!1 &2060296307
@@ -455,7 +456,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2060296307}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 3.044, z: 0}
+  m_LocalPosition: {x: 0, y: 5.6, z: 0}
   m_LocalScale: {x: 1, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -474,7 +475,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3107b636fb6a0d14796b808118e0bac0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocity: 0.01
+  velocity: 5
+  max_spd: 10
 --- !u!54 &2060296313
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -489,7 +491,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!65 &2060296314
 BoxCollider:
