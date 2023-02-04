@@ -85,7 +85,7 @@ public class tkp_caemra_work : MonoBehaviour
         //マウスが左右どちらに動いたのかを取得、カメラの回転方向を決定
         if ((mouse_position.x - screen_center_position.x) > sensitivity_theta || (mouse_position.x - screen_center_position.x) < (-sensitivity_theta))
         {
-            Debug.Log((float)(mouse_position.x - screen_center_position.x));
+           
             if (mouse_position.x > screen_center_position.x)
             {
                 camera_rotate_h += camera_velocity;
@@ -152,6 +152,10 @@ public class tkp_caemra_work : MonoBehaviour
         {
             camera_rotate_h = 360;
         }
-
+        //Debug.Log(camera_obj.transform.forward);
+    }
+    public Transform get_camera_vector()
+    {
+        return camera_obj.transform;
     }
 }
