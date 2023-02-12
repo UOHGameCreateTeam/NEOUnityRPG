@@ -10,6 +10,13 @@ public class TAMIYANOMAR_pre_manager : MonoBehaviour
     private bool arrived = false;
     private Vector2 destination;
 
+
+    private void Start()
+    {
+        activated = false;
+        arrived = false;
+    }
+
     void Update()
     {
         if(activated == true)
@@ -17,8 +24,18 @@ public class TAMIYANOMAR_pre_manager : MonoBehaviour
             float gap_x = Mathf.Abs(playerObj.transform.position.x - destination.x);
             float gap_z = Mathf.Abs(playerObj.transform.position.z - destination.y);
 
-            if(gap_x < 2f && gap_z < 2f)
+            //サウンドをシームレスに変化
+            float dis = Mathf.Pow(gap_x * gap_z, 0.5f);
+
+            if(dis <= 25f)
             {
+                //サウンド切り替え期間
+            }
+
+            if (dis <= 15f)
+            {
+                //バトルサウンドにする
+                //Debug.Log("arrived true");
                 arrived = true;
                 activated = false;
                 TAMIYANOMAR_destination_manager destination_Manager = this.gameObject.GetComponent<TAMIYANOMAR_destination_manager>();
@@ -29,11 +46,12 @@ public class TAMIYANOMAR_pre_manager : MonoBehaviour
 
     public void setActive(Vector2 dest)
     {
+        //Debug.Log("activate dest");
         activated = true;
         destination = dest;
         arrived = false;
         TAMIYANOMAR_destination_manager destination_Manager =  this.gameObject.GetComponent<TAMIYANOMAR_destination_manager>();
-        destination_Manager.activateDestination(destination);
+        destination_Manager.activateDestination(dest);
     }
 
     public bool getArrived()
