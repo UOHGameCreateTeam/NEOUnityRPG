@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class SS_Enemy_kinsetu_attack : MonoBehaviour
 {
+    [SerializeField] GameObject player;
     // Start is called before the first frame update
     void Start()
     {
@@ -13,6 +14,6 @@ public class SS_Enemy_kinsetu_attack : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        transform.LookAt(player.transform);
     }
 }
