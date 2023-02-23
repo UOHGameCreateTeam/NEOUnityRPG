@@ -12,6 +12,7 @@ public class TAMIYANOMAR_battle_manager : MonoBehaviour
     [SerializeField] private GameObject preManager;
     [SerializeField] private GameObject poseManager;
     [SerializeField] float poseTime = 2.0f;
+    [SerializeField] private GameObject battleAreaWall;
 
     private bool battleClear = false;
     private bool battleActive = false;
@@ -64,6 +65,7 @@ public class TAMIYANOMAR_battle_manager : MonoBehaviour
                 Enemy_1.SetActive(true);
                 Enemy_2.SetActive(true);
                 Enemy_3.SetActive(true);
+                battleAreaWall.SetActive(true);
 
                 int enemy_hp_1 = Enemy_1.GetComponent<SS_enemy_hp>().getHp();
                 int enemy_hp_2 = Enemy_2.GetComponent<SS_enemy_hp>().getHp();
@@ -83,6 +85,7 @@ public class TAMIYANOMAR_battle_manager : MonoBehaviour
                 }
                 if (enemy_hp_1 <= 0 && enemy_hp_2 <= 0 && enemy_hp_3 <= 0)
                 {
+                    battleAreaWall.SetActive(false);
                     Debug.Log("battle cleaar");
                     battleClear = true;
                     battleStart = false;
