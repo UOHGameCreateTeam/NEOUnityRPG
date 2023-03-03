@@ -191,9 +191,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   createObject: {fileID: 0}
+  Player: {fileID: 0}
   itemCount: 50
   radius: 5
   repeat: 2
+  e_damage: 30
   Jump_speed: 50
   speed: 5
   jumpForce: 3
@@ -320,6 +322,7 @@ GameObject:
   - component: {fileID: 25655881}
   - component: {fileID: 25655880}
   - component: {fileID: 25655879}
+  - component: {fileID: 25655887}
   m_Layer: 0
   m_Name: Enemy2
   m_TagString: Untagged
@@ -371,9 +374,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   createObject: {fileID: 1341570382}
+  Player: {fileID: 0}
   itemCount: 50
   radius: 5
   repeat: 2
+  e_damage: 30
   Jump_speed: 50
   speed: 5
   jumpForce: 3
@@ -483,6 +488,23 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 25655877}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &25655887
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 25655877}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73b76a24e5aa0984885871f81921dbdf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Player: {fileID: 0}
+  e_damage: 30
+  jumpForce: 50
+  jumpDelay: 1
+  jumpRange: 1000
 --- !u!1 &38226642
 GameObject:
   m_ObjectHideFlags: 0
@@ -753,9 +775,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   createObject: {fileID: 0}
+  Player: {fileID: 0}
   itemCount: 50
   radius: 5
   repeat: 2
+  e_damage: 30
   Jump_speed: 50
   speed: 5
   jumpForce: 3
@@ -985,9 +1009,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   createObject: {fileID: 0}
+  Player: {fileID: 0}
   itemCount: 50
   radius: 5
   repeat: 2
+  e_damage: 30
   Jump_speed: 50
   speed: 5
   jumpForce: 3
@@ -1224,9 +1250,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   createObject: {fileID: 0}
+  Player: {fileID: 0}
   itemCount: 50
   radius: 5
   repeat: 2
+  e_damage: 30
   Jump_speed: 50
   speed: 5
   jumpForce: 3
@@ -1515,9 +1543,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   createObject: {fileID: 0}
+  Player: {fileID: 0}
   itemCount: 50
   radius: 5
   repeat: 2
+  e_damage: 30
   Jump_speed: 50
   speed: 5
   jumpForce: 3
@@ -1781,9 +1811,10 @@ GameObject:
   - component: {fileID: 412634708}
   - component: {fileID: 412634707}
   - component: {fileID: 412634706}
+  - component: {fileID: 412634710}
   m_Layer: 0
   m_Name: Stage
-  m_TagString: Untagged
+  m_TagString: ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1795,7 +1826,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 412634705}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: cab799f5072a5a84e80bf6f0b88d0f63, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -1876,6 +1907,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!64 &412634710
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 412634705}
+  m_Material: {fileID: 13400000, guid: cab799f5072a5a84e80bf6f0b88d0f63, type: 2}
+  m_IsTrigger: 0
+  m_Enabled: 0
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &486942899
 GameObject:
   m_ObjectHideFlags: 0
@@ -2422,9 +2467,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   createObject: {fileID: 0}
+  Player: {fileID: 0}
   itemCount: 50
   radius: 5
   repeat: 2
+  e_damage: 30
   Jump_speed: 50
   speed: 5
   jumpForce: 3
@@ -2846,9 +2893,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   createObject: {fileID: 0}
+  Player: {fileID: 0}
   itemCount: 50
   radius: 5
   repeat: 2
+  e_damage: 30
   Jump_speed: 50
   speed: 5
   jumpForce: 3
@@ -3026,9 +3075,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   createObject: {fileID: 0}
+  Player: {fileID: 0}
   itemCount: 50
   radius: 5
   repeat: 2
+  e_damage: 30
   Jump_speed: 50
   speed: 5
   jumpForce: 3
@@ -3206,9 +3257,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   createObject: {fileID: 0}
+  Player: {fileID: 0}
   itemCount: 50
   radius: 5
   repeat: 2
+  e_damage: 30
   Jump_speed: 50
   speed: 5
   jumpForce: 3
@@ -3386,9 +3439,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   createObject: {fileID: 0}
+  Player: {fileID: 0}
   itemCount: 50
   radius: 5
   repeat: 2
+  e_damage: 30
   Jump_speed: 50
   speed: 5
   jumpForce: 3
@@ -4005,15 +4060,14 @@ GameObject:
   - component: {fileID: 1043109647}
   - component: {fileID: 1043109646}
   - component: {fileID: 1043109649}
-  - component: {fileID: 1043109650}
-  - component: {fileID: 1043109645}
   - component: {fileID: 1043109644}
   - component: {fileID: 1043109643}
   - component: {fileID: 1043109642}
+  - component: {fileID: 1043109650}
   - component: {fileID: 1043109641}
   m_Layer: 0
   m_Name: Enemy3
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4061,13 +4115,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3808b927c0d03f47a8136ed3a1c0be0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  createObject: {fileID: 0}
+  createObject: {fileID: 1341570382}
+  Player: {fileID: 1207827050}
   itemCount: 50
   radius: 5
   repeat: 2
+  e_damage: 30
   Jump_speed: 50
   speed: 5
-  jumpForce: 3
+  jumpForce: 300
   jumpDelay: 2
   jumpRange: 50
 --- !u!65 &1043109643
@@ -4125,21 +4181,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &1043109645
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1043109639}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c2727eabb7b643c4ea6ab05a45d8417e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  kinsetu: {fileID: 0}
-  Speed: 1
-  timer: 3
 --- !u!114 &1043109646
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4196,18 +4237,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 1043109639}
   m_Enabled: 0
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f3808b927c0d03f47a8136ed3a1c0be0, type: 3}
+  m_Script: {fileID: 11500000, guid: 73b76a24e5aa0984885871f81921dbdf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  createObject: {fileID: 0}
-  itemCount: 40
-  radius: 5
-  repeat: 2
-  Jump_speed: 2
-  speed: 5
-  jumpForce: 3
-  jumpDelay: 2
-  jumpRange: 50
+  Player: {fileID: 2060296307}
+  e_damage: 30
+  jumpForce: 50
+  jumpDelay: 1
+  jumpRange: 1000
 --- !u!1 &1050844596
 GameObject:
   m_ObjectHideFlags: 0
@@ -4276,9 +4313,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   createObject: {fileID: 0}
+  Player: {fileID: 0}
   itemCount: 50
   radius: 5
   repeat: 2
+  e_damage: 30
   Jump_speed: 50
   speed: 5
   jumpForce: 3
@@ -4498,15 +4537,15 @@ GameObject:
   - component: {fileID: 1177925069}
   - component: {fileID: 1177925068}
   - component: {fileID: 1177925071}
-  - component: {fileID: 1177925072}
   - component: {fileID: 1177925067}
   - component: {fileID: 1177925066}
   - component: {fileID: 1177925065}
   - component: {fileID: 1177925064}
+  - component: {fileID: 1177925072}
   - component: {fileID: 1177925063}
   m_Layer: 0
   m_Name: Enemy2
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4554,13 +4593,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3808b927c0d03f47a8136ed3a1c0be0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  createObject: {fileID: 0}
+  createObject: {fileID: 1341570382}
+  Player: {fileID: 1207827050}
   itemCount: 50
   radius: 5
   repeat: 2
+  e_damage: 30
   Jump_speed: 50
   speed: 5
-  jumpForce: 3
+  jumpForce: 300
   jumpDelay: 2
   jumpRange: 50
 --- !u!65 &1177925065
@@ -4689,18 +4730,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 1177925061}
   m_Enabled: 0
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f3808b927c0d03f47a8136ed3a1c0be0, type: 3}
+  m_Script: {fileID: 11500000, guid: 73b76a24e5aa0984885871f81921dbdf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  createObject: {fileID: 0}
-  itemCount: 40
-  radius: 5
-  repeat: 2
-  Jump_speed: 2
-  speed: 5
-  jumpForce: 3
-  jumpDelay: 2
-  jumpRange: 50
+  Player: {fileID: 2060296307}
+  e_damage: 30
+  jumpForce: 50
+  jumpDelay: 1
+  jumpRange: 1000
 --- !u!1 &1207827050
 GameObject:
   m_ObjectHideFlags: 0
@@ -4745,15 +4782,15 @@ GameObject:
   - component: {fileID: 1217966438}
   - component: {fileID: 1217966437}
   - component: {fileID: 1217966440}
-  - component: {fileID: 1217966441}
   - component: {fileID: 1217966436}
   - component: {fileID: 1217966435}
   - component: {fileID: 1217966434}
   - component: {fileID: 1217966433}
+  - component: {fileID: 1217966442}
   - component: {fileID: 1217966432}
   m_Layer: 0
   m_Name: Enemy1
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4801,13 +4838,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3808b927c0d03f47a8136ed3a1c0be0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  createObject: {fileID: 0}
+  createObject: {fileID: 1341570382}
+  Player: {fileID: 1207827050}
   itemCount: 50
   radius: 5
   repeat: 2
+  e_damage: 30
   Jump_speed: 50
   speed: 5
-  jumpForce: 3
+  jumpForce: 300
   jumpDelay: 2
   jumpRange: 50
 --- !u!65 &1217966434
@@ -4927,7 +4966,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Enemy: {fileID: 1217966430}
---- !u!114 &1217966441
+--- !u!114 &1217966442
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4936,18 +4975,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 1217966430}
   m_Enabled: 0
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f3808b927c0d03f47a8136ed3a1c0be0, type: 3}
+  m_Script: {fileID: 11500000, guid: 73b76a24e5aa0984885871f81921dbdf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  createObject: {fileID: 0}
-  itemCount: 40
-  radius: 5
-  repeat: 2
-  Jump_speed: 2
-  speed: 5
-  jumpForce: 3
-  jumpDelay: 2
-  jumpRange: 50
+  Player: {fileID: 2060296307}
+  e_damage: 30
+  jumpForce: 50
+  jumpDelay: 1
+  jumpRange: 1000
 --- !u!1 &1272211615
 GameObject:
   m_ObjectHideFlags: 0
@@ -5016,9 +5051,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   createObject: {fileID: 0}
+  Player: {fileID: 0}
   itemCount: 50
   radius: 5
   repeat: 2
+  e_damage: 30
   Jump_speed: 50
   speed: 5
   jumpForce: 3
@@ -5191,6 +5228,7 @@ GameObject:
   - component: {fileID: 1341570386}
   - component: {fileID: 1341570385}
   - component: {fileID: 1341570384}
+  - component: {fileID: 1341570387}
   - component: {fileID: 1341570383}
   m_Layer: 0
   m_Name: Cube (1)
@@ -5277,6 +5315,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1341570387
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1341570382}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b9271bb187166b4bb9d6eeac00fed14, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Player: {fileID: 2060296307}
+  e_damage: 30
 --- !u!1 &1404468494
 GameObject:
   m_ObjectHideFlags: 0
@@ -5445,9 +5497,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   createObject: {fileID: 0}
+  Player: {fileID: 0}
   itemCount: 50
   radius: 5
   repeat: 2
+  e_damage: 30
   Jump_speed: 50
   speed: 5
   jumpForce: 3
@@ -5677,9 +5731,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   createObject: {fileID: 0}
+  Player: {fileID: 0}
   itemCount: 50
   radius: 5
   repeat: 2
+  e_damage: 30
   Jump_speed: 50
   speed: 5
   jumpForce: 3
@@ -5955,9 +6011,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   createObject: {fileID: 0}
+  Player: {fileID: 0}
   itemCount: 50
   radius: 5
   repeat: 2
+  e_damage: 30
   Jump_speed: 50
   speed: 5
   jumpForce: 3
@@ -6234,6 +6292,7 @@ GameObject:
   - component: {fileID: 1614785550}
   - component: {fileID: 1614785549}
   - component: {fileID: 1614785548}
+  - component: {fileID: 1614785556}
   m_Layer: 0
   m_Name: Enemy1
   m_TagString: Untagged
@@ -6285,9 +6344,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   createObject: {fileID: 1341570382}
+  Player: {fileID: 0}
   itemCount: 50
   radius: 5
   repeat: 2
+  e_damage: 30
   Jump_speed: 50
   speed: 5
   jumpForce: 3
@@ -6397,6 +6458,23 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1614785546}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1614785556
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1614785546}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73b76a24e5aa0984885871f81921dbdf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Player: {fileID: 0}
+  e_damage: 30
+  jumpForce: 50
+  jumpDelay: 1
+  jumpRange: 1000
 --- !u!1 &1628764936
 GameObject:
   m_ObjectHideFlags: 0
@@ -6414,6 +6492,7 @@ GameObject:
   - component: {fileID: 1628764940}
   - component: {fileID: 1628764939}
   - component: {fileID: 1628764938}
+  - component: {fileID: 1628764946}
   m_Layer: 0
   m_Name: Enemy3
   m_TagString: Untagged
@@ -6465,9 +6544,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   createObject: {fileID: 1341570382}
+  Player: {fileID: 0}
   itemCount: 50
   radius: 5
   repeat: 2
+  e_damage: 30
   Jump_speed: 50
   speed: 5
   jumpForce: 3
@@ -6577,6 +6658,23 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1628764936}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1628764946
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1628764936}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73b76a24e5aa0984885871f81921dbdf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Player: {fileID: 0}
+  e_damage: 30
+  jumpForce: 50
+  jumpDelay: 1
+  jumpRange: 1000
 --- !u!1 &1630462124
 GameObject:
   m_ObjectHideFlags: 0
@@ -6839,9 +6937,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   createObject: {fileID: 0}
+  Player: {fileID: 0}
   itemCount: 50
   radius: 5
   repeat: 2
+  e_damage: 30
   Jump_speed: 50
   speed: 5
   jumpForce: 3
@@ -7117,9 +7217,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   createObject: {fileID: 0}
+  Player: {fileID: 0}
   itemCount: 50
   radius: 5
   repeat: 2
+  e_damage: 30
   Jump_speed: 50
   speed: 5
   jumpForce: 3
@@ -7539,9 +7641,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   createObject: {fileID: 0}
+  Player: {fileID: 0}
   itemCount: 50
   radius: 5
   repeat: 2
+  e_damage: 30
   Jump_speed: 50
   speed: 5
   jumpForce: 3
@@ -7819,9 +7923,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   createObject: {fileID: 0}
+  Player: {fileID: 0}
   itemCount: 50
   radius: 5
   repeat: 2
+  e_damage: 30
   Jump_speed: 50
   speed: 5
   jumpForce: 3
@@ -8525,9 +8631,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   createObject: {fileID: 0}
+  Player: {fileID: 0}
   itemCount: 50
   radius: 5
   repeat: 2
+  e_damage: 30
   Jump_speed: 50
   speed: 5
   jumpForce: 3
@@ -8805,9 +8913,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   createObject: {fileID: 0}
+  Player: {fileID: 0}
   itemCount: 50
   radius: 5
   repeat: 2
+  e_damage: 30
   Jump_speed: 50
   speed: 5
   jumpForce: 3
