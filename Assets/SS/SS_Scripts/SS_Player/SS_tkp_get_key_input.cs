@@ -11,7 +11,7 @@ public class SS_tkp_get_key_input : MonoBehaviour
     private string input_key;
     private Vector3 cube_position;
     private Vector3 cube_rotation;
-    private float velocity = 0.01f;
+    private float velocity = 0.1f;
     private float obj_rotation = 0.1f;
     private bool isground = false;
     // Start is called before the first frame update

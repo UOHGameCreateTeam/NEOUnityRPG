@@ -5,13 +5,13 @@ using UnityEngine;
 public class SS_ground_shock : MonoBehaviour
 {
     [SerializeField] private GameObject createObject; // 生成するオブジェクト
-
+    [SerializeField] private GameObject Player;
     [SerializeField] private int itemCount = 40; // 生成するオブジェクトの数
 
     [SerializeField] private float radius = 5f; // 半径
 
     [SerializeField] private float repeat = 2f; // 何周期するか
-
+    [SerializeField] private int e_damage = 30;
     [SerializeField] private float Jump_speed = 2f; // 何周期するか
     [SerializeField] private float speed = 5f;
     public float jumpForce = 3f;
@@ -55,6 +55,7 @@ public class SS_ground_shock : MonoBehaviour
     }
     private void Jump()
     {
+        rb.angularVelocity = Vector3.zero;
         rb.velocity = Vector3.zero;
         Vector3 uppow = new Vector3(0, 0, 0);
         uppow.y += 0.5f;
@@ -65,6 +66,7 @@ public class SS_ground_shock : MonoBehaviour
     }
     private void tackle()
     {
+        rb.angularVelocity = Vector3.zero;
         rb.velocity = Vector3.zero;
         Vector3 downpow = new Vector3(0, 0, 0);
         downpow.y -= 1;
@@ -77,18 +79,30 @@ public class SS_ground_shock : MonoBehaviour
             if (this.GetComponent<SS_ground_shock>().enabled == true)
             {
 
-                Debug.Log("当たったよ");
+                //Debug.Log("当たったよ");
                 if (collision.gameObject.tag == "ground")
                 {
                     inpact_object();
+                    rb.velocity = Vector3.zero;
                     this.GetComponent<SS_ground_shock>().enabled = false;
+                }
+                if (collision.gameObject.tag == "Player")
+                {
+                    rb.velocity = Vector3.zero;
+                    this.GetComponent<SS_ground_shock>().enabled = false;
+                    addDamage(e_damage, Player);
                 }
             }
         }
         
       
     }
-
+    private void addDamage(int damage, GameObject gameobject)
+    {
+        Debug.Log(damage);
+        int now_hp = gameobject.GetComponent<tkp_player_tkp>().get_hp();
+        gameobject.GetComponent<tkp_player_tkp>().set_hp(now_hp - damage);
+    }
     public void inpact_object()
     {
         var oneCycle = 2.0f * Mathf.PI; // sin の周期は 2π
