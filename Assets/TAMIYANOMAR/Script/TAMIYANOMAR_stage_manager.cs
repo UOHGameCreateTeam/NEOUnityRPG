@@ -7,29 +7,40 @@ public class TAMIYANOMAR_stage_manager : MonoBehaviour
     [SerializeField] private GameObject questManager1;
     [SerializeField] private GameObject questManager2;
     [SerializeField] private GameObject questManager3;
+    [SerializeField] private string stageName;
 
     private bool stageClear = false;
 
+    private bool quest1 = false;
+    private bool quest2 = false;
+    private bool quest3 = false;
+
     private bool stageActive = false;
+
+
     void Update()
     {
+
         TAMIYANOMAR_quest_manager t_quest_manager_1 = questManager1.GetComponent<TAMIYANOMAR_quest_manager>();
         TAMIYANOMAR_quest_manager t_quest_manager_2 = questManager2.GetComponent<TAMIYANOMAR_quest_manager>();
-        TAMIYANOMAR_quest_manager t_quest_manager_3 = questManager2.GetComponent<TAMIYANOMAR_quest_manager>();
+        TAMIYANOMAR_quest_manager t_quest_manager_3 = questManager3.GetComponent<TAMIYANOMAR_quest_manager>();
 
-        if (stageActive == true)
+        if (stageActive == true &&quest1 ==false )
         {  
-            t_quest_manager_1.setActive(); 
+            t_quest_manager_1.setActive();
+            quest1 = true;
         }
 
-        if (t_quest_manager_1.getQuestClear() == true)
+        if (t_quest_manager_1.getQuestClear() == true && quest2 == false)
         {
             t_quest_manager_2.setActive();
+            quest2 = true;
         }
 
-        if (t_quest_manager_2.getQuestClear() == true)
+        if (t_quest_manager_2.getQuestClear() == true && quest3 == false)
         {
             t_quest_manager_3.setActive();
+            quest3 = true;
         }
 
         if (t_quest_manager_3.getQuestClear() == true)
