@@ -26,8 +26,8 @@ public class StartButton : MonoBehaviour
 
     public void OnClick()
     {
-        SceneManager.LoadScene("hogehogeScene"); // 遷移したいSceneを入れる
-        Debug.Log("ボタン押した");
+        SceneManager.LoadScene("TAMIYANOMAR_Scene_MAENAO"); // メインのゲームシーン
+        //Debug.Log("ボタン押した");
     }
 
     public void ChangeStartColor() // カーソルが乗ったら色変わる
