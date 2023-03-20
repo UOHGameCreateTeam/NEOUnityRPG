@@ -23,7 +23,7 @@ public class ContinueButton : MonoBehaviour
     }
     public void ContinueGame()
     {
-        SceneManager.LoadScene("hugehugeScene"); // ‘JˆÚ‚µ‚½‚¢Scene–¼‚ð“ü‚ê‚é
+        SceneManager.LoadScene("StartScene"); // ‘JˆÚ‚µ‚½‚¢Scene–¼‚ð“ü‚ê‚é
         Debug.Log("ƒ{ƒ^ƒ“‰Ÿ‚µ‚½");
     }
 

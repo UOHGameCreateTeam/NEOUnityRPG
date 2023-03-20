@@ -270,6 +270,9 @@ MonoBehaviour:
   Enemy_3: {fileID: 0}
   battleDestination: {fileID: 525281822}
   preManager: {fileID: 319074146}
+  poseManager: {fileID: 0}
+  poseTime: 2
+  battleAreaWall: {fileID: 0}
 --- !u!1 &134779019
 GameObject:
   m_ObjectHideFlags: 0
@@ -433,6 +436,7 @@ MonoBehaviour:
   battleManager1: {fileID: 1276066840}
   battleManager2: {fileID: 2022489057}
   battleManager3: {fileID: 912242875}
+  questName: 
   questPosition: {x: 0, y: 0}
 --- !u!1 &223628350
 GameObject:
@@ -588,6 +592,7 @@ MonoBehaviour:
   battleManager1: {fileID: 1533738922}
   battleManager2: {fileID: 2022279127}
   battleManager3: {fileID: 538824713}
+  questName: 
   questPosition: {x: 0, y: 0}
 --- !u!1 &319074146
 GameObject:
@@ -620,6 +625,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerObj: {fileID: 2060296307}
+  fieldbgm: {fileID: 0}
+  fieldintro: {fileID: 0}
+  battlebgm: {fileID: 0}
+  battleintro: {fileID: 0}
 --- !u!4 &319074148
 Transform:
   m_ObjectHideFlags: 0
@@ -1326,6 +1335,9 @@ MonoBehaviour:
   Enemy_3: {fileID: 0}
   battleDestination: {fileID: 1666777138}
   preManager: {fileID: 319074146}
+  poseManager: {fileID: 0}
+  poseTime: 2
+  battleAreaWall: {fileID: 0}
 --- !u!4 &538824715
 Transform:
   m_ObjectHideFlags: 0
@@ -1916,6 +1928,9 @@ MonoBehaviour:
   Enemy_3: {fileID: 0}
   battleDestination: {fileID: 885933267}
   preManager: {fileID: 319074146}
+  poseManager: {fileID: 0}
+  poseTime: 2
+  battleAreaWall: {fileID: 0}
 --- !u!4 &912242877
 Transform:
   m_ObjectHideFlags: 0
@@ -1963,6 +1978,7 @@ MonoBehaviour:
   questManager1: {fileID: 1037013150}
   questManager2: {fileID: 216802338}
   questManager3: {fileID: 239211072}
+  stageName: 
 --- !u!4 &923360895
 Transform:
   m_ObjectHideFlags: 0
@@ -2294,6 +2310,7 @@ MonoBehaviour:
   battleManager1: {fileID: 108083526}
   battleManager2: {fileID: 2012627442}
   battleManager3: {fileID: 1602492176}
+  questName: 
   questPosition: {x: 0, y: 0}
 --- !u!1 &1120346655
 GameObject:
@@ -2426,6 +2443,9 @@ MonoBehaviour:
   Enemy_3: {fileID: 0}
   battleDestination: {fileID: 2139343372}
   preManager: {fileID: 319074146}
+  poseManager: {fileID: 0}
+  poseTime: 2
+  battleAreaWall: {fileID: 0}
 --- !u!4 &1276066842
 Transform:
   m_ObjectHideFlags: 0
@@ -2814,6 +2834,9 @@ MonoBehaviour:
   Enemy_3: {fileID: 0}
   battleDestination: {fileID: 1912927575}
   preManager: {fileID: 319074146}
+  poseManager: {fileID: 0}
+  poseTime: 2
+  battleAreaWall: {fileID: 0}
 --- !u!4 &1533738924
 Transform:
   m_ObjectHideFlags: 0
@@ -2976,6 +2999,9 @@ MonoBehaviour:
   Enemy_3: {fileID: 0}
   battleDestination: {fileID: 712521446}
   preManager: {fileID: 319074146}
+  poseManager: {fileID: 0}
+  poseTime: 2
+  battleAreaWall: {fileID: 0}
 --- !u!1 &1604392038
 GameObject:
   m_ObjectHideFlags: 0
@@ -3889,6 +3915,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2c5ef01da267b843b7d5c0d4705d7f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  camera_offset: 1
   sensitivity_theta: 1
   camera_velocity: 1
 --- !u!1 &1912927575
@@ -4264,6 +4291,9 @@ MonoBehaviour:
   Enemy_3: {fileID: 0}
   battleDestination: {fileID: 525281822}
   preManager: {fileID: 319074146}
+  poseManager: {fileID: 0}
+  poseTime: 2
+  battleAreaWall: {fileID: 0}
 --- !u!1 &2022279127
 GameObject:
   m_ObjectHideFlags: 0
@@ -4298,6 +4328,9 @@ MonoBehaviour:
   Enemy_3: {fileID: 0}
   battleDestination: {fileID: 1404468494}
   preManager: {fileID: 319074146}
+  poseManager: {fileID: 0}
+  poseTime: 2
+  battleAreaWall: {fileID: 0}
 --- !u!4 &2022279129
 Transform:
   m_ObjectHideFlags: 0
@@ -4347,6 +4380,9 @@ MonoBehaviour:
   Enemy_3: {fileID: 0}
   battleDestination: {fileID: 524131048}
   preManager: {fileID: 319074146}
+  poseManager: {fileID: 0}
+  poseTime: 2
+  battleAreaWall: {fileID: 0}
 --- !u!4 &2022489059
 Transform:
   m_ObjectHideFlags: 0
@@ -4529,8 +4565,9 @@ GameObject:
   - component: {fileID: 2060296312}
   - component: {fileID: 2060296313}
   - component: {fileID: 2060296314}
-  - component: {fileID: 2060296315}
   - component: {fileID: 2060296316}
+  - component: {fileID: 2060296317}
+  - component: {fileID: 2060296318}
   m_Layer: 0
   m_Name: test_cube_1
   m_TagString: test_cube_1
@@ -4629,6 +4666,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3107b636fb6a0d14796b808118e0bac0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  velocity: 0.01
+  max_spd: 10
 --- !u!54 &2060296313
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -4658,24 +4697,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &2060296315
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2060296307}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 78ab7854e5630dd40851a6a6b2237b49, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerObj: {fileID: 2060296307}
-  redSlider: {fileID: 1767043042}
-  greenSlider: {fileID: 1447371807}
-  warningSlider: {fileID: 1935466857}
-  anim: {fileID: 1935466856}
-  gameOver: 0
 --- !u!95 &2060296316
 Animator:
   serializedVersion: 4
@@ -4696,6 +4717,37 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &2060296317
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2060296307}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56fd7919187a08446af7188275cd4e72, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hp: 100
+--- !u!114 &2060296318
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2060296307}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78ab7854e5630dd40851a6a6b2237b49, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerObj: {fileID: 2060296307}
+  redSlider: {fileID: 1767043042}
+  greenSlider: {fileID: 1447371807}
+  warningSlider: {fileID: 1935466857}
+  anim: {fileID: 1935466856}
+  gameOver: 0
 --- !u!1 &2106686567
 GameObject:
   m_ObjectHideFlags: 0
