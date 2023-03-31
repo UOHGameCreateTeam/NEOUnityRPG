@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -19,6 +20,12 @@ public class BackToStartButton : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public void BackToStart()
+    {
+        SceneManager.LoadScene("StartScene"); // 遷移したいScene名
+
     }
 
     public void ChangeBackToStartColor() // カーソルが乗ったら色変わる

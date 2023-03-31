@@ -23,8 +23,8 @@ public class ContinueButton : MonoBehaviour
     }
     public void ContinueGame()
     {
-        SceneManager.LoadScene("StartScene"); // 遷移したいScene名を入れる
-        Debug.Log("ボタン押した");
+        SceneManager.LoadScene("StartScene"); // 遷移したいScene名
+        
     }
 
     public void ChangeContinueColor() // カーソルが乗ったら色変わる

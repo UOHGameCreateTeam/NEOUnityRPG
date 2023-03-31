@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MAENAO_tkp_player_tkp : MonoBehaviour
 {
-    [SerializeField] private int hp;
+    [SerializeField] public int hp;
     // Start is called before the first frame update
     void Start()
     {

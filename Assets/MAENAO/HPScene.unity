@@ -1452,6 +1452,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2c5ef01da267b843b7d5c0d4705d7f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  camera_offset: 1
   sensitivity_theta: 1
   camera_velocity: 1
 --- !u!1 &1931551638
@@ -1707,6 +1708,7 @@ GameObject:
   - component: {fileID: 2060296316}
   - component: {fileID: 2060296317}
   - component: {fileID: 2060296318}
+  - component: {fileID: 2060296319}
   m_Layer: 0
   m_Name: test_cube_1
   m_TagString: test_cube_1
@@ -1804,6 +1806,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3107b636fb6a0d14796b808118e0bac0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  velocity: 0.01
+  max_spd: 10
 --- !u!54 &2060296313
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1897,3 +1901,16 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &2060296319
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2060296307}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56fd7919187a08446af7188275cd4e72, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hp: 100
