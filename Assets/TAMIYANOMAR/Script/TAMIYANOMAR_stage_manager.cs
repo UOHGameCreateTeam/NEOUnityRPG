@@ -16,8 +16,11 @@ public class TAMIYANOMAR_stage_manager : MonoBehaviour
     private bool quest3 = false;
 
     private bool stageActive = false;
+
+
     void Update()
     {
+
         TAMIYANOMAR_quest_manager t_quest_manager_1 = questManager1.GetComponent<TAMIYANOMAR_quest_manager>();
         TAMIYANOMAR_quest_manager t_quest_manager_2 = questManager2.GetComponent<TAMIYANOMAR_quest_manager>();
         TAMIYANOMAR_quest_manager t_quest_manager_3 = questManager3.GetComponent<TAMIYANOMAR_quest_manager>();
