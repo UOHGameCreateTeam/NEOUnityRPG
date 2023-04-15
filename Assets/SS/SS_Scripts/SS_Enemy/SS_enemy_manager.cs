@@ -10,7 +10,6 @@ public class SS_enemy_manager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Enemy = GameObject.Find("Enemy");
         Enemy.GetComponent<SS_ground_shock>().enabled = false;
         Enemy.GetComponent<SS_EnemyJump>().enabled = false;
     }
@@ -18,19 +17,20 @@ public class SS_enemy_manager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //Debug.Log(Cot);
         Cot += Time.deltaTime;
         if (Cot >= 2 && ctt == 0)
         {
             int rnd = Random.Range(1, 10);
             if (rnd % 2 == 0)
             {
-                Debug.Log("a");
+                //Debug.Log("a");
                 Enemy.GetComponent<SS_ground_shock>().enabled = true;
                 Enemy.GetComponent<SS_ground_shock>().Initialize();
             }
             else
             {
-                Debug.Log("b");
+                //Debug.Log("b");
                 Enemy.GetComponent<SS_EnemyJump>().enabled = true;
                 Enemy.GetComponent<SS_EnemyJump>().Initialize();
             }
@@ -38,9 +38,7 @@ public class SS_enemy_manager : MonoBehaviour
         }
         if (Cot >= 7 && ctt == 1)
         {
-            Debug.Log("c");
-            Enemy.GetComponent<SS_ground_shock>().enabled = false;
-            Enemy.GetComponent<SS_EnemyJump>().enabled = false;
+            //Debug.Log("c");
             ctt = 0;
             Cot = 0;
         }

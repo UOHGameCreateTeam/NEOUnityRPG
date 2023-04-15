@@ -27,8 +27,8 @@ public class PlayerHpSlider : MonoBehaviour
         playerClass = playerObj.GetComponent<tkp_player_tkp>();
         anim = gameObject.GetComponent<Animator>();
         //maxPlayerHp = playerClass.get_hp();
-        maxPlayerHp = 100;
-        currentPlayerHp = 100;
+        currentPlayerHp = playerClass.get_hp();
+        maxPlayerHp = currentPlayerHp;
         damage = 0;
         greenSlider.value = 1;
         redSlider.value = 1;
@@ -42,12 +42,8 @@ public class PlayerHpSlider : MonoBehaviour
     void Update()
     {
         //currentPlayerHp = playerClass.get_hp();
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            getPlayerHp = currentPlayerHp - 2;
-        }
 
-        //getPlayerHp = playerClass.get_hp(); // ダメージ受けてHP減ったときの残りHP
+        getPlayerHp = playerClass.get_hp(); // ダメージ受けてHP減ったときの残りHP
         if (currentPlayerHp - getPlayerHp > 0)
         {
             damage = currentPlayerHp - getPlayerHp;

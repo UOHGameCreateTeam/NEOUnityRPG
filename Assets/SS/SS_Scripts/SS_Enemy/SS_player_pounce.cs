@@ -30,16 +30,16 @@ public class SS_player_pounce : MonoBehaviour
         {
             if (sumon == false)
             {
-                atari = Instantiate(kinsetu, this.transform.position, Quaternion.identity);
+                //atari = Instantiate(kinsetu, this.transform.position, Quaternion.identity);
                 sumon = true;
             }
-            atari.transform.position = this.transform.position;
+            this.transform.position = this.transform.position;
             transform.position += transform.forward * Speed;
             float dis = Vector3.Distance(distination_position, transform.position);
    
             if (dis <= 2)
             {
-                atari.transform.position = new Vector3 (this.transform.position.x, 0, this.transform.position.z);
+                this.transform.position = new Vector3 (this.transform.position.x, 0, this.transform.position.z);
                 Speed = 0;
                 transform.position = new Vector3(distination_position.x, 3.5f,distination_position.z);
                 this.GetComponent<SS_player_pounce>().enabled = false;
