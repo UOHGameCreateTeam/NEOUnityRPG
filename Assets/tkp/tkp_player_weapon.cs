@@ -11,7 +11,7 @@ public class tkp_player_weapon : MonoBehaviour
     private GameObject obj;
     void Start()
     {
-        player = GameObject.Find("test_cube_1");
+        player = GameObject.Find("Player_1");
         //obj = (GameObject)Instantiate(player_weapon,player.transform.position,Quaternion.identity);
         //obj.transform.parent = player.transform;
     }
