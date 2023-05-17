@@ -23,4 +23,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/MAENAO/GameClearScene.unity
     guid: 9b5751d2c92963d488a63fab6ae99f50
+  - enabled: 1
+    path: Assets/MAENAO/MAE_main_Scene.unity
+    guid: d47a89a62f4e2984ba119a6ef55604d5
   m_configObjects: {}
