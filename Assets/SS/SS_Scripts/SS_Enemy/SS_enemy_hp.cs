@@ -14,4 +14,11 @@ public class SS_enemy_hp : MonoBehaviour
     {
         return EnemyHp;
     }
+    private void Update()
+    {
+        if (EnemyHp <= 0)
+        {
+            Destroy(this);
+        }
+    }
 }

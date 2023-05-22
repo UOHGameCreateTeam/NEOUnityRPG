@@ -15,8 +15,8 @@ public class tkp_weapon_dmg : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        gameobject_enemy_hp = GameObject.Find("Enemy");
-        enemy_hp = gameobject_enemy_hp.GetComponent<SS_enemy_hp>();
+        //gameobject_enemy_hp = GameObject.Find("Enemy");
+        //if (gameobject_enemy_hp != null) enemy_hp = gameobject_enemy_hp.GetComponent<SS_enemy_hp>();
   
     }
 
@@ -27,13 +27,16 @@ public class tkp_weapon_dmg : MonoBehaviour
     }
 
     //ƒvƒŒƒCƒ„[‚Ì•Ší‚Æ“G‚Æ‚Ìd‚È‚è”»’è
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter(Collider collider)
     {
+        //Debug.Log(collider.gameObject.tag);
+        //Debug.Log("A");
         //æ“¾‚µ‚½“G‚Ìhp‚ğŠi”[‚·‚é•Ï”
         int now_enemy_hp, tmp_enemy_hp;
 
-        if (other.gameObject.name == "Enemy")
+        if (collider.gameObject.tag == "enemy_body")
         {
+            enemy_hp = collider.gameObject.GetComponent<SS_enemy_hp>();
             //“Ghp‚Ìæ“¾
             now_enemy_hp = enemy_hp.getHp();
             tmp_enemy_hp = now_enemy_hp - player_weapon_dmg;

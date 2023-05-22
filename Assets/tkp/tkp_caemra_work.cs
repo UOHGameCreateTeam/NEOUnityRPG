@@ -21,8 +21,10 @@ public class tkp_caemra_work : MonoBehaviour
     private float camera_rotate_h;
     private float camera_rotate_v;
     //カメラと被写体の距離
-    private float r = 3.5f;
+    public float r = 3.5f;
+    //カメラの高さ
     public float camera_offset = 1;
+    
     //感度？
     private bool mouse_lock = true;
     private float sensitivity;
@@ -42,7 +44,7 @@ public class tkp_caemra_work : MonoBehaviour
 
         //オブジェクト取得
         camera_obj = this.gameObject;
-        cube_obj = GameObject.Find("test_cube_1");
+        cube_obj = GameObject.Find("Player_1");
        
         //初期設定
         camera_rotate_h = 0;
