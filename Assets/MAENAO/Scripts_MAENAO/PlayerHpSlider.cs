@@ -18,14 +18,14 @@ public class PlayerHpSlider : MonoBehaviour
     private int currentPlayerHp;
     private int getPlayerHp;
     private int damage;
-    private MAENAO_tkp_player_tkp playerClass;
+    private tkp_player_tkp playerClass;
 
 
 
     // Start is called before the first frame update
     void Start()
     {
-        playerClass = playerObj.GetComponent<MAENAO_tkp_player_tkp>();
+        playerClass = playerObj.GetComponent<tkp_player_tkp>();
         anim = gameObject.GetComponent<Animator>();
         //maxPlayerHp = playerClass.get_hp();
         currentPlayerHp = playerClass.get_hp();
