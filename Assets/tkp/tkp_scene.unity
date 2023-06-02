@@ -184,7 +184,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2541452a762d74044bd25176fd2e1250, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -14.3
+      value: 9.31
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2541452a762d74044bd25176fd2e1250, type: 3}
       propertyPath: m_LocalPosition.y
@@ -192,7 +192,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2541452a762d74044bd25176fd2e1250, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 23.42
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2541452a762d74044bd25176fd2e1250, type: 3}
       propertyPath: m_LocalRotation.w
@@ -530,7 +530,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2c5ef01da267b843b7d5c0d4705d7f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  camera_offset: 1
+  r: 5
+  camera_offset: 3
   sensitivity_theta: 1
   camera_velocity: 1
 --- !u!1 &2060296307
