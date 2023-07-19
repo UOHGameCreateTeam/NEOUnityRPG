@@ -11,8 +11,9 @@ public class TAMIYANOMAR_battle_manager : MonoBehaviour
     private Vector2 battlePosition;
     [SerializeField] private GameObject preManager;
     [SerializeField] private GameObject poseManager;
-    [SerializeField] float poseTime = 2.0f;
+    [SerializeField] float poseTime = 2.0f; //ポーズをしている間にストーリーを表示？
     [SerializeField] private GameObject battleAreaWall;
+    [SerializeField] private GameObject storyObject;
 
     private bool battleClear = false;
     private bool battleActive = false;
@@ -56,6 +57,11 @@ public class TAMIYANOMAR_battle_manager : MonoBehaviour
                 {
                     posestarted = true;
                     t_poseManager.StartPose(poseTime);
+                    if (storyObject != null)
+                    {
+                        TAMIYANOMAR_story_manager t_story_manager = storyObject.GetComponent<TAMIYANOMAR_story_manager>();
+                        t_story_manager.StartManager(poseTime);
+                    }
                     //SEとVFXの発動
                     //fiedMusicの停止
                     return;

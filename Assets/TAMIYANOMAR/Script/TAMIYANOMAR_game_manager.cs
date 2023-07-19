@@ -29,7 +29,7 @@ public class TAMIYANOMAR_game_manager : MonoBehaviour
             SceneManager.LoadScene("GameoverScene");
         }
 
-        //ƒvƒŒƒCƒ„[‚ª€‚ñ‚Å‚½‚ç
+        
         TAMIYANOMAR_stage_manager t_stage_manager_1 =  stageManager1.GetComponent<TAMIYANOMAR_stage_manager>();
         if(t_stage_manager_1.getStageClear() == true)
         {
