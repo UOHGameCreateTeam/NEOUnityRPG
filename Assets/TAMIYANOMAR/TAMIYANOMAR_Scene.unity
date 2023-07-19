@@ -681,6 +681,7 @@ MonoBehaviour:
   poseManager: {fileID: 1799709312}
   poseTime: 10
   battleAreaWall: {fileID: 2127947865}
+  storyObject: {fileID: 225015501}
 --- !u!1 &118165167
 GameObject:
   m_ObjectHideFlags: 0
@@ -3613,6 +3614,7 @@ MonoBehaviour:
   poseManager: {fileID: 1799709312}
   poseTime: 2
   battleAreaWall: {fileID: 689342433}
+  storyObject: {fileID: 0}
 --- !u!4 &538824715
 Transform:
   m_ObjectHideFlags: 0
@@ -5278,6 +5280,7 @@ MonoBehaviour:
   poseManager: {fileID: 1799709312}
   poseTime: 2
   battleAreaWall: {fileID: 824717057}
+  storyObject: {fileID: 0}
 --- !u!4 &912242877
 Transform:
   m_ObjectHideFlags: 0
@@ -8046,6 +8049,7 @@ MonoBehaviour:
   poseManager: {fileID: 1799709312}
   poseTime: 2
   battleAreaWall: {fileID: 1187077743}
+  storyObject: {fileID: 0}
 --- !u!4 &1276066842
 Transform:
   m_ObjectHideFlags: 0
@@ -9514,6 +9518,7 @@ MonoBehaviour:
   poseManager: {fileID: 1799709312}
   poseTime: 2
   battleAreaWall: {fileID: 10462097}
+  storyObject: {fileID: 0}
 --- !u!4 &1533738924
 Transform:
   m_ObjectHideFlags: 0
@@ -9931,6 +9936,7 @@ MonoBehaviour:
   poseManager: {fileID: 1799709312}
   poseTime: 2
   battleAreaWall: {fileID: 50816951}
+  storyObject: {fileID: 0}
 --- !u!1 &1604392038
 GameObject:
   m_ObjectHideFlags: 0
@@ -12222,6 +12228,7 @@ MonoBehaviour:
   poseManager: {fileID: 1799709312}
   poseTime: 2
   battleAreaWall: {fileID: 234617269}
+  storyObject: {fileID: 0}
 --- !u!1 &2022279127
 GameObject:
   m_ObjectHideFlags: 0
@@ -12259,6 +12266,7 @@ MonoBehaviour:
   poseManager: {fileID: 1799709312}
   poseTime: 2
   battleAreaWall: {fileID: 483823007}
+  storyObject: {fileID: 0}
 --- !u!4 &2022279129
 Transform:
   m_ObjectHideFlags: 0
@@ -12311,6 +12319,7 @@ MonoBehaviour:
   poseManager: {fileID: 1799709312}
   poseTime: 2
   battleAreaWall: {fileID: 1860808750}
+  storyObject: {fileID: 0}
 --- !u!4 &2022489059
 Transform:
   m_ObjectHideFlags: 0
