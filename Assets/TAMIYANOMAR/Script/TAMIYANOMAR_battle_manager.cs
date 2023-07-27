@@ -29,7 +29,6 @@ public class TAMIYANOMAR_battle_manager : MonoBehaviour
 
     void Update()
     {
-
         TAMIYANOMAR_poseManager t_poseManager = poseManager.GetComponent<TAMIYANOMAR_poseManager>();
         if(t_poseManager.GetPosed())
         {
@@ -68,26 +67,57 @@ public class TAMIYANOMAR_battle_manager : MonoBehaviour
                 }
 
                 //Debug.Log("battle start");
-                Enemy_1.SetActive(true);
-                Enemy_2.SetActive(true);
-                Enemy_3.SetActive(true);
+                if (Enemy_1 != null)
+                {
+                    Enemy_1.SetActive(true);
+                }
+                if (Enemy_2 != null)
+                {
+                    Enemy_2.SetActive(true);
+                }
+                if (Enemy_3 != null)
+                {
+                    Enemy_3.SetActive(true);
+                }
                 battleAreaWall.SetActive(true);
 
-                int enemy_hp_1 = Enemy_1.GetComponent<SS_enemy_hp>().getHp();
-                int enemy_hp_2 = Enemy_2.GetComponent<SS_enemy_hp>().getHp();
-                int enemy_hp_3 = Enemy_3.GetComponent<SS_enemy_hp>().getHp();
+
+                int enemy_hp_1 = 0;
+                int enemy_hp_2 = 0;
+                int enemy_hp_3 = 0;
+                if (Enemy_1 != null)
+                {
+                    enemy_hp_1 = Enemy_1.GetComponent<SS_enemy_hp>().getHp();
+                }
+                if (Enemy_2 != null)
+                {
+                    enemy_hp_2 = Enemy_2.GetComponent<SS_enemy_hp>().getHp();
+                }
+                if (Enemy_3 != null)
+                {
+                    enemy_hp_3 = Enemy_3.GetComponent<SS_enemy_hp>().getHp();
+                }
 
                 if (enemy_hp_1 <= 0)
                 {
-                    Enemy_1.SetActive(false);
+                    if (Enemy_1 != null)
+                    {
+                        Enemy_1.SetActive(false);
+                    }
                 }
                 if (enemy_hp_2 <= 0)
                 {
-                    Enemy_2.SetActive(false);
+                    if (Enemy_2 != null)
+                    {
+                        Enemy_2.SetActive(false);
+                    }
                 }
                 if (enemy_hp_3 <= 0)
                 {
-                    Enemy_3.SetActive(false);
+                    if (Enemy_3 != null)
+                    {
+                        Enemy_3.SetActive(false);
+                    }
                 }
                 if (enemy_hp_1 <= 0 && enemy_hp_2 <= 0 && enemy_hp_3 <= 0)
                 {
@@ -107,14 +137,15 @@ public class TAMIYANOMAR_battle_manager : MonoBehaviour
     {
         if (battleClear == true)
         {
-            battleClear = false;
-            return true;
+           //battleClear = false;
+           return true;
         }
         else
         {
             return false;
         }
     }
+
 
     public void setActive()
     {
