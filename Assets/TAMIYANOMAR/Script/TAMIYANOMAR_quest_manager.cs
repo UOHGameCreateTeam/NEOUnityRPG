@@ -123,10 +123,6 @@ public class TAMIYANOMAR_quest_manager : MonoBehaviour
                 battleManager1.SetActive(true);
                 t_battle_manager_1.setActive();
                 firstActive1 = true;
-                if (battleFigure == 1)
-                {
-                    questClear = true;
-                }
             }
         }
 
