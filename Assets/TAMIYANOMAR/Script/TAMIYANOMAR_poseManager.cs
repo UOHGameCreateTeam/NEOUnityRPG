@@ -14,9 +14,15 @@ public class TAMIYANOMAR_poseManager : MonoBehaviour
     {
         if(posed)
         {
+            SoundMaster.instance.VolBGM(0.5f);
             timer += Time.deltaTime;
+            if (pose_end - timer < 1)
+            {
+                SoundMaster.instance.VolBGM(1.0f - (pose_end - timer) * 0.5f);
+            }
             if(timer >= pose_end)
             {
+                SoundMaster.instance.VolBGM(1.0f);
                 posed = false;
                 timer = 0f;
                 pose_end = 0f;

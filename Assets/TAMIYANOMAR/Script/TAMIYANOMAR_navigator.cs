@@ -12,6 +12,8 @@ public class TAMIYANOMAR_navigator : MonoBehaviour
     NavMeshAgent agent;
     [SerializeField]
     LineRenderer line;
+    [SerializeField]
+    Transform playerTrans;
 
     NavMeshPath path;
 
@@ -26,9 +28,10 @@ public class TAMIYANOMAR_navigator : MonoBehaviour
         agent.speed = 0f;
     }
 
-    // Update is called once per frame
     void Update()
     {
+        updatePosition();
+        
         if (activated)
         {
             agent.destination = target.position;
@@ -43,6 +46,11 @@ public class TAMIYANOMAR_navigator : MonoBehaviour
         {
             line.SetWidth(0f, 0f);
         }
+    }
+
+    private void updatePosition()
+    {
+        this.transform.position = new Vector3(playerTrans.position.x, this.transform.position.y, playerTrans.position.z);
     }
 
     public void activate()
