@@ -13,6 +13,7 @@ public class tkp_Enemy_atk_blow_away : MonoBehaviour
 
     public float blow_away_spd = 5.0f;
     public float player_blow_away_limit_y = 10.0f;
+    public GameObject wave_prefab;
 
     // Start is called before the first frame update
     void Start()
@@ -29,20 +30,32 @@ public class tkp_Enemy_atk_blow_away : MonoBehaviour
     void Update()
     {
         if(player_obj.transform.position.y <= player_blow_away_limit_y){
-            if (Input.anyKey)
+            if (Input.GetKeyDown("p")) 
             {
-                foreach (KeyCode code in Enum.GetValues(typeof(KeyCode)))
-                {
-                    if (Input.GetKey(code))
-                    {
-                        // キー入力を文字列に変換
-                        input_key = code.ToString();
-
-                        // Pキーの入力で敵が攻撃する（仮）
-                        if (input_key == "P") rb.AddForce(add_force);
-                    }
-                }
+                // rb.AddForce(add_force);
+                
+                Instantiate(wave_prefab);
+                
             }
+            Debug.Log(rb.velocity.magnitude);
+            // if (Input.anyKey)
+            // {
+            //     foreach (KeyCode code in Enum.GetValues(typeof(KeyCode)))
+            //     {
+            //         if (Input.GetKey(code))
+            //         {
+            //             // キー入力を文字列に変換
+            //             input_key = code.ToString();
+
+            //             // Pキーの入力で敵が攻撃する（仮）
+            //             if (input_key == "P") 
+            //             {
+            //                 Instantiate(wave_prefab);
+            //                 // rb.AddForce(add_force);
+            //             }
+            //         }
+            //     }
+            // }
         }
         
     }
