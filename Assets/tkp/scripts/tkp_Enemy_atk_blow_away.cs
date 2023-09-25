@@ -14,6 +14,7 @@ public class tkp_Enemy_atk_blow_away : MonoBehaviour
     public float blow_away_spd = 5.0f;
     public float player_blow_away_limit_y = 10.0f;
     public GameObject wave_prefab;
+    public GameObject dmg_area_prefab;
 
     // Start is called before the first frame update
     void Start()
@@ -33,11 +34,16 @@ public class tkp_Enemy_atk_blow_away : MonoBehaviour
             if (Input.GetKeyDown("p")) 
             {
                 // rb.AddForce(add_force);
-                
+                // Debug.Log(enemy_pos);
                 Instantiate(wave_prefab);
                 
             }
-            Debug.Log(rb.velocity.magnitude);
+            if (Input.GetKeyDown("o")) 
+            {
+                for(int i = 0;i < 20; i++)Instantiate(dmg_area_prefab, this.gameObject.transform);
+            }
+            
+            
             // if (Input.anyKey)
             // {
             //     foreach (KeyCode code in Enum.GetValues(typeof(KeyCode)))
