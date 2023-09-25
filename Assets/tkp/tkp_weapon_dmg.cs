@@ -27,14 +27,15 @@ public class tkp_weapon_dmg : MonoBehaviour
     }
 
     //ƒvƒŒƒCƒ„[‚Ì•Ší‚Æ“G‚Æ‚Ìd‚È‚è”»’è
+
+
     private void OnTriggerEnter(Collider collider)
     {
-        //Debug.Log(collider.gameObject.tag);
         //Debug.Log("A");
         //æ“¾‚µ‚½“G‚Ìhp‚ğŠi”[‚·‚é•Ï”
         int now_enemy_hp, tmp_enemy_hp;
 
-        if (collider.gameObject.tag == "enemy_body")
+        if (collider.gameObject.tag == "Enemy")
         {
             enemy_hp = collider.gameObject.GetComponent<SS_enemy_hp>();
             //“Ghp‚Ìæ“¾
@@ -50,7 +51,7 @@ public class tkp_weapon_dmg : MonoBehaviour
     }
     private void OnTriggerExit(Collider other)
     {
-        if (other.gameObject.name == "Enemy")
+        if (other.gameObject.name != "Enemy")
         {
             Debug.Log("miss");
             weapon_hit = false;
