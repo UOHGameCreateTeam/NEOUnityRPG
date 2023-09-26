@@ -31,14 +31,14 @@ public class tkp_dmg_area : MonoBehaviour
 
         rb.velocity = add_force;
 
-        // player_obj = GameObject.Find("Player_1");
-        // player_hp = player_obj.gameObject.GetComponent<tkp_player_tkp>();        
+        player_obj = GameObject.Find("Player_1");
+        player_hp = player_obj.gameObject.GetComponent<tkp_player_tkp>();        
     }
 
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(player_hp.get_hp());
+        
     }
 
     private void OnTriggerStay(Collider other)
