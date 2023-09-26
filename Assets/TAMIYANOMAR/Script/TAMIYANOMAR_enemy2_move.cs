@@ -12,7 +12,7 @@ public class TAMIYANOMAR_enemy2_move : MonoBehaviour
     private float lookAtTime = 2.0f;
     private float AttackTime = 3.0f;
     private float RushTime = 2.0f;
-    private float IdleTime = 1.2f;
+    private float IdleTime = 0.8f;
     private bool RushOrAttack = false;
 
     private float timer = 0f;
@@ -28,6 +28,7 @@ public class TAMIYANOMAR_enemy2_move : MonoBehaviour
     private SS_enemy_hp ss_hp;
     private int hp = 100;
     private int former_hp = 100;
+
     private void Start()
     {
         ss_hp = this.gameObject.GetComponent<SS_enemy_hp>();
@@ -38,6 +39,7 @@ public class TAMIYANOMAR_enemy2_move : MonoBehaviour
         hp = ss_hp.getHp();
         if(hp < former_hp)
         {
+            Debug.Log("Enemy2 got damage");
             moveFlag = IdleFlag;
         }
         former_hp = hp;
@@ -89,7 +91,7 @@ public class TAMIYANOMAR_enemy2_move : MonoBehaviour
                 if (timer > AttackTime)
                 {
                     timer = 0f;
-                    moveFlag = LookAtFlag;
+                    moveFlag = IdleFlag;
                     attack_cube.SetActive(false);
                     return;
                 }
@@ -105,7 +107,7 @@ public class TAMIYANOMAR_enemy2_move : MonoBehaviour
                 if (timer > RushTime || distance < 14f)
                 {
                     timer = 0f;
-                    moveFlag = LookAtFlag;
+                    moveFlag = IdleFlag;
                     rush_cube.SetActive(false);
                     return;
                 }
@@ -116,6 +118,14 @@ public class TAMIYANOMAR_enemy2_move : MonoBehaviour
             }
         }
 
+    }
+
+    public void gaveDamage()
+    {
+        timer = 0f;
+        moveFlag = IdleFlag;
+        rush_cube.SetActive(false);
+        return;
     }
 
 }
