@@ -316,6 +316,11 @@ MonoBehaviour:
   player_blow_away_limit_y: 10
   wave_prefab: {fileID: 16212565960012596, guid: a190c03f0b7eb1e4c9fbe68bc628993f, type: 3}
   dmg_area_prefab: {fileID: 5104818500123015442, guid: d9690a3215df31a40be1d480c806c49f, type: 3}
+  atk_interval: 14500
+  spray_dmg_area_interval: 30
+  spray_dmg_area_time: 3000
+  num_max_dmg_area: 50
+  blow_away_time: 5000
 --- !u!65 &406571623
 BoxCollider:
   m_ObjectHideFlags: 0
