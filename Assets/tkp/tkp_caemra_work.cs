@@ -22,9 +22,7 @@ public class tkp_caemra_work : MonoBehaviour
     private float camera_rotate_v;
     //�J�����Ɣ�ʑ̂̋���
     public float r = 3.5f;
-    //�J�����̍���
-    public float camera_offset = 1;
-    
+   
     //���x�H
     private bool mouse_lock = true;
     private float sensitivity;
@@ -32,6 +30,10 @@ public class tkp_caemra_work : MonoBehaviour
     public float sensitivity_theta = 1;
     //�J�����̑���
     public float camera_velocity = 1;
+
+    public float camera_offset_x = 1.0f;
+    public float camera_offset_y = 0.0f;
+    public float camera_offset_z = 1.0f;
 
     // Start is called before the first frame update
     void Start()
@@ -64,7 +66,9 @@ public class tkp_caemra_work : MonoBehaviour
         float theta, phi;
 
         delta_camera = cube_obj.transform.position;
-        delta_camera.y += camera_offset;
+        // delta_camera.x += camera_offset_x;
+        delta_camera.y += camera_offset_y;
+        // delta_camera.z += camera_offset_z;
 
         if (mouse_lock)
         {
