@@ -8,50 +8,52 @@ using System;
 
 public class tkp_caemra_work : MonoBehaviour
 {
-    //ƒ}ƒEƒX‚ÌÀ•WŽæ“¾‚·‚é
+    //ï¿½}ï¿½Eï¿½Xï¿½Ìï¿½ï¿½Wï¿½æ“¾ï¿½ï¿½ï¿½ï¿½
     private Vector3 mouse_position;
-    //‰æ–Ê’†‰›‚ÌÀ•W
+    //ï¿½ï¿½Ê’ï¿½ï¿½ï¿½ï¿½Ìï¿½ï¿½W
     private Vector3 screen_center_position;
-    //ƒJƒƒ‰‚ÌÀ•W
+    //ï¿½Jï¿½ï¿½ï¿½ï¿½ï¿½Ìï¿½ï¿½W
     private Vector3 delta_camera;
-    //ƒJƒƒ‰‚Æ”íŽÊ‘Ì‚ÌƒIƒuƒWƒFƒNƒg
+    //ï¿½Jï¿½ï¿½ï¿½ï¿½ï¿½Æ”ï¿½Ê‘Ì‚ÌƒIï¿½uï¿½Wï¿½Fï¿½Nï¿½g
     private GameObject camera_obj;
     private GameObject cube_obj;
-    //ƒJƒƒ‰‚Ì‰ñ“]Šp“x
+    //ï¿½Jï¿½ï¿½ï¿½ï¿½ï¿½Ì‰ï¿½]ï¿½pï¿½x
     private float camera_rotate_h;
     private float camera_rotate_v;
-    //ƒJƒƒ‰‚Æ”íŽÊ‘Ì‚Ì‹——£
+    //ï¿½Jï¿½ï¿½ï¿½ï¿½ï¿½Æ”ï¿½Ê‘Ì‚Ì‹ï¿½ï¿½ï¿½
     public float r = 3.5f;
-    //ƒJƒƒ‰‚Ì‚‚³
-    public float camera_offset = 1;
-    
-    //Š´“xH
+   
+    //ï¿½ï¿½ï¿½xï¿½H
     private bool mouse_lock = true;
     private float sensitivity;
-    //‚±‚Ì’l‚ð’´‚¦‚é‚ÆƒJƒƒ‰‚ª“®‚­
+    //ï¿½ï¿½ï¿½Ì’lï¿½ð’´‚ï¿½ï¿½ï¿½ÆƒJï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
     public float sensitivity_theta = 1;
-    //ƒJƒƒ‰‚Ì‘¬‚³
+    //ï¿½Jï¿½ï¿½ï¿½ï¿½ï¿½Ì‘ï¿½ï¿½ï¿½
     public float camera_velocity = 1;
+    public float camera_offset_y = 0.0f;
+
+    // ç”»é¢ã‚’è¦‹ã‚„ã™ãã™ã‚‹å‡¦ç†
+    public float camera_offset_rad = 30.0f;
 
     // Start is called before the first frame update
     void Start()
     {
-        //‰æ–Ê’†‰›‚ÌÀ•W‚ðŽæ“¾
+        //ï¿½ï¿½Ê’ï¿½ï¿½ï¿½ï¿½Ìï¿½ï¿½Wï¿½ï¿½ï¿½æ“¾
         screen_center_position.x = Screen.width / 2;
         screen_center_position.y = Screen.height / 2;
 
         mouse_position = Input.mousePosition;
 
-        //ƒIƒuƒWƒFƒNƒgŽæ“¾
+        //ï¿½Iï¿½uï¿½Wï¿½Fï¿½Nï¿½gï¿½æ“¾
         camera_obj = this.gameObject;
         cube_obj = GameObject.Find("Player_1");
        
-        //‰ŠúÝ’è
+        //ï¿½ï¿½ï¿½ï¿½ï¿½Ý’ï¿½
         camera_rotate_h = 0;
         camera_rotate_v = 0;
         sensitivity = 0;
 
-        //ƒJ[ƒ\ƒ‹‚ðÁ‚·
+        //ï¿½Jï¿½[ï¿½\ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
         Cursor.visible = true;
 
     }
@@ -59,21 +61,21 @@ public class tkp_caemra_work : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        
         double tmp_x, tmp_y, tmp_z, r_dash;
         float theta, phi;
 
         delta_camera = cube_obj.transform.position;
-        delta_camera.y += camera_offset;
+        // delta_camera.x += camera_offset_x;
+        delta_camera.y += camera_offset_y;
+        // delta_camera.z += camera_offset_z;
 
         if (mouse_lock)
         {
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = true;
             screen_center_position = Input.mousePosition;
-            mouse_lock = false;
-
-           
+            mouse_lock = false;  
         }
         else
         {
@@ -81,10 +83,9 @@ public class tkp_caemra_work : MonoBehaviour
             Cursor.visible = true;
             mouse_position = Input.mousePosition;
             mouse_lock = true;
-
         }
 
-        //ƒ}ƒEƒX‚ª¶‰E‚Ç‚¿‚ç‚É“®‚¢‚½‚Ì‚©‚ðŽæ“¾AƒJƒƒ‰‚Ì‰ñ“]•ûŒü‚ðŒˆ’è
+        //ï¿½}ï¿½Eï¿½Xï¿½ï¿½ï¿½ï¿½ï¿½Eï¿½Ç‚ï¿½ï¿½ï¿½É“ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ì‚ï¿½ï¿½ï¿½ï¿½æ“¾ï¿½Aï¿½Jï¿½ï¿½ï¿½ï¿½ï¿½Ì‰ï¿½]ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
         if ((mouse_position.x - screen_center_position.x) > sensitivity_theta || (mouse_position.x - screen_center_position.x) < (-sensitivity_theta))
         {
            
@@ -102,7 +103,7 @@ public class tkp_caemra_work : MonoBehaviour
                 camera_rotate_h -= camera_velocity;
             }
         }
-        //ƒ}ƒEƒX‚ªã‰º‚Ç‚¿‚ç‚É“®‚¢‚½‚Ì‚©‚ðŽæ“¾AƒJƒƒ‰‚Ì‰ñ“]•ûŒü‚ðŒˆ’è
+        //ï¿½}ï¿½Eï¿½Xï¿½ï¿½ï¿½ã‰ºï¿½Ç‚ï¿½ï¿½ï¿½É“ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ì‚ï¿½ï¿½ï¿½ï¿½æ“¾ï¿½Aï¿½Jï¿½ï¿½ï¿½ï¿½ï¿½Ì‰ï¿½]ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
         if ((mouse_position.y - screen_center_position.y) > sensitivity_theta || (mouse_position.y - screen_center_position.y) < (-sensitivity_theta))
         {
             if (mouse_position.y > screen_center_position.y)
@@ -125,13 +126,13 @@ public class tkp_caemra_work : MonoBehaviour
         }
 
 
-        //ƒJƒƒ‰‚ÌÀ•W‚ðŒvŽZ
+        //ï¿½Jï¿½ï¿½ï¿½ï¿½ï¿½Ìï¿½ï¿½Wï¿½ï¿½ï¿½vï¿½Z
         r_dash = r * Math.Cos(camera_rotate_v * (Math.PI / 180));
-        //‚’¼•ûŒü
+        //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
         tmp_y = r * Math.Sin(camera_rotate_v * (Math.PI / 180));
-        //…•½•ûŒü
-        tmp_z = r_dash * Math.Sin(camera_rotate_h * (Math.PI / 180));
-        tmp_x = r_dash * Math.Cos(camera_rotate_h * (Math.PI / 180));
+        //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+        tmp_z = r_dash * Math.Sin((camera_rotate_h + camera_offset_rad) * (Math.PI / 180));
+        tmp_x = r_dash * Math.Cos((camera_rotate_h + camera_offset_rad) * (Math.PI / 180));
 
         delta_camera.x += (float)tmp_x;
         delta_camera.y += (float)tmp_y;
@@ -139,13 +140,13 @@ public class tkp_caemra_work : MonoBehaviour
         theta = camera_rotate_h;
         phi = camera_rotate_v;
 
-        //ƒJƒƒ‰‚ÌˆÚ“®
+        //ï¿½Jï¿½ï¿½ï¿½ï¿½ï¿½ÌˆÚ“ï¿½
         camera_obj.transform.position = delta_camera;
-        //ƒJƒƒ‰–{‘Ì‚Ì‰ñ“]
+        //ï¿½Jï¿½ï¿½ï¿½ï¿½ï¿½{ï¿½Ì‚Ì‰ï¿½]
         camera_obj.transform.rotation = Quaternion.Euler(phi, -(90 + theta), 0f);
 
 
-        //ƒI[ƒo[ƒtƒ[–hŽ~
+        //ï¿½Iï¿½[ï¿½oï¿½[ï¿½tï¿½ï¿½ï¿½[ï¿½hï¿½~
         if (camera_rotate_h >= 360)
         {
             camera_rotate_h = 0;

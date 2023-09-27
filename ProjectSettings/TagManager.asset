@@ -8,6 +8,8 @@ TagManager:
   - ground
   - enemy_body
   - Enemy
+  - dmg_area
+  - blow_away_wave
   layers:
   - Default
   - TransparentFX
