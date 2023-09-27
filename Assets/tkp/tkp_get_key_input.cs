@@ -92,6 +92,11 @@ public class tkp_get_key_input : MonoBehaviour
             isground = false;
         }
     }
+
+    void FixedUpdate() 
+    {
+        SoundMaster.instance.UpdateFootSound();
+    }
 }
 
 
