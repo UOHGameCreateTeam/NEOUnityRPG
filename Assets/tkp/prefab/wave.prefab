@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 8051136751351047727}
   m_Layer: 0
   m_Name: wave
-  m_TagString: Enemy
+  m_TagString: blow_away_wave
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

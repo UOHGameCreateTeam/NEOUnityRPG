@@ -312,10 +312,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7e1b5defd0bc5347a2c11ed43da67d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hp: 0
   blow_away_spd: 1000
   player_blow_away_limit_y: 10
   wave_prefab: {fileID: 16212565960012596, guid: a190c03f0b7eb1e4c9fbe68bc628993f, type: 3}
   dmg_area_prefab: {fileID: 5104818500123015442, guid: d9690a3215df31a40be1d480c806c49f, type: 3}
+  atk_interval: 14500
+  spray_dmg_area_interval: 30
+  spray_dmg_area_time: 3000
+  num_max_dmg_area: 50
+  blow_away_time: 5000
 --- !u!65 &406571623
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -855,6 +861,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   r: 5
-  camera_offset: 3
   sensitivity_theta: 1
   camera_velocity: 1
+  camera_offset_x: 1
+  camera_offset_y: 3
+  camera_offset_z: 1

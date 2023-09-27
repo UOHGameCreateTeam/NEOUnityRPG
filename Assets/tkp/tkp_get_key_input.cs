@@ -78,8 +78,8 @@ public class tkp_get_key_input : MonoBehaviour
         if(other.gameObject.name == "Stage")
         {
             add_force = rb.velocity;
-            add_force.x *= 0.99f;
-            add_force.z *= 0.99f;
+            add_force.x *= 0.9f;
+            add_force.z *= 0.9f;
             rb.velocity = add_force;
             
             isground = true;
