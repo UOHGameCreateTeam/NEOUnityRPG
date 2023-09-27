@@ -7,6 +7,8 @@ public class TAMIYANOMAR_bullet : MonoBehaviour
     [SerializeField] private float speed = 10f;
     [SerializeField] private float rotateSpeed = 6000000000f;
 
+    private float wait_time = 1f;
+    private float timer = 0f;
     private GameObject player;
     [SerializeField] private GameObject toRotation;
 
@@ -18,6 +20,11 @@ public class TAMIYANOMAR_bullet : MonoBehaviour
 
     void Update()
     {
+        timer += Time.deltaTime;
+        if (timer < wait_time)
+        {
+            return;
+        }
         if (player != null)
         {
             toRotation.transform.LookAt(player.transform.position);
