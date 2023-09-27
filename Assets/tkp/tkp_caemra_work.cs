@@ -30,10 +30,10 @@ public class tkp_caemra_work : MonoBehaviour
     public float sensitivity_theta = 1;
     //�J�����̑���
     public float camera_velocity = 1;
-
-    public float camera_offset_x = 1.0f;
     public float camera_offset_y = 0.0f;
-    public float camera_offset_z = 1.0f;
+
+    // 画面を見やすくする処理
+    public float camera_offset_rad = 30.0f;
 
     // Start is called before the first frame update
     void Start()
@@ -131,8 +131,8 @@ public class tkp_caemra_work : MonoBehaviour
         //��������
         tmp_y = r * Math.Sin(camera_rotate_v * (Math.PI / 180));
         //��������
-        tmp_z = r_dash * Math.Sin(camera_rotate_h * (Math.PI / 180));
-        tmp_x = r_dash * Math.Cos(camera_rotate_h * (Math.PI / 180));
+        tmp_z = r_dash * Math.Sin((camera_rotate_h + camera_offset_rad) * (Math.PI / 180));
+        tmp_x = r_dash * Math.Cos((camera_rotate_h + camera_offset_rad) * (Math.PI / 180));
 
         delta_camera.x += (float)tmp_x;
         delta_camera.y += (float)tmp_y;
