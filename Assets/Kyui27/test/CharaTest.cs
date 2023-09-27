@@ -71,4 +71,8 @@ public class CharaTest : MonoBehaviour
             SoundMaster.instance.StopBGM();
         }
     }
+    void FixedUpdate()
+    {
+        SoundMaster.instance.UpdateFootSound();
+    }
 }
