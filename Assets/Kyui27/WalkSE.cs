@@ -10,8 +10,7 @@ public class WalkSE : MonoBehaviour
     public AudioClip walk2;
     public AudioClip walk3;
     public AudioClip walk4;
-    public AudioClip jump_up;
-    public AudioClip jump_down;
+    public AudioClip jump;
     int walkTimer_;
     int walkStride =25;
     int flag = 0;
@@ -28,17 +27,10 @@ public class WalkSE : MonoBehaviour
     public void UpdateFootSound(bool triger)
     {
         //移動時、タイマーインクリメント　要、移動キー再設定
-        if(flag ==1){
-            if(triger == True){
-                audioSource.PlayOneShot(jump_down);
-                flag = 0;
-            }
-            
-        }
-        else if(Input.GetKey(KeyCode.Space))
+        if(Input.GetKeyDown(KeyCode.Space))
         {
-            audioSource.PlayOneShot(jump_up);
-            flag = 1;
+            audioSource.PlayOneShot(jump);
+            Debug.Log("おしたよー");
         }
         else if(Input.GetKey(KeyCode.A)||Input.GetKey(KeyCode.W)||Input.GetKey(KeyCode.D)||Input.GetKey(KeyCode.S))
         {
