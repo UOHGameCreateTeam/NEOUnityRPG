@@ -15,6 +15,7 @@ public class SoundMaster : MonoBehaviour
     public AudioClip walk2;
     public AudioClip walk3;
     public AudioClip walk4;
+    public AudioClip jump;
     int walkTimer_;
     int walkStride =25;
 
@@ -98,7 +99,11 @@ public class SoundMaster : MonoBehaviour
     public void UpdateFootSound()
     {
         //移動時、タイマーインクリメント　要、移動キー再設定
-        if(Input.GetKey(KeyCode.A)||Input.GetKey(KeyCode.W)||Input.GetKey(KeyCode.D)||Input.GetKey(KeyCode.S))
+        if(Input.GetKey(KeyCode.Space))
+        {
+            audioSource.PlayOneShot(jump);
+        }
+        else if(Input.GetKey(KeyCode.A)||Input.GetKey(KeyCode.W)||Input.GetKey(KeyCode.D)||Input.GetKey(KeyCode.S))
         {
             ++walkTimer_;
         }
@@ -118,7 +123,7 @@ public class SoundMaster : MonoBehaviour
 
             if(tmp == 0)
             {
-                audioSource.PlayOneShot(walk1) ;
+                audioSource.PlayOneShot(walk1);
             }
             else if(tmp == 1)
             {
