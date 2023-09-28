@@ -8,6 +8,8 @@ public class TAMIYANOMAR_enemy_move : MonoBehaviour
     [SerializeField] GameObject bullet;
     [SerializeField] GameObject toRotation;
     [SerializeField] GameObject muzzle;
+    [SerializeField] ParticleSystem warpParticle;
+    [SerializeField] Animator EnemyAnimator;
 
     private bool pose = false;
     private float poseTime = 1.2f;
@@ -21,6 +23,8 @@ public class TAMIYANOMAR_enemy_move : MonoBehaviour
 
     void Update()
     {
+        EnemyAnimator.SetBool("Attack", false);
+        EnemyAnimator.SetBool("Warp", false);
         toRotation.transform.LookAt(player.transform);
         if (pose)
         {
@@ -42,6 +46,7 @@ public class TAMIYANOMAR_enemy_move : MonoBehaviour
         if (warpFlag)
         {
             this.gameObject.transform.position = nextPosition;
+            warpParticle.Stop();
             warpFlag = false;
             return;
         }
@@ -89,12 +94,15 @@ public class TAMIYANOMAR_enemy_move : MonoBehaviour
     {
         pose = true;
         Instantiate(bullet, muzzle.transform.position, this.transform.rotation);
+        EnemyAnimator.SetBool("Attack", true);
     }
 
     void warp()
     {
         pose = true;
         warpFlag = true;
+        warpParticle.Play();
         nextPosition = this.transform.position + this.transform.forward * 10f + transform.right * 10f;
+        EnemyAnimator.SetBool("Warp", true);
     }
 }
