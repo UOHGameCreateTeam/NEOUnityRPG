@@ -1221,7 +1221,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1586981579}
-  - component: {fileID: 1586981578}
+  - component: {fileID: 1586981580}
   m_Layer: 0
   m_Name: SoundManager
   m_TagString: Untagged
@@ -1229,31 +1229,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1586981578
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1586981577}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4145ba5b814ba3c42b44326a203cf58b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bgmAudioSource: {fileID: 406571627}
-  seAudioSource: {fileID: 353192239}
-  bgmSoundDatas:
-  - bgm: 0
-    audioClip: {fileID: 8300000, guid: d78dc73a841be11429fe2e166bbd3a8b, type: 3}
-    volume: 0.5
-  seSoundDatas:
-  - se: 2
-    audioClip: {fileID: 8300000, guid: d921efff7851f8440a5a7ac4e80c646e, type: 3}
-    volume: 0.5
-  masterVolume: 1
-  bgmMasterVolume: 1
-  seMasterVolume: 1
 --- !u!4 &1586981579
 Transform:
   m_ObjectHideFlags: 0
@@ -1269,6 +1244,33 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1586981580
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1586981577}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4145ba5b814ba3c42b44326a203cf58b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  seAudioSource: {fileID: 0}
+  seSoundDatas:
+  - se: 2
+    audioClip: {fileID: 8300000, guid: d78dc73a841be11429fe2e166bbd3a8b, type: 3}
+    volume: 1
+  - se: 0
+    audioClip: {fileID: 8300000, guid: 24527632b1dd7294ba354b7e185ff85c, type: 3}
+    volume: 1
+  SourceDatas:
+  - source: 2
+    audioSource: {fileID: 406571627}
+  - source: 0
+    audioSource: {fileID: 353192239}
+  masterVolume: 1
+  seMasterVolume: 1
 --- !u!1 &1906944146
 GameObject:
   m_ObjectHideFlags: 0

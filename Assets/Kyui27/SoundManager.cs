@@ -4,14 +4,11 @@ using UnityEngine;
 
 public class SoundManager : MonoBehaviour
 {
-    [SerializeField] AudioSource bgmAudioSource;
     [SerializeField] AudioSource seAudioSource;
-
-    [SerializeField] List<BGMSoundData> bgmSoundDatas;
     [SerializeField] List<SESoundData> seSoundDatas;
+    [SerializeField] List<SourceData> SourceDatas;
 
     public float masterVolume = 1;
-    public float bgmMasterVolume = 1;
     public float seMasterVolume = 1;
 
     public static SoundManager Instance { get; private set; }
@@ -29,38 +26,15 @@ public class SoundManager : MonoBehaviour
         }
     }
 
-    public void PlayBGM(BGMSoundData.BGM bgm)
-    {
-        BGMSoundData data = bgmSoundDatas.Find(data => data.bgm == bgm);
-        bgmAudioSource.clip = data.audioClip;
-        bgmAudioSource.volume = data.volume * bgmMasterVolume * masterVolume;
-        bgmAudioSource.Play();
-    }
-
-
-    public void PlaySE(SESoundData.SE se)
+    public void PlaySE(SESoundData.SE se,SourceData.Source source)
     {
         SESoundData data = seSoundDatas.Find(data => data.se == se);
+        SourceData sdata = SourceDatas.Find(sdata => sdata.source == source);
+        AudioSource seAudioSource = sdata.audioSource;
+
         seAudioSource.volume = data.volume * seMasterVolume * masterVolume;
         seAudioSource.PlayOneShot(data.audioClip);
     }
-
-}
-
-[System.Serializable]
-public class BGMSoundData
-{
-    public enum BGM
-    {
-        Title,
-        Dungeon,
-        Hoge, // これがラベルになる
-    }
-
-    public BGM bgm;
-    public AudioClip audioClip;
-    [Range(0, 1)]
-    public float volume = 1;
 }
 
 [System.Serializable]
@@ -77,4 +51,18 @@ public class SESoundData
     public AudioClip audioClip;
     [Range(0, 1)]
     public float volume = 1;
+}
+
+[System.Serializable]
+public class SourceData
+{
+    public enum Source
+    {
+        Attack,
+        Damage,
+        Hoge, // これがラベルになる
+    }
+
+    public Source source;
+    public AudioSource audioSource;
 }
