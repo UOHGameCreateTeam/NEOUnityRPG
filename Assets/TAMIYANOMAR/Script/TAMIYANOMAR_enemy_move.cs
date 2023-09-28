@@ -10,7 +10,7 @@ public class TAMIYANOMAR_enemy_move : MonoBehaviour
     [SerializeField] GameObject muzzle;
     [SerializeField] ParticleSystem warpParticle;
     [SerializeField] Animator EnemyAnimator;
-
+    [SerializeField] SS_enemy_hp enemy_hp;
     private bool pose = false;
     private float poseTime = 1.2f;
     private float timer = 0f;
@@ -19,6 +19,7 @@ public class TAMIYANOMAR_enemy_move : MonoBehaviour
     private bool lookAtFlag = false;
     private float lookAtTime = 1f;
     private Vector3 nextPosition;
+    private int former_hp = 100;
 
 
     void Update()
@@ -28,6 +29,14 @@ public class TAMIYANOMAR_enemy_move : MonoBehaviour
         toRotation.transform.LookAt(player.transform);
         if (pose)
         {
+            int now_hp = enemy_hp.getHp();
+            if (former_hp > now_hp)
+            {
+                poseTime = 2.0f;
+                EnemyAnimator.speed = 0.7f;
+                this.gameObject.transform.position -= new Vector3( (player.transform.position.x - this.transform.position.x) / Mathf.Abs(player.transform.position.x - this.transform.position.x) * 1.1f, 0, (player.transform.position.z - this.transform.position.z) / Mathf.Abs(player.transform.position.z - this.transform.position.z) * 1.1f);
+            }
+            former_hp = now_hp;
             timer += Time.deltaTime;
             if (timer > poseTime)
             {
@@ -53,8 +62,6 @@ public class TAMIYANOMAR_enemy_move : MonoBehaviour
 
         if (lookAtFlag)
         {
-            //Vector3 rotation = toRotation.transform.rotation.eulerAngles - this.transform.rotation.eulerAngles;
-            //this.transform.eulerAngles = new Vector3(this.transform.rotation.eulerAngles.x + rotation.x * Time.deltaTime / lookAtTime, this.transform.rotation.eulerAngles.y + rotation.y * Time.deltaTime / lookAtTime, this.transform.rotation.eulerAngles.z + rotation.z * Time.deltaTime / lookAtTime);
             Quaternion rotation = Quaternion.RotateTowards(this.transform.rotation, toRotation.transform.rotation, 300f * Time.deltaTime);
             this.transform.rotation = rotation;
             timer += Time.deltaTime;

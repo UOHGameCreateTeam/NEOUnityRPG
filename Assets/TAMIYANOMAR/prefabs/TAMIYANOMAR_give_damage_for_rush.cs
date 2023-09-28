@@ -10,8 +10,6 @@ public class TAMIYANOMAR_give_damage_for_rush : MonoBehaviour
 
     private TAMIYANOMAR_enemy2_move TEnemy2Move;
     private Rigidbody player_rb;
-    public float expansion_speed = 0.1f;
-    public float max_wave_size = 10.0f;
     private Vector3 add_force;
     [SerializeField] private int damage = 0;
 
@@ -32,10 +30,10 @@ public class TAMIYANOMAR_give_damage_for_rush : MonoBehaviour
         {
             //if (player_obj.transform.position.y <= player_blow_away_limit_y)
             {
-                add_force.x = (player_obj.transform.position.x - dummy.transform.position.x ) * 35;
-                add_force.z = (player_obj.transform.position.z - dummy.transform.position.z ) * 35;
+                add_force.x = (player_obj.transform.position.x - dummy.transform.position.x ) * 10;
+                add_force.z = (player_obj.transform.position.z - dummy.transform.position.z ) * 10;
                 player_rb.AddForce(add_force, ForceMode.Impulse);
-                player_rb.AddForce(Vector3.up * 22, ForceMode.Impulse);
+                player_rb.AddForce(Vector3.up * 10, ForceMode.Impulse);
                 //player_rb.velocity = add_force;
                 Debug.Log(player_rb.velocity);
             }
