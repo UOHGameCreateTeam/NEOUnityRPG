@@ -13,14 +13,14 @@ public class CharaTest1 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //下入力時SE2を流す
         if(Input.GetKeyDown(KeyCode.UpArrow))
         {
-            SoundManager.Instance.PlayBGM(BGMSoundData.BGM.Title);
+            SoundManager.Instance.PlaySE(SESoundData.SE.Attack,SourceData.Source.Attack);
         }
-        //下入力時SE2を流す
         if(Input.GetKeyDown(KeyCode.DownArrow))
         {
-            SoundManager.Instance.PlaySE(SESoundData.SE.Hoge);
+            SoundManager.Instance.PlaySE(SESoundData.SE.Hoge,SourceData.Source.Hoge);
         }
     }
     void FixedUpdate()
