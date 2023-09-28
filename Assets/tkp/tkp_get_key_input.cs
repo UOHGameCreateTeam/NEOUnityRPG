@@ -93,6 +93,12 @@ public class tkp_get_key_input : MonoBehaviour
         }
     }
 
+    // この関数呼び出しで接地ているかを判定
+    public bool Is_ground()
+    {
+        return isground
+    }
+
     void FixedUpdate() 
     {
         SoundMaster.instance.UpdateFootSound();

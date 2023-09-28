@@ -19,10 +19,13 @@ public class tkp_player_weapon : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Vector3 player_pos = player.transform.position;
         if (Input.GetMouseButtonDown(0))
         {
+            player_pos.y = 3;
             obj = (GameObject)Instantiate(player_weapon, player.transform.position, Quaternion.identity);
-            obj.transform.parent = player.transform;
+            obj.transform.position = player_pos;//player.transform;
+            obj.transform.forward = player.transform.forward;
         }
     }
 }
