@@ -1112,12 +1112,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioSource: {fileID: 1302416101}
+  tkp: {fileID: 1302416095}
   walk1: {fileID: 8300000, guid: d2f1784f3dd9a4646aa855c2d0271c56, type: 3}
   walk2: {fileID: 8300000, guid: b1b82aef298746342aeadbf3f6aa4d42, type: 3}
   walk3: {fileID: 8300000, guid: 774f527cc3c045949b91e549d3f20c05, type: 3}
   walk4: {fileID: 8300000, guid: 1b9760b12dddbf94e9c5656dd1751b90, type: 3}
-  jump_up: {fileID: 8300000, guid: 4c3521c726882a245b18b4b216db750d, type: 3}
-  jump_down: {fileID: 8300000, guid: 234a31c372ed43144ae9902aefa61941, type: 3}
+  jump: {fileID: 8300000, guid: ec3c88fa4650de34aaf5640bc8d5097d, type: 3}
 --- !u!1 &1432988149
 GameObject:
   m_ObjectHideFlags: 0
