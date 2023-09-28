@@ -5,6 +5,7 @@ using UnityEngine;
 public class WalkSE : MonoBehaviour
 {
     [SerializeField] AudioSource audioSource;
+    [SerializeField] tkp_get_key_input tkp;
     public AudioClip walk1;
     public AudioClip walk2;
     public AudioClip walk3;
@@ -22,13 +23,13 @@ public class WalkSE : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        UpdateFootSound();
+        UpdateFootSound(tkp.Is_ground());
     }
     public void UpdateFootSound(bool triger)
     {
         //移動時、タイマーインクリメント　要、移動キー再設定
-        if(triger == false){
-            if(Input.GetKey(KeyCode.Q)){
+        if(flag ==1){
+            if(triger == True){
                 audioSource.PlayOneShot(jump_down);
                 flag = 0;
             }
