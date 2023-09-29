@@ -43,8 +43,14 @@ public class SESoundData
     public enum SE
     {
         Attack,
-        Damage,
         Hoge, // これがラベルになる
+        wizard_shoot_ball,
+        wizard_warp,
+        whomp_rush,
+        whomp_attack,
+        wave_wave,
+        wave_drop,
+        wave_launch,
     }
 
     public SE se;
@@ -59,8 +65,10 @@ public class SourceData
     public enum Source
     {
         Attack,
-        Damage,
         Hoge, // これがラベルになる
+        wizard,
+        whomp,
+        wave,
     }
 
     public Source source;
