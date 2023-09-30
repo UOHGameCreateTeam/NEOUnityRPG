@@ -10,29 +10,35 @@ public class WalkSE : MonoBehaviour
     public AudioClip walk2;
     public AudioClip walk3;
     public AudioClip walk4;
+    public AudioClip walk5;
+    public AudioClip walk6;
+    public AudioClip walk7;
+    public AudioClip walk8;
     public AudioClip jump;
+    public AudioClip landing;
     int walkTimer_;
     int walkStride =25;
-    int flag = 0;
+    bool jumped = false;
+    bool indoor = false;
     // Start is called before the first frame update
     void Start(){
-
+        
     }
 
     // Update is called once per frame
+    void Update()
+    {
+        Jump(tkp.Is_ground());
+        field();
+    }
     void FixedUpdate()
     {
         UpdateFootSound(tkp.Is_ground());
     }
-    public void UpdateFootSound(bool triger)
+    public void UpdateFootSound(bool Is_ground)
     {
         //移動時、タイマーインクリメント　要、移動キー再設定
-        if(Input.GetKeyDown(KeyCode.Space))
-        {
-            audioSource.PlayOneShot(jump);
-            Debug.Log("おしたよー");
-        }
-        else if(Input.GetKey(KeyCode.A)||Input.GetKey(KeyCode.W)||Input.GetKey(KeyCode.D)||Input.GetKey(KeyCode.S))
+        if((Input.GetKey(KeyCode.A)||Input.GetKey(KeyCode.W)||Input.GetKey(KeyCode.D)||Input.GetKey(KeyCode.S)) && Is_ground == true)
         {
             ++walkTimer_;
         }
@@ -46,10 +52,45 @@ public class WalkSE : MonoBehaviour
             return;
         }
         
-        if((walkTimer_ == 2 || walkTimer_%walkStride ==0) && triger == true)
+        if((walkTimer_ == 2 || walkTimer_%walkStride ==0) && Is_ground == true && indoor == false)
         {
-            //一定間隔で足音を鳴らす。
+            //outside
             RandomizeSfx(walk1, walk2, walk3, walk4);
+        }
+        if((walkTimer_ == 2 || walkTimer_%walkStride ==0) && Is_ground == true && indoor == true)
+        {
+            //inside
+            RandomizeSfx(walk5, walk6, walk7, walk8);
+        }
+    }
+    public void Jump(bool Is_ground)
+    {
+        if(Input.GetKeyDown(KeyCode.Space) && Is_ground == true)
+        {
+            audioSource.PlayOneShot(jump);
+        }
+        if(Is_ground == false && jumped == false){
+            jumped = true;
+            Debug.Log("ジャンプ");
+        }
+        if(Is_ground == true && jumped == true){
+            audioSource.PlayOneShot(landing);
+            Debug.Log("着地");
+            jumped = false;
+        }        
+    }
+    public void field()
+    {
+        if(Input.GetKeyDown(KeyCode.Q))
+        {
+            if(indoor == true){
+                indoor = false;
+                Debug.Log("外");
+            }
+            else{
+                indoor = true;
+                Debug.Log("城");
+            }
         }
     }
     public void RandomizeSfx ( params AudioClip[] clips )
