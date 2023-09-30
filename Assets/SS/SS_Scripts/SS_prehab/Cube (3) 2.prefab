@@ -61,6 +61,7 @@ MonoBehaviour:
   maxBeamLength: 10000
   intarval: 2
   lifeTime: 5
+  damage: 30
 --- !u!23 &1827184303982381650
 MeshRenderer:
   m_ObjectHideFlags: 0

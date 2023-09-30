@@ -11,7 +11,6 @@ public class SS_enemy_manage : MonoBehaviour
     private float time = 0f;
     Coroutine hassha_Coroutine;
     Coroutine beam_Coroutine;
-    private float hp;
     private float intarval = 5;
     // Start is called before the first frame update
     void Start()
@@ -73,7 +72,6 @@ public class SS_enemy_manage : MonoBehaviour
             worp_triangle.worp();
             time = 0;
         }
-        hp = 100;
 
     }
 
