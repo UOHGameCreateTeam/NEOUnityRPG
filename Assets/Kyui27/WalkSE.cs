@@ -6,6 +6,7 @@ public class WalkSE : MonoBehaviour
 {
     [SerializeField] AudioSource audioSource;
     [SerializeField] tkp_get_key_input tkp;
+    //[SerializeField] TAMIYANOMAR_inside_siro inside_siro;
     public AudioClip walk1;
     public AudioClip walk2;
     public AudioClip walk3;
@@ -20,7 +21,7 @@ public class WalkSE : MonoBehaviour
     int walkStride =25;
     bool jumped = false;
     bool indoor = false;
-    // Start is called before the first frame update
+
     void Start(){
         
     }
@@ -29,7 +30,7 @@ public class WalkSE : MonoBehaviour
     void Update()
     {
         Jump(tkp.Is_ground());
-        field();
+        //indoor = inside_siro.get_inside_or_not();
     }
     void FixedUpdate()
     {
@@ -79,20 +80,7 @@ public class WalkSE : MonoBehaviour
             jumped = false;
         }        
     }
-    public void field()
-    {
-        if(Input.GetKeyDown(KeyCode.Q))
-        {
-            if(indoor == true){
-                indoor = false;
-                Debug.Log("外");
-            }
-            else{
-                indoor = true;
-                Debug.Log("城");
-            }
-        }
-    }
+    
     public void RandomizeSfx ( params AudioClip[] clips )
     {
         var randomIndex = Random.Range(0, clips.Length);

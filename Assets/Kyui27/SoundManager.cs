@@ -42,8 +42,8 @@ public class SESoundData
 {
     public enum SE
     {
-        hero_attack,
-        hero_damage,
+        player_attack,
+        player_damage,
         wizard_shoot_ball,
         wizard_warp,
         whomp_rush,
@@ -60,6 +60,9 @@ public class SESoundData
         devil_jump,
         test1,
         test2,
+        player_bullet_throw,
+        player_bullet_hit,
+        player_bullet_crush,
     }
 
     public SE se;
@@ -73,7 +76,7 @@ public class SourceData
 {
     public enum Source
     {
-        hero,
+        player,
         wizard,
         whomp,
         wave,
@@ -82,6 +85,7 @@ public class SourceData
         yellow_devil,
         test1,
         test2,
+        player_bullet,
     }
 
     public Source source;
