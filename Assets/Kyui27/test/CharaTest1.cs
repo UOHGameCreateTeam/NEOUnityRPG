@@ -16,11 +16,11 @@ public class CharaTest1 : MonoBehaviour
         //下入力時SE2を流す
         if(Input.GetKeyDown(KeyCode.UpArrow))
         {
-            SoundManager.Instance.PlaySE(SESoundData.SE.Attack,SourceData.Source.Attack);
+            SoundManager.Instance.PlaySE(SESoundData.SE.test1,SourceData.Source.test1);
         }
         if(Input.GetKeyDown(KeyCode.DownArrow))
         {
-            SoundManager.Instance.PlaySE(SESoundData.SE.Hoge,SourceData.Source.Hoge);
+            SoundManager.Instance.PlaySE(SESoundData.SE.test2,SourceData.Source.test2);
         }
     }
     void FixedUpdate()
