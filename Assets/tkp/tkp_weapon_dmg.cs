@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class tkp_weapon_dmg : MonoBehaviour
 {
-    //d‚È‚è”»’è—p‚Ì•Ï”
+    //ï¿½dï¿½È‚è”»ï¿½ï¿½pï¿½Ì•Ïï¿½
     private bool weapon_hit = false;
-    //ƒvƒŒ[ƒ„[‚ª—^‚¦‚éƒ_ƒ[ƒW
+    //ï¿½vï¿½ï¿½ï¿½[ï¿½ï¿½ï¿½[ï¿½ï¿½ï¿½^ï¿½ï¿½ï¿½ï¿½_ï¿½ï¿½ï¿½[ï¿½W
     public int player_weapon_dmg = 10;
-    //“G‚ÌƒNƒ‰ƒX‚ğ“Ç‚İ‚Ş
+    //ï¿½Gï¿½ÌƒNï¿½ï¿½ï¿½Xï¿½ï¿½Ç‚İï¿½ï¿½ï¿½
     private GameObject gameobject_enemy_hp;
     private SS_enemy_hp enemy_hp;
     //[SerializeField] private int player_weapon_dmg = 10;
@@ -26,22 +26,22 @@ public class tkp_weapon_dmg : MonoBehaviour
         
     }
 
-    //ƒvƒŒƒCƒ„[‚Ì•Ší‚Æ“G‚Æ‚Ìd‚È‚è”»’è
+    //ï¿½vï¿½ï¿½ï¿½Cï¿½ï¿½ï¿½[ï¿½Ì•ï¿½ï¿½ï¿½Æ“Gï¿½Æ‚Ìdï¿½È‚è”»ï¿½ï¿½
 
 
-    private void OnTriggerEnter(Collider collider)
+    private void OnTriggerEnter(Collider other)
     {
         //Debug.Log("A");
-        //æ“¾‚µ‚½“G‚Ìhp‚ğŠi”[‚·‚é•Ï”
+        //ï¿½æ“¾ï¿½ï¿½ï¿½ï¿½ï¿½Gï¿½ï¿½hpï¿½ï¿½ï¿½iï¿½[ï¿½ï¿½ï¿½ï¿½Ïï¿½
         int now_enemy_hp, tmp_enemy_hp;
-
-        if (collider.gameObject.tag == "Enemy")
+        
+        if (other.gameObject.tag == "Enemy")
         {
-            enemy_hp = collider.gameObject.GetComponent<SS_enemy_hp>();
-            //“Ghp‚Ìæ“¾
+            enemy_hp = other.gameObject.GetComponent<SS_enemy_hp>();
+            //ï¿½Ghpï¿½Ìæ“¾
             now_enemy_hp = enemy_hp.getHp();
             tmp_enemy_hp = now_enemy_hp - player_weapon_dmg;
-            //ƒ_ƒ[ƒW‚Ì•t—^
+            //ï¿½_ï¿½ï¿½ï¿½[ï¿½Wï¿½Ì•tï¿½^
             enemy_hp.setHp(tmp_enemy_hp);
 
             Debug.Log("hit_enemy");
@@ -53,7 +53,6 @@ public class tkp_weapon_dmg : MonoBehaviour
     {
         if (other.gameObject.name != "Enemy")
         {
-            Debug.Log("miss");
             weapon_hit = false;
         }
     }
