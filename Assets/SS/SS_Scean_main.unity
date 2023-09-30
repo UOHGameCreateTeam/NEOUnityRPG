@@ -652,9 +652,10 @@ MonoBehaviour:
   Enemy_3: {fileID: 1043109639}
   battleDestination: {fileID: 525281822}
   preManager: {fileID: 319074146}
-  soundManager: {fileID: 0}
   poseManager: {fileID: 1799709312}
   poseTime: 2
+  battleAreaWall: {fileID: 0}
+  storyObject: {fileID: 0}
 --- !u!1 &216802338
 GameObject:
   m_ObjectHideFlags: 0
@@ -705,8 +706,11 @@ MonoBehaviour:
   battleManager1: {fileID: 1276066840}
   battleManager2: {fileID: 2022489057}
   battleManager3: {fileID: 912242875}
+  battleManager4: {fileID: 0}
+  battleManager5: {fileID: 0}
   questName: 
   questPosition: {x: 0, y: 0}
+  gate: {fileID: 0}
 --- !u!1 &228473126
 GameObject:
   m_ObjectHideFlags: 0
@@ -939,8 +943,11 @@ MonoBehaviour:
   battleManager1: {fileID: 1533738922}
   battleManager2: {fileID: 2022279127}
   battleManager3: {fileID: 538824713}
+  battleManager4: {fileID: 0}
+  battleManager5: {fileID: 0}
   questName: 
   questPosition: {x: 0, y: 0}
+  gate: {fileID: 0}
 --- !u!1 &293804219
 GameObject:
   m_ObjectHideFlags: 0
@@ -1154,6 +1161,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerObj: {fileID: 2060296307}
+  fieldbgm: {fileID: 0}
+  fieldintro: {fileID: 0}
+  battlebgm: {fileID: 0}
+  battleintro: {fileID: 0}
 --- !u!4 &319074148
 Transform:
   m_ObjectHideFlags: 0
@@ -2252,9 +2263,10 @@ MonoBehaviour:
   Enemy_3: {fileID: 1050844596}
   battleDestination: {fileID: 1666777138}
   preManager: {fileID: 319074146}
-  soundManager: {fileID: 0}
   poseManager: {fileID: 1799709312}
   poseTime: 2
+  battleAreaWall: {fileID: 0}
+  storyObject: {fileID: 0}
 --- !u!4 &538824715
 Transform:
   m_ObjectHideFlags: 0
@@ -3687,9 +3699,10 @@ MonoBehaviour:
   Enemy_3: {fileID: 1679596457}
   battleDestination: {fileID: 885933267}
   preManager: {fileID: 319074146}
-  soundManager: {fileID: 0}
   poseManager: {fileID: 1799709312}
   poseTime: 2
+  battleAreaWall: {fileID: 0}
+  storyObject: {fileID: 0}
 --- !u!4 &912242877
 Transform:
   m_ObjectHideFlags: 0
@@ -3738,7 +3751,6 @@ MonoBehaviour:
   questManager2: {fileID: 216802338}
   questManager3: {fileID: 239211072}
   stageName: alfa
-  fieldMusic: {fileID: 8300000, guid: 4d6659a6de5112a4e8b1e1125252c6d0, type: 3}
 --- !u!4 &923360895
 Transform:
   m_ObjectHideFlags: 0
@@ -4045,8 +4057,11 @@ MonoBehaviour:
   battleManager1: {fileID: 108083526}
   battleManager2: {fileID: 2012627442}
   battleManager3: {fileID: 1602492176}
+  battleManager4: {fileID: 0}
+  battleManager5: {fileID: 0}
   questName: 
   questPosition: {x: 0, y: 0}
+  gate: {fileID: 0}
 --- !u!1 &1043109639
 GameObject:
   m_ObjectHideFlags: 0
@@ -4694,7 +4709,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1177925061}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1e3d8c6a72867c3478d411fe2548f201, type: 3}
   m_Name: 
@@ -4715,7 +4730,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1177925061}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 34879967d7faf5b43a4906b5e2396033, type: 3}
   m_Name: 
@@ -4939,7 +4954,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1217966430}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1e3d8c6a72867c3478d411fe2548f201, type: 3}
   m_Name: 
@@ -4960,7 +4975,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1217966430}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 34879967d7faf5b43a4906b5e2396033, type: 3}
   m_Name: 
@@ -5199,9 +5214,10 @@ MonoBehaviour:
   Enemy_3: {fileID: 1272211615}
   battleDestination: {fileID: 2139343372}
   preManager: {fileID: 319074146}
-  soundManager: {fileID: 0}
   poseManager: {fileID: 1799709312}
   poseTime: 2
+  battleAreaWall: {fileID: 0}
+  storyObject: {fileID: 0}
 --- !u!4 &1276066842
 Transform:
   m_ObjectHideFlags: 0
@@ -5645,9 +5661,10 @@ MonoBehaviour:
   Enemy_3: {fileID: 1628764936}
   battleDestination: {fileID: 1912927575}
   preManager: {fileID: 319074146}
-  soundManager: {fileID: 0}
   poseManager: {fileID: 1799709312}
   poseTime: 2
+  battleAreaWall: {fileID: 0}
+  storyObject: {fileID: 0}
 --- !u!4 &1533738924
 Transform:
   m_ObjectHideFlags: 0
@@ -6174,9 +6191,10 @@ MonoBehaviour:
   Enemy_3: {fileID: 1777526597}
   battleDestination: {fileID: 712521446}
   preManager: {fileID: 319074146}
-  soundManager: {fileID: 0}
   poseManager: {fileID: 1799709312}
   poseTime: 2
+  battleAreaWall: {fileID: 0}
+  storyObject: {fileID: 0}
 --- !u!1 &1604392038
 GameObject:
   m_ObjectHideFlags: 0
@@ -7852,6 +7870,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2c5ef01da267b843b7d5c0d4705d7f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  r: 3.5
   camera_offset: 1
   sensitivity_theta: 1
   camera_velocity: 0.5
@@ -8283,9 +8302,10 @@ MonoBehaviour:
   Enemy_3: {fileID: 2112261794}
   battleDestination: {fileID: 1817581478}
   preManager: {fileID: 319074146}
-  soundManager: {fileID: 0}
   poseManager: {fileID: 1799709312}
   poseTime: 2
+  battleAreaWall: {fileID: 0}
+  storyObject: {fileID: 0}
 --- !u!1 &2022279127
 GameObject:
   m_ObjectHideFlags: 0
@@ -8320,9 +8340,10 @@ MonoBehaviour:
   Enemy_3: {fileID: 1539798673}
   battleDestination: {fileID: 1404468494}
   preManager: {fileID: 319074146}
-  soundManager: {fileID: 0}
   poseManager: {fileID: 1799709312}
   poseTime: 2
+  battleAreaWall: {fileID: 0}
+  storyObject: {fileID: 0}
 --- !u!4 &2022279129
 Transform:
   m_ObjectHideFlags: 0
@@ -8372,9 +8393,10 @@ MonoBehaviour:
   Enemy_3: {fileID: 376692298}
   battleDestination: {fileID: 524131048}
   preManager: {fileID: 319074146}
-  soundManager: {fileID: 0}
   poseManager: {fileID: 1799709312}
   poseTime: 2
+  battleAreaWall: {fileID: 0}
+  storyObject: {fileID: 0}
 --- !u!4 &2022489059
 Transform:
   m_ObjectHideFlags: 0

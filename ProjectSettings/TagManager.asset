@@ -8,6 +8,8 @@ TagManager:
   - ground
   - enemy_body
   - Enemy
+  - test_hassha
+  - beam
   layers:
   - Default
   - TransparentFX
