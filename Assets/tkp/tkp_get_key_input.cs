@@ -11,13 +11,12 @@ public class tkp_get_key_input : MonoBehaviour
     private bool isground = false;
     private GameObject camera_obj;
     private tkp_caemra_work camera_work;
-    //Å‘å‘¬“x
+    //ï¿½Å‘å‘¬ï¿½x
     public float max_spd = 10.0f;
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-
-        //ƒJƒƒ‰‚ÌƒIƒuƒWƒFƒNƒg‚ğQÆ‚·‚é
+        //ï¿½Jï¿½ï¿½ï¿½ï¿½ï¿½ÌƒIï¿½uï¿½Wï¿½Fï¿½Nï¿½gï¿½ï¿½ï¿½Qï¿½Æ‚ï¿½ï¿½ï¿½
         camera_obj = GameObject.Find("Main Camera");
         camera_work = camera_obj.GetComponent<tkp_caemra_work>();
 
@@ -38,10 +37,10 @@ public class tkp_get_key_input : MonoBehaviour
             {
                 if (Input.GetKey(code))
                 {
-                    // “ü—Í‚³‚ê‚½ƒL[–¼‚ğ•\¦
+                    // ï¿½ï¿½ï¿½Í‚ï¿½ï¿½ê‚½ï¿½Lï¿½[ï¿½ï¿½ï¿½ï¿½\ï¿½ï¿½
                     input_key = code.ToString();
 
-                    //“ü—Í‚É‰‚¶‚Ä‰Á‘¬‚·‚é
+                    //ï¿½ï¿½ï¿½Í‚É‰ï¿½ï¿½ï¿½ï¿½Ä‰ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
                     if (input_key == "W") add_force += now_camera_transform.forward;
                     if (input_key == "A") add_force -= now_camera_transform.right;
                     if (input_key == "S") add_force -= now_camera_transform.forward;
@@ -55,7 +54,7 @@ public class tkp_get_key_input : MonoBehaviour
                 if (Input.GetKey(KeyCode.Space)) rb.AddForce(new Vector3(0, 20, 0));
             }
            
-            //Å‘å‘¬“xˆÈã‚É‰Á‘¬‚µ‚È‚¢ˆ—
+            //ï¿½Å‘å‘¬ï¿½xï¿½Èï¿½É‰ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È‚ï¿½ï¿½ï¿½ï¿½ï¿½
             if ((rb.velocity.x >= max_spd || rb.velocity.x <= -max_spd))
             {
                 add_force.x = 0;
@@ -67,21 +66,22 @@ public class tkp_get_key_input : MonoBehaviour
             add_force.y = 0;
             rb.AddForce(add_force * velocity);
         }
-        else
-        {
-            //ƒL[“ü—Í‚ª‚È‚¢‚Æ‚«‚ÉƒIƒuƒWƒFƒNƒg‚ğÃ~‚·‚é
-            add_force = rb.velocity;
-            add_force.x = 0;
-            add_force.z = 0;
-            rb.velocity = add_force;
-        }
+
     }
 
 
     private void OnTriggerStay(Collider other)
     {
+        Vector3 add_force;
+        add_force = new Vector3(0, 0, 0);
+
         if(other.gameObject.name == "Stage")
         {
+            add_force = rb.velocity;
+            add_force.x *= 0.9f;
+            add_force.z *= 0.9f;
+            rb.velocity = add_force;
+            
             isground = true;
         }
     }
@@ -91,6 +91,17 @@ public class tkp_get_key_input : MonoBehaviour
         {
             isground = false;
         }
+    }
+
+    // ã“ã®é–¢æ•°å‘¼ã³å‡ºã—ã§æ¥åœ°ã¦ã„ã‚‹ã‹ã‚’åˆ¤å®š
+    public bool Is_ground()
+    {
+        return isground;
+    }
+
+    void FixedUpdate() 
+    {
+        SoundMaster.instance.UpdateFootSound();
     }
 }
 

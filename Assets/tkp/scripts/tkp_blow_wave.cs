@@ -63,13 +63,18 @@ public class tkp_blow_wave : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision) 
     {
+        // Debug.Log(player_obj.transform.position);
+        
         if(collision.gameObject.name == "Player_1")
         {
             if(player_obj.transform.position.y <= player_blow_away_limit_y)
             {
+                add_force.x = (player_obj.transform.position.x - enemy_obj.transform.position.x) * 40;
+                add_force.z = (player_obj.transform.position.z - enemy_obj.transform.position.z) * 40;
                 player_rb.AddForce(add_force);
-                Debug.Log("hit");
+                         
             }
+
             
         }
     }
