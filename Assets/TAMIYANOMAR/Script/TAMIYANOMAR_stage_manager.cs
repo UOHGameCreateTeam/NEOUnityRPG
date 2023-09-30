@@ -8,7 +8,7 @@ public class TAMIYANOMAR_stage_manager : MonoBehaviour
     [SerializeField] private GameObject questManager2;
     [SerializeField] private GameObject questManager3;
     [SerializeField] private string stageName;
-    [SerializeField] public AudioClip fieldMusic;
+
     private bool stageClear = false;
 
     private bool quest1 = false;
@@ -17,16 +17,9 @@ public class TAMIYANOMAR_stage_manager : MonoBehaviour
 
     private bool stageActive = false;
 
-    private bool musicStart = false;
-
 
     void Update()
     {
-        if(musicStart == false)
-        {
-            SoundMaster.instance.PlaySE(fieldMusic);
-            musicStart = true;
-        }
 
         TAMIYANOMAR_quest_manager t_quest_manager_1 = questManager1.GetComponent<TAMIYANOMAR_quest_manager>();
         TAMIYANOMAR_quest_manager t_quest_manager_2 = questManager2.GetComponent<TAMIYANOMAR_quest_manager>();

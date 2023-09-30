@@ -10,6 +10,8 @@ TagManager:
   - Enemy
   - test_hassha
   - beam
+  - dmg_area
+  - blow_away_wave
   layers:
   - Default
   - TransparentFX
