@@ -51,7 +51,7 @@ public class horming3 : MonoBehaviour
         //Debug.Log("faefa");
         if (collision.gameObject.tag == "test_cube_1")
         {
-            addDamage(damage);
+            //addDamage(damage);
             Destroy(this);
         }
     }
