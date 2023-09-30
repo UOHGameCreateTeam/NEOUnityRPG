@@ -35,7 +35,7 @@ public class TAMIYANOMAR_give_damage_for_rush : MonoBehaviour
                 player_rb.AddForce(add_force, ForceMode.Impulse);
                 player_rb.AddForce(Vector3.up * 10, ForceMode.Impulse);
                 //player_rb.velocity = add_force;
-                Debug.Log(player_rb.velocity);
+                //Debug.Log(player_rb.velocity);
             }
             tkp_player_tkp player_hp = collision.gameObject.GetComponent<tkp_player_tkp>();
             player_hp.set_hp(player_hp.get_hp() - damage);
