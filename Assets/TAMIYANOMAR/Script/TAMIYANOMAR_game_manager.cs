@@ -21,7 +21,6 @@ public class TAMIYANOMAR_game_manager : MonoBehaviour
     {
         tkp_player_tkp player_class = playerObj.GetComponent<tkp_player_tkp>();
         int player_hp = player_class.get_hp();
-        //Debug.Log(player_hp);
         if(player_hp <= 0)
         {
             Debug.Log("game over");
