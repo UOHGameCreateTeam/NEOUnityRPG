@@ -8,11 +8,14 @@ public class TAMIYANOMAR_enemy2_move : MonoBehaviour
     [SerializeField] GameObject rush_cube;
     [SerializeField] GameObject player;
     [SerializeField] GameObject toRotation;
+    [SerializeField] Collider collider1;
+    [SerializeField] Collider collider2;
+    [SerializeField] Animator e_animator;
 
     private float lookAtTime = 2.0f;
-    private float AttackTime = 3.0f;
+    private float AttackTime = 4.0f;
     private float RushTime = 2.0f;
-    private float IdleTime = 0.8f;
+    private float IdleTime = 1.2f;
     private bool RushOrAttack = false;
 
     private float timer = 0f;
@@ -86,26 +89,37 @@ public class TAMIYANOMAR_enemy2_move : MonoBehaviour
 
             if (RushOrAttack == true)
             {
+                e_animator.SetBool("Attack", true);
                 Quaternion rotation = Quaternion.RotateTowards(this.transform.rotation, toRotation.transform.rotation, 3f * Time.deltaTime);
                 this.transform.rotation = rotation;
                 if (timer > AttackTime)
                 {
+                    e_animator.SetBool("Attack", false);
                     timer = 0f;
                     moveFlag = IdleFlag;
                     attack_cube.SetActive(false);
                     return;
                 }
-                if(timer > AttackTime * 0.2f)
+                if(timer > AttackTime * 0.75f)
                 {
+                    collider1.enabled = false;
+                    collider2.enabled = true;
                     attack_cube.SetActive(true);
+                }
+                if(timer > AttackTime * 0.95)
+                {
+                    collider1.enabled = true;
+                    collider2.enabled = false;
                 }
 
             }
             else
             {
                 rush_cube.SetActive(true);
+                e_animator.SetBool("Rush", true);
                 if (timer > RushTime || distance < 14f)
                 {
+                    e_animator.SetBool("Rush", false);
                     timer = 0f;
                     moveFlag = IdleFlag;
                     rush_cube.SetActive(false);
@@ -122,6 +136,7 @@ public class TAMIYANOMAR_enemy2_move : MonoBehaviour
 
     public void gaveDamage()
     {
+        e_animator.SetBool("Rush", false);
         timer = 0f;
         moveFlag = IdleFlag;
         rush_cube.SetActive(false);

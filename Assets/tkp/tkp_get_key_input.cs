@@ -11,6 +11,7 @@ public class tkp_get_key_input : MonoBehaviour
     private bool isground = false;
     private GameObject camera_obj;
     private tkp_caemra_work camera_work;
+    public float jump_power = 20.0f;
     //�ő呬�x
     public float max_spd = 10.0f;
     void Start()
@@ -51,7 +52,8 @@ public class tkp_get_key_input : MonoBehaviour
             
             if (isground)
             {
-                if (Input.GetKey(KeyCode.Space)) rb.AddForce(new Vector3(0, 20, 0));
+                if (Input.GetKey(KeyCode.Space)) rb.AddForce(new Vector3(0, jump_power, 0));
+                
             }
            
             //�ő呬�x�ȏ�ɉ������Ȃ�����
