@@ -27,6 +27,9 @@ public class SS_worp : MonoBehaviour
     private float time = 0f;
     [SerializeField] private float intarval = 8f;
     [SerializeField] private float limit_intarval = 16f;
+    
+
+    
     void Update()
     {
         time += Time.deltaTime;

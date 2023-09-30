@@ -73,7 +73,7 @@ public class SS_beam5 : MonoBehaviour
                 //Debug.Log(hit.collider.gameObject.name);
                 lineRenderer.SetPosition(1, hitPos);
                 if (hit.collider.tag == "test_cube_1") {
-                    addDamage(damage);
+                    //addDamage(damage);
                 }
                 Destroy(currentBeam);
             }

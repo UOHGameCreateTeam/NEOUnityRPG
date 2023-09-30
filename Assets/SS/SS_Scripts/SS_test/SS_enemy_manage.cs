@@ -12,14 +12,19 @@ public class SS_enemy_manage : MonoBehaviour
     Coroutine hassha_Coroutine;
     Coroutine beam_Coroutine;
     private float intarval = 5;
+    [SerializeField]  private Animator animator;  // アニメーターコンポーネント取得用
+
     // Start is called before the first frame update
     void Start()
     {
-
+        // アニメーターコンポーネント取得
         generate = this.GetComponent<SS_generate_tama>();
         beam_attack = this.GetComponent<SS_beam_hassha>();
         worp_triangle = this.GetComponent<SS_worp>();
         StartCoroutine("kougeki");
+
+        
+       
     }
 
     /*public void hahaha() {
@@ -32,11 +37,18 @@ public class SS_enemy_manage : MonoBehaviour
     //コルーチン関数を定義
     private IEnumerator kougeki() //コルーチン関数の名前
     {
+
+        //animator.SetBool("hassha", true);
         int i = 0;
         while (true)
         {
-            //Debug.Log(i);
-            if (i > 10) yield return StartCoroutine("beam");
+            animator.SetBool("hassha", true);
+            Debug.Log(animator);
+            if (i > 10) {
+                animator.SetBool("hassha", false);
+                yield return StartCoroutine("beam");
+            }
+            
             i++;
             generate.hassha();
 
@@ -47,12 +59,18 @@ public class SS_enemy_manage : MonoBehaviour
     }
     private IEnumerator beam() //コルーチン関数の名前
     {
+        //animator.SetBool("beam", true);
         int i = 0;
         while (true)
         {
+            animator.SetBool("beam", true);
             //Debug.Log("aa");
             //Debug.Log(i);
-            if (i > 5) yield return StartCoroutine("kougeki");
+            if (i > 5) {
+                animator.SetBool("beam", false);
+                yield return StartCoroutine("kougeki");
+            }
+            
             i++;
             beam_attack.player_search();
 
@@ -66,7 +84,7 @@ public class SS_enemy_manage : MonoBehaviour
 
     private void Update()
     {
-        
+        //animator.SetBool("hassha", true);
         time += Time.deltaTime;
         if (time >= intarval) {
             worp_triangle.worp();
