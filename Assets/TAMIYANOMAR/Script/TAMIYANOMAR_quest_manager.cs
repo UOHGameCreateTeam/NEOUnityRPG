@@ -89,7 +89,7 @@ public class TAMIYANOMAR_quest_manager : MonoBehaviour
                 {
                     gate.GetComponent<TAMIYANOMAR_gete_manager>().gateDelete();
                 }
-                else if (warp_area != null)
+                if (warp_area != null)
                 {
                     warp_area.SetActive(true);
                 }

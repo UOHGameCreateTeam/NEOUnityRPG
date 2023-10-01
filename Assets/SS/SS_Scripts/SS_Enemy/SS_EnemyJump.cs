@@ -15,6 +15,7 @@ public class SS_EnemyJump : MonoBehaviour
     private Transform player_po;
     private float ct = 0f;
     private int count = 0;
+    private Vector3 now_pos;
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -26,7 +27,7 @@ public class SS_EnemyJump : MonoBehaviour
     {
         //Debug.Log(ct);
         ct += Time.deltaTime;
-        player = GameObject.FindWithTag("Player").transform; // "Player"タグが付いたオブジェクトを取得
+        player = GameObject.FindWithTag("test_cube_1").transform; // "Player"タグが付いたオブジェクトを取得
         float distanceToPlayer = Vector3.Distance(transform.position, player.position);
 
         if (ct >= 1 && count == 0)
@@ -40,14 +41,6 @@ public class SS_EnemyJump : MonoBehaviour
             tackle(player_po);
             count++;
         }
-        if (ct >= 6 && count == 2)
-        {
-
-            rb.velocity = Vector3.zero;
-            rb.angularVelocity = Vector3.zero;
-            this.GetComponent<SS_EnemyJump>().enabled = false;
-
-        }
     }
     public void Initialize()
     {
@@ -58,14 +51,13 @@ public class SS_EnemyJump : MonoBehaviour
     }
     private void Jump(Transform player)
     {
+        SoundManager.Instance.PlaySE(SESoundData.SE.rocket_move, SourceData.Source.rocket);
         rb.velocity = Vector3.zero;
         rb.angularVelocity = Vector3.zero;
-        Vector3 directionToPlayer = (player.position - transform.position).normalized;
-        
-        directionToPlayer.y += 0.5f;
+        Vector3 jump = new Vector3 (0, 1, 0);
         
         
-        rb.AddForce(directionToPlayer * jumpForce, ForceMode.Impulse);
+        rb.AddForce(jump * jumpForce, ForceMode.Impulse);
         rb.angularVelocity = Vector3.zero;
         lastJumpTime = Time.time;
     }
@@ -74,25 +66,49 @@ public class SS_EnemyJump : MonoBehaviour
         rb.velocity = Vector3.zero;
         rb.angularVelocity = Vector3.zero;
         Vector3 directionToPlayer = (player.position - transform.position).normalized;
-        rb.AddForce(directionToPlayer * jumpForce * 3, ForceMode.Impulse);
-        rb.angularVelocity = Vector3.zero;
+        this.transform.LookAt(player.transform);
+        rb.AddForce(this.transform.forward * jumpForce * 3, ForceMode.Impulse);
+        //rb.angularVelocity = Vector3.zero;
     }
 
     void OnCollisionEnter(Collision collision)
     {
-
+        
         if (ct >= 3 && count == 2)
         {
+
             if (collision.gameObject.tag == "ground")
             {
+                SoundManager.Instance.PlaySE(SESoundData.SE.rocket_explode, SourceData.Source.rocket);
+                Transform ply_maue = this.transform;
+                this.transform.position = new Vector3(ply_maue.position.x, 20, ply_maue.position.z);
+                Vector3 maue = new Vector3(0, 1000, 0);
+                this.transform.LookAt(maue);
+                now_pos = this.transform.position;
                 rb.velocity = Vector3.zero;
-                this.GetComponent<SS_EnemyJump>().enabled = false;
+                rb.angularVelocity = Vector3.zero;
+                this.transform.position = now_pos;
+                //this.GetComponent<SS_EnemyJump>().enabled = false;
+                Initialize();
             }
-            if (collision.gameObject.tag == "Player")
+            if (collision.gameObject.tag == "test_cube_1")
             {
+                SoundManager.Instance.PlaySE(SESoundData.SE.rocket_explode, SourceData.Source.rocket);
+                Transform ply_maue = this.transform;
+                this.transform.position = new Vector3(ply_maue.position.x, 20, ply_maue.position.z);
+                Vector3 maue = new Vector3(0, 1000, 0);
+                this.transform.LookAt(maue);
+                now_pos = this.transform.position;
                 rb.velocity = Vector3.zero;
-                this.GetComponent<SS_EnemyJump>().enabled = false;
+                rb.angularVelocity = Vector3.zero;
+                this.transform.position = now_pos;
+                now_pos = this.transform.position;
+                rb.velocity = Vector3.zero;
+                rb.angularVelocity = Vector3.zero;
+                this.transform.position = now_pos;
+                //this.GetComponent<SS_EnemyJump>().enabled = false;
                 addDamage(e_damage, Player);
+                Initialize();
             }
         }
 

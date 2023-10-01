@@ -17,6 +17,7 @@ public class SS_generate_tama : MonoBehaviour
     }
 
     public void hassha() {
+        SoundManager.Instance.PlaySE(SESoundData.SE.mahou, SourceData.Source.mahoutu);
         vv = this.transform.position;
         vv.y += 5.0f;
         

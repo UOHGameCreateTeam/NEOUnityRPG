@@ -20,7 +20,19 @@ public class TAMIYANOMAR_enemy_move : MonoBehaviour
     private float lookAtTime = 1f;
     private Vector3 nextPosition;
     private int former_hp = 100;
+    private int max_x;
+    private int min_x;
+    private int max_z;
+    private int min_z;
 
+
+    private void Start()
+    {
+        max_x = (int)(this.transform.position.x + 40f);
+        min_x = (int)(this.transform.position.x - 40f);
+        max_z = (int)(this.transform.position.z + 40f);
+        min_z = (int)(this.transform.position.z - 40f);
+    }
 
     void Update()
     {
@@ -99,6 +111,7 @@ public class TAMIYANOMAR_enemy_move : MonoBehaviour
 
     void shoot()
     {
+        SoundManager.Instance.PlaySE(SESoundData.SE.wizard_shoot_ball, SourceData.Source.wizard);
         pose = true;
         Instantiate(bullet, muzzle.transform.position, this.transform.rotation);
         EnemyAnimator.SetBool("Attack", true);
@@ -106,10 +119,34 @@ public class TAMIYANOMAR_enemy_move : MonoBehaviour
 
     void warp()
     {
+        SoundManager.Instance.PlaySE(SESoundData.SE.wizard_warp, SourceData.Source.wizard);
         pose = true;
         warpFlag = true;
         warpParticle.Play();
-        nextPosition = this.transform.position + this.transform.forward * 10f + transform.right * 10f;
+        if (Random.Range(0f,1f) > 0.5)
+        {
+            nextPosition = this.transform.position + this.transform.forward * 15f + transform.right * 15f;
+        }
+        else
+        {
+            nextPosition = this.transform.position - this.transform.forward * 15f - transform.right * 15f;
+        }
+        if(nextPosition.x > max_x)
+        {
+            nextPosition.x = max_x;
+        }
+        if (nextPosition.x < min_x)
+        {
+            nextPosition.x = min_x;
+        }
+        if (nextPosition.z > max_z)
+        {
+            nextPosition.z = max_z;
+        }
+        if (nextPosition.z < min_z)
+        {
+            nextPosition.z = min_z;
+        }
         EnemyAnimator.SetBool("Warp", true);
     }
 }
