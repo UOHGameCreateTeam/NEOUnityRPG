@@ -7,6 +7,7 @@ public class tkp_animator_idle2firewarks : MonoBehaviour
     //
     private GameObject enemy_obj;
     private int now_atk_time;
+    private float timer = 0f;
 
     private Animator animators;
 
@@ -30,10 +31,16 @@ public class tkp_animator_idle2firewarks : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        timer += Time.deltaTime;
         int now_atk_time = enemy_obj.GetComponent<tkp_Enemy_atk_blow_away>().get_now_time();
 
         if(now_atk_time < spray_dmg_area_time)
         {
+            if((int)(timer*10) % 10 == 0)
+            {
+                SoundManager.Instance.PlaySE(SESoundData.SE.wave_launch, SourceData.Source.wave);
+            }
+            
             animators.SetBool("firewarks", true);
         }
         else
