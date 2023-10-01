@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 8350854862098113697}
   - component: {fileID: 2632450907768590606}
   - component: {fileID: 7788925778661893429}
-  - component: {fileID: 984389539922446920}
   - component: {fileID: 8748200469232364189}
   - component: {fileID: -6694908290982710449}
+  - component: {fileID: 984389539922446920}
   m_Layer: 0
   m_Name: player_weapon
   m_TagString: test_cube_1
@@ -86,19 +86,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &984389539922446920
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4562210926572592196}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &8748200469232364189
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -124,3 +111,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player_weapon_dmg: 10
+--- !u!65 &984389539922446920
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4562210926572592196}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}

@@ -6,6 +6,7 @@ public class WalkSE : MonoBehaviour
 {
     [SerializeField] AudioSource audioSource;
     [SerializeField] tkp_get_key_input tkp;
+    //[SerializeField] TAMIYANOMAR_inside_siro inside_siro;
     public AudioClip walk1;
     public AudioClip walk2;
     public AudioClip walk3;
@@ -19,8 +20,8 @@ public class WalkSE : MonoBehaviour
     int walkTimer_;
     int walkStride =25;
     bool jumped = false;
-    bool indoor = false;
-    // Start is called before the first frame update
+    //bool indoor = false;
+
     void Start(){
         
     }
@@ -29,7 +30,7 @@ public class WalkSE : MonoBehaviour
     void Update()
     {
         Jump(tkp.Is_ground());
-        field();
+        //indoor = inside_siro.get_inside_or_not();
     }
     void FixedUpdate()
     {
@@ -52,16 +53,16 @@ public class WalkSE : MonoBehaviour
             return;
         }
         
-        if((walkTimer_ == 2 || walkTimer_%walkStride ==0) && Is_ground == true && indoor == false)
+        if((walkTimer_ == 2 || walkTimer_%walkStride ==0) && Is_ground == true)
         {
             //outside
             RandomizeSfx(walk1, walk2, walk3, walk4);
         }
-        if((walkTimer_ == 2 || walkTimer_%walkStride ==0) && Is_ground == true && indoor == true)
-        {
+        //if((walkTimer_ == 2 || walkTimer_%walkStride ==0) && Is_ground == true && indoor == true)
+        //{
             //inside
-            RandomizeSfx(walk5, walk6, walk7, walk8);
-        }
+            //RandomizeSfx(walk5, walk6, walk7, walk8);
+        //}
     }
     public void Jump(bool Is_ground)
     {
@@ -71,28 +72,15 @@ public class WalkSE : MonoBehaviour
         }
         if(Is_ground == false && jumped == false){
             jumped = true;
-            Debug.Log("ジャンプ");
+            //Debug.Log("ジャンプ");
         }
         if(Is_ground == true && jumped == true){
             audioSource.PlayOneShot(landing);
-            Debug.Log("着地");
+            //Debug.Log("着地");
             jumped = false;
         }        
     }
-    public void field()
-    {
-        if(Input.GetKeyDown(KeyCode.Q))
-        {
-            if(indoor == true){
-                indoor = false;
-                Debug.Log("外");
-            }
-            else{
-                indoor = true;
-                Debug.Log("城");
-            }
-        }
-    }
+    
     public void RandomizeSfx ( params AudioClip[] clips )
     {
         var randomIndex = Random.Range(0, clips.Length);

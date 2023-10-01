@@ -17,7 +17,11 @@ public class tkp_player_tkp : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        this.gameObject.transform.forward = camera_obj.transform.forward;
+        Vector3 player_forward;
+        player_forward = camera_obj.transform.forward;
+
+        player_forward.y = 0;
+        this.gameObject.transform.forward = player_forward;
         // Debug.Log(this.gameObject.transform.forward);
     }
     //hp�Ǘ��p�֐�
