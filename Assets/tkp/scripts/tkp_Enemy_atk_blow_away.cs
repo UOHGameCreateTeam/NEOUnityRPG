@@ -22,6 +22,7 @@ public class tkp_Enemy_atk_blow_away : MonoBehaviour
     public int spray_dmg_area_interval = 30;
     // ダメージエリア散布時間
     public int spray_dmg_area_time = 3000;
+    private bool spray_dmg_area_flag = true;
 
     // ダメージエリアの数を数える
     private int count_dmg_area = 0;
@@ -30,6 +31,7 @@ public class tkp_Enemy_atk_blow_away : MonoBehaviour
 
     // 衝撃波を打つ時間
     public int blow_away_time = 5000;
+    // private bool blow_away_flag = false;
 
     // Start is called before the first frame update
     void Start()
@@ -53,13 +55,22 @@ public class tkp_Enemy_atk_blow_away : MonoBehaviour
         if(player_obj.transform.position.y <= player_blow_away_limit_y){
             if (((now_atk_time % blow_away_time) == 0) && (now_atk_time > spray_dmg_area_time)) 
             {
-                Instantiate(wave_prefab);        
+                spray_dmg_area_flag = false;
+                // blow_away_flag = true;
+                Instantiate(wave_prefab); 
             }
 
         }
         if((count_dmg_area <= num_max_dmg_area) && ((now_atk_time % spray_dmg_area_interval) == 0) && (now_atk_time < spray_dmg_area_time))
         {
-            Instantiate(dmg_area_prefab, this.gameObject.transform);          
+            Instantiate(dmg_area_prefab, this.gameObject.transform);   
+            spray_dmg_area_flag = true;   
+            // blow_away_flag = false;    
+        }
+
+        if(now_atk_time > spray_dmg_area_time)
+        {
+            spray_dmg_area_flag = false;
         }
 
         now_atk_time++;
@@ -71,6 +82,23 @@ public class tkp_Enemy_atk_blow_away : MonoBehaviour
             }
             now_atk_time = 1;
         }           
+    }
+
+    public int get_atk_interval()
+    {
+        return atk_interval;
+    }
+    public int get_now_time()
+    {
+        return now_atk_time;
+    }
+    public int get_wave_time()
+    {
+        return blow_away_time;
+    }
+    public int get_spray_time()
+    {
+        return spray_dmg_area_time;
     }
 
 }
