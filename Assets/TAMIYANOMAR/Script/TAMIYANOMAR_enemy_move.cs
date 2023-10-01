@@ -99,6 +99,7 @@ public class TAMIYANOMAR_enemy_move : MonoBehaviour
 
     void shoot()
     {
+        SoundManager.Instance.PlaySE(SESoundData.SE.wizard_shoot_ball, SourceData.Source.wizard);
         pose = true;
         Instantiate(bullet, muzzle.transform.position, this.transform.rotation);
         EnemyAnimator.SetBool("Attack", true);
@@ -106,6 +107,7 @@ public class TAMIYANOMAR_enemy_move : MonoBehaviour
 
     void warp()
     {
+        SoundManager.Instance.PlaySE(SESoundData.SE.wizard_warp, SourceData.Source.wizard);
         pose = true;
         warpFlag = true;
         warpParticle.Play();
