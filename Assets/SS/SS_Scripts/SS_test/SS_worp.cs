@@ -70,6 +70,7 @@ public class SS_worp : MonoBehaviour
     }
     public void worp() {
         GameObject player = GameObject.FindWithTag("test_cube_1");
+        SoundManager.Instance.PlaySE(SESoundData.SE.mahou, SourceData.Source.mahoutu);
         float x1 = 0;
         float z1 = 0;
         int count1 = 0;

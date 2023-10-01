@@ -51,6 +51,7 @@ public class SS_EnemyJump : MonoBehaviour
     }
     private void Jump(Transform player)
     {
+        SoundManager.Instance.PlaySE(SESoundData.SE.rocket_move, SourceData.Source.rocket);
         rb.velocity = Vector3.zero;
         rb.angularVelocity = Vector3.zero;
         Vector3 jump = new Vector3 (0, 1, 0);
@@ -72,23 +73,35 @@ public class SS_EnemyJump : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
-        Transform ply_maue = this.transform;
-        this.transform.position = new Vector3(ply_maue.position.x, 14, ply_maue.position.z);
-        Vector3 maue = new Vector3(0, 1000, 0);
-        this.transform.LookAt(maue);
-        now_pos = this.transform.position;
-        rb.velocity = Vector3.zero;
-        rb.angularVelocity = Vector3.zero;
-        this.transform.position = now_pos;
+        
         if (ct >= 3 && count == 2)
         {
+
             if (collision.gameObject.tag == "ground")
             {
+                SoundManager.Instance.PlaySE(SESoundData.SE.rocket_explode, SourceData.Source.rocket);
+                Transform ply_maue = this.transform;
+                this.transform.position = new Vector3(ply_maue.position.x, 20, ply_maue.position.z);
+                Vector3 maue = new Vector3(0, 1000, 0);
+                this.transform.LookAt(maue);
+                now_pos = this.transform.position;
+                rb.velocity = Vector3.zero;
+                rb.angularVelocity = Vector3.zero;
+                this.transform.position = now_pos;
                 //this.GetComponent<SS_EnemyJump>().enabled = false;
                 Initialize();
             }
             if (collision.gameObject.tag == "test_cube_1")
             {
+                SoundManager.Instance.PlaySE(SESoundData.SE.rocket_explode, SourceData.Source.rocket);
+                Transform ply_maue = this.transform;
+                this.transform.position = new Vector3(ply_maue.position.x, 20, ply_maue.position.z);
+                Vector3 maue = new Vector3(0, 1000, 0);
+                this.transform.LookAt(maue);
+                now_pos = this.transform.position;
+                rb.velocity = Vector3.zero;
+                rb.angularVelocity = Vector3.zero;
+                this.transform.position = now_pos;
                 now_pos = this.transform.position;
                 rb.velocity = Vector3.zero;
                 rb.angularVelocity = Vector3.zero;

@@ -72,11 +72,11 @@ public class WalkSE : MonoBehaviour
         }
         if(Is_ground == false && jumped == false){
             jumped = true;
-            Debug.Log("ジャンプ");
+            //Debug.Log("ジャンプ");
         }
         if(Is_ground == true && jumped == true){
             audioSource.PlayOneShot(landing);
-            Debug.Log("着地");
+            //Debug.Log("着地");
             jumped = false;
         }        
     }

@@ -25,6 +25,7 @@ public class SS_beam_hassha : MonoBehaviour
         player_position = player.transform.position;
         Vector3 instanse_position = new Vector3(transform.position.x, transform.position.y+3, transform.position.z);
         // ビームのプレハブをインスタンス化して、現在のビームとして設定
+        SoundManager.Instance.PlaySE(SESoundData.SE.beam_mahou, SourceData.Source.mahoutu);
         currentBeam = Instantiate(beamPrefab, instanse_position, Quaternion.identity);
         Destroy(currentBeam, lifeTime);
 

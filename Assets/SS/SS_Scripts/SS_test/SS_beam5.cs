@@ -33,6 +33,7 @@ public class SS_beam5 : MonoBehaviour
     void Start()
     {
         player = GameObject.FindWithTag("test_cube_1");
+        SoundManager.Instance.PlaySE(SESoundData.SE.beam, SourceData.Source.mahoutu);
         beamSpeed = base_beamSpeed;
         currentBeamLength = 0;
         player_position = player.transform.position;
