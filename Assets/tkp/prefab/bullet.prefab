@@ -112,7 +112,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   exist_time: 1000
-  atk_pow: 100
+  atk_pow: 40
   bullet_v: 1
   throw_pow: 1500
 --- !u!54 &-206186260188495981
