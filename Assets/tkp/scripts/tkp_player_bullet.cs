@@ -6,7 +6,7 @@ public class tkp_player_bullet : MonoBehaviour
 {
     public int exist_time = 100;
     private int now_exist_time = 0;
-    public int atk_pow = 100;
+    public int atk_pow = 40;
     public float bullet_v = 1.0f;
 
     private GameObject player_obj;
