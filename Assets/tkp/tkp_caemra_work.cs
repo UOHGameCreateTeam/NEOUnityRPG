@@ -54,7 +54,7 @@ public class tkp_caemra_work : MonoBehaviour
         sensitivity = 0;
 
         //�J�[�\��������
-        Cursor.visible = true;
+        Cursor.visible = false;
 
     }
 
@@ -73,7 +73,7 @@ public class tkp_caemra_work : MonoBehaviour
         if (mouse_lock)
         {
             Cursor.lockState = CursorLockMode.Locked;
-            Cursor.visible = true;
+            Cursor.visible = false;
             screen_center_position = Input.mousePosition;
             mouse_lock = false;  
         }

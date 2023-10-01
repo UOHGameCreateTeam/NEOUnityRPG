@@ -26,6 +26,7 @@ public class TAMIYANOMAR_game_manager : MonoBehaviour
             Debug.Log("game over");
             gameOver = true;
             SceneManager.LoadScene("GameoverScene");
+            SoundMaster.instance.StopBGM();
         }
 
         
@@ -33,6 +34,7 @@ public class TAMIYANOMAR_game_manager : MonoBehaviour
         if(t_stage_manager_1.getStageClear() == true)
         {
             gameClear = true;
+            SoundMaster.instance.StopBGM();
             SceneManager.LoadScene("GameClearScene");
         }
     }
