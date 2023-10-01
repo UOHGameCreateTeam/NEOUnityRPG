@@ -89,6 +89,7 @@ public class TAMIYANOMAR_enemy2_move : MonoBehaviour
 
             if (RushOrAttack == true)
             {
+                
                 e_animator.SetBool("Attack", true);
                 Quaternion rotation = Quaternion.RotateTowards(this.transform.rotation, toRotation.transform.rotation, 3f * Time.deltaTime);
                 this.transform.rotation = rotation;
@@ -102,6 +103,7 @@ public class TAMIYANOMAR_enemy2_move : MonoBehaviour
                 }
                 if(timer > AttackTime * 0.75f)
                 {
+                    SoundManager.Instance.PlaySE(SESoundData.SE.whomp_attack, SourceData.Source.whomp);
                     collider1.enabled = false;
                     collider2.enabled = true;
                     attack_cube.SetActive(true);
@@ -117,6 +119,13 @@ public class TAMIYANOMAR_enemy2_move : MonoBehaviour
             {
                 rush_cube.SetActive(true);
                 e_animator.SetBool("Rush", true);
+                //Debug.Log((int)(timer * 30));
+                if( (int)(timer*10) % 3 == 0 )
+                {
+                    //Debug.Log("playse");
+                    SoundManager.Instance.PlaySE(SESoundData.SE.whomp_rush, SourceData.Source.whomp);
+                }
+                
                 if (timer > RushTime || distance < 14f)
                 {
                     e_animator.SetBool("Rush", false);
