@@ -27,6 +27,9 @@ EditorBuildSettings:
     path: Assets/MAENAO/GameClearScene.unity
     guid: 9b5751d2c92963d488a63fab6ae99f50
   - enabled: 1
-    path: Assets/Kyui27/Image_Ending_Scenes.unity
+    path: Assets/Kyui27/Scene/GameClearScene.unity
+    guid: 7d399123198aa5d4299e9ec6502f6876
+  - enabled: 1
+    path: Assets/Kyui27/Scene/Ending_Scenes.unity
     guid: cee63468ad84f304d8757a047e7e4b36
   m_configObjects: {}
