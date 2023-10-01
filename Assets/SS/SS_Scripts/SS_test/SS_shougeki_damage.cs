@@ -18,8 +18,8 @@ public class SS_shougeki_damage : MonoBehaviour
     }
     void OnTriggerEnter(Collider collision)
     {
-        
-            
+
+        Debug.Log("aaaa");
             if (collision.gameObject.tag == "ground")
             {
                 Debug.Log("‚¶‚ß‚ñ");
@@ -27,12 +27,8 @@ public class SS_shougeki_damage : MonoBehaviour
             if (collision.gameObject.tag == "test_cube_1")
             {
                 Debug.Log("“–‚½‚Á‚½");
-                addDamage(e_damage, gameObject);
+                addDamage(e_damage, collision.gameObject);
             }
-      
-
-
-
 
     }
     private void addDamage(int damage, GameObject gameobject)
