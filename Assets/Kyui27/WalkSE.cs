@@ -6,7 +6,7 @@ public class WalkSE : MonoBehaviour
 {
     [SerializeField] AudioSource audioSource;
     [SerializeField] tkp_get_key_input tkp;
-    //[SerializeField] TAMIYANOMAR_inside_siro inside_siro;
+    [SerializeField] TAMIYANOMAR_inside_siro inside_siro;
     public AudioClip walk1;
     public AudioClip walk2;
     public AudioClip walk3;
@@ -30,7 +30,7 @@ public class WalkSE : MonoBehaviour
     void Update()
     {
         Jump(tkp.Is_ground());
-        //indoor = inside_siro.get_inside_or_not();
+        indoor = inside_siro.get_inside_or_not();
     }
     void FixedUpdate()
     {
