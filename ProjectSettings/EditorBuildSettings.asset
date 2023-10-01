@@ -5,9 +5,12 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/MAENAO/StartScene.unity
-    guid: a813813461bd221488ba34322f48df98
+    guid: c57934fcec41281409bc5e919081a4b8
   - enabled: 1
     path: Assets/MAENAO/MAENAO_main_Scene.unity
     guid: 5580d6f81dd67a54ab858254ce3f239d
