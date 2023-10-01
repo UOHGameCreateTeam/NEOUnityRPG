@@ -11,13 +11,6 @@ public class SoundMaster : MonoBehaviour
     AudioSource Intro = null;
     int flag = 0;
     //flagについて。今どのBGMを鳴らしているのかを判断。0は停止中。他は呼び出す際に任意に設定
-    public AudioClip walk1;
-    public AudioClip walk2;
-    public AudioClip walk3;
-    public AudioClip walk4;
-    public AudioClip jump;
-    int walkTimer_;
-    int walkStride =25;
 
     private void Awake(){
         //よくわからん。多分おまじない
@@ -96,47 +89,6 @@ public class SoundMaster : MonoBehaviour
         Debug.Log("BGM stop flag on");
     }
 
-    public void UpdateFootSound()
-    {
-        //移動時、タイマーインクリメント　要、移動キー再設定
-        if(Input.GetKey(KeyCode.Space))
-        {
-            audioSource.PlayOneShot(jump);
-        }
-        else if(Input.GetKey(KeyCode.A)||Input.GetKey(KeyCode.W)||Input.GetKey(KeyCode.D)||Input.GetKey(KeyCode.S))
-        {
-            ++walkTimer_;
-        }
-        else if(walkTimer_>=0)
-        {
-            Random.InitState(walkTimer_);
-            walkTimer_=0;
-        }
-        if(walkTimer_ == 0)
-        {
-            return;
-        }
-        //一定間隔で足音を鳴らす。
-        if(walkTimer_ == 2 || walkTimer_%walkStride ==0)
-        {
-            int tmp = Random.Range(0,4);
-
-            if(tmp == 0)
-            {
-                audioSource.PlayOneShot(walk1);
-            }
-            else if(tmp == 1)
-            {
-                audioSource.PlayOneShot(walk2);
-            }
-            else if(tmp ==2)
-            {
-                audioSource.PlayOneShot(walk3);
-            }
-            else
-            {
-                audioSource.PlayOneShot(walk4);
-            }
-        }
+    public void UpdateFootSound(){
     }
 }
