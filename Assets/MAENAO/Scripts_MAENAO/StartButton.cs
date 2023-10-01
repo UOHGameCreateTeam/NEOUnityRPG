@@ -26,15 +26,19 @@ public class StartButton : MonoBehaviour
 
     public void OnClick()
     {
-        SceneManager.LoadScene("TAMIYANOMAR_Scene_MAENAO"); // ƒƒCƒ“‚ÌƒQ[ƒ€ƒV[ƒ“
-        //Debug.Log("ƒ{ƒ^ƒ“‰Ÿ‚µ‚½");
+        SoundManager.Instance.PlaySE(SESoundData.SE.test1,SourceData.Source.test1);
+        Invoke("ChangeScene", 1.5f);
+    }
+    public void ChangeScene(){
+        SceneManager.LoadScene("TAMIYANOMAR/TAMIYANOMAR_Scene"); // ï¿½ï¿½ï¿½Cï¿½ï¿½ï¿½ÌƒQï¿½[ï¿½ï¿½ï¿½Vï¿½[ï¿½ï¿½
+        //Debug.Log("ï¿½{ï¿½^ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½");
     }
 
-    public void ChangeStartColor() // ƒJ[ƒ\ƒ‹‚ªæ‚Á‚½‚çF•Ï‚í‚é
+    public void ChangeStartColor() // ï¿½Jï¿½[ï¿½\ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Fï¿½Ï‚ï¿½ï¿½
     {
         startText.color = new Color(255f, 255f, 255f, 255f);
     }
-    public void ResetStartCloror() // ƒJ[ƒ\ƒ‹‚ª—£‚ê‚½‚çŒ³‚ÌF‚É–ß‚é
+    public void ResetStartCloror() // ï¿½Jï¿½[ï¿½\ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ê‚½ï¿½çŒ³ï¿½ÌFï¿½É–ß‚ï¿½
     {
         startText.color = currentStartColor;
     }
