@@ -47,6 +47,6 @@ public class tkp_player_walk_anim : MonoBehaviour
 
         }
         animators.SetBool("Run", walk_flag);
-        Debug.Log(walk_flag);
+        //Debug.Log(walk_flag);
     }  
 }
