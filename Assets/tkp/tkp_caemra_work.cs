@@ -117,7 +117,7 @@ public class tkp_caemra_work : MonoBehaviour
 
             else if (mouse_position.y < screen_center_position.y)
             {
-                if (camera_rotate_v > 0)
+                if (camera_rotate_v > -30)
                 {
                     camera_rotate_v -= camera_velocity;
                 }

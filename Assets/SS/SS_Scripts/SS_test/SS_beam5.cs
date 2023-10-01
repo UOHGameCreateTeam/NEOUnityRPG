@@ -14,6 +14,7 @@ public class SS_beam5 : MonoBehaviour
     private Transform tttt;
     private Vector3 player_position;
     Vector3 endPosition;
+    //private tkp_player_tkp character_Hp;
     private GameObject currentBeam;
     private LineRenderer lineRenderer;
     private float currentBeamLength = 0.0f;
@@ -22,6 +23,13 @@ public class SS_beam5 : MonoBehaviour
     private float time = 0f;
     [SerializeField] private float intarval = 2f;
     [SerializeField] private float lifeTime = 3.0f;
+    [SerializeField] public int damage = 60;
+    int hp = 0;
+    private void addDamage(int damage)
+    {
+        int now_hp = player.GetComponent<tkp_player_tkp>().get_hp();
+        player.GetComponent<tkp_player_tkp>().set_hp(now_hp - damage);
+    }
     void Start()
     {
         player = GameObject.FindWithTag("test_cube_1");
@@ -64,6 +72,9 @@ public class SS_beam5 : MonoBehaviour
                 hitPos = hit.point;
                 //Debug.Log(hit.collider.gameObject.name);
                 lineRenderer.SetPosition(1, hitPos);
+                if (hit.collider.tag == "test_cube_1") {
+                    //addDamage(damage);
+                }
                 Destroy(currentBeam);
             }
             else

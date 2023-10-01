@@ -7,14 +7,18 @@ public class horming3 : MonoBehaviour
     [SerializeField] private float speed = 10f;
     [SerializeField] private float rotateSpeed = 6000000000f;
     [SerializeField] private float rotateSpeed_ac = 1;
-  
+    [SerializeField] public int damage = 5;
     private GameObject player;
     [SerializeField] private GameObject toRotation;
 
 
     Vector3 vvv;
     private float time = 0;
-
+    private void addDamage(int damage)
+    {
+        int now_hp = player.GetComponent<tkp_player_tkp>().get_hp();
+        player.GetComponent<tkp_player_tkp>().set_hp(now_hp - damage);
+    }
     void faa()
     {
         Vector3 vel_za = new Vector3(0, 0, 0);
@@ -47,6 +51,7 @@ public class horming3 : MonoBehaviour
         //Debug.Log("faefa");
         if (collision.gameObject.tag == "test_cube_1")
         {
+            //addDamage(damage);
             Destroy(this);
         }
     }

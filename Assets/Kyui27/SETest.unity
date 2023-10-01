@@ -831,7 +831,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 25dc09c334ad2de41b965e617b734440, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1117,7 +1117,12 @@ MonoBehaviour:
   walk2: {fileID: 8300000, guid: b1b82aef298746342aeadbf3f6aa4d42, type: 3}
   walk3: {fileID: 8300000, guid: 774f527cc3c045949b91e549d3f20c05, type: 3}
   walk4: {fileID: 8300000, guid: 1b9760b12dddbf94e9c5656dd1751b90, type: 3}
-  jump: {fileID: 8300000, guid: ec3c88fa4650de34aaf5640bc8d5097d, type: 3}
+  walk5: {fileID: 8300000, guid: 5f2a2f536be41ec48a6d5853ff4d0b49, type: 3}
+  walk6: {fileID: 8300000, guid: a933ec205e115d241b96c3336e26b678, type: 3}
+  walk7: {fileID: 8300000, guid: dda200b44c99e214aa8bf5ab92661673, type: 3}
+  walk8: {fileID: 8300000, guid: 678388deb6848454b8298a4759f67a4a, type: 3}
+  jump: {fileID: 8300000, guid: 4249f991cf3096347b6b15c5ede825a3, type: 3}
+  landing: {fileID: 8300000, guid: 14d010167cc7e464d93522d1c6495d9e, type: 3}
 --- !u!1 &1432988149
 GameObject:
   m_ObjectHideFlags: 0
@@ -1258,16 +1263,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   seAudioSource: {fileID: 0}
   seSoundDatas:
-  - se: 2
+  - se: 16
     audioClip: {fileID: 8300000, guid: d78dc73a841be11429fe2e166bbd3a8b, type: 3}
     volume: 1
-  - se: 0
+  - se: 17
     audioClip: {fileID: 8300000, guid: 24527632b1dd7294ba354b7e185ff85c, type: 3}
     volume: 1
   SourceDatas:
-  - source: 2
+  - source: 7
     audioSource: {fileID: 406571627}
-  - source: 0
+  - source: 8
     audioSource: {fileID: 353192239}
   masterVolume: 1
   seMasterVolume: 1

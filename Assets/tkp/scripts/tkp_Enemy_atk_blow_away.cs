@@ -73,13 +73,4 @@ public class tkp_Enemy_atk_blow_away : MonoBehaviour
         }           
     }
 
-    public int get_hp()
-    {
-        return hp;
-    }
-    //set_hp() hp��������
-    public void set_hp(int set_values)
-    {
-        hp = set_values;
-    }
 }

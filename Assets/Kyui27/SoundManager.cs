@@ -42,8 +42,8 @@ public class SESoundData
 {
     public enum SE
     {
-        Attack,
-        Hoge, // これがラベルになる
+        player_attack,
+        player_damage,
         wizard_shoot_ball,
         wizard_warp,
         whomp_rush,
@@ -51,6 +51,18 @@ public class SESoundData
         wave_wave,
         wave_drop,
         wave_launch,
+        mahou,
+        buttai_tobasi,
+        beam_mahou,
+        beam,
+        rocket_move,
+        rocket_explode,
+        devil_jump,
+        test1,
+        test2,
+        player_bullet_throw,
+        player_bullet_hit,
+        player_bullet_crush,
     }
 
     public SE se;
@@ -64,11 +76,16 @@ public class SourceData
 {
     public enum Source
     {
-        Attack,
-        Hoge, // これがラベルになる
+        player,
         wizard,
         whomp,
         wave,
+        mahoutu,
+        rocket,
+        yellow_devil,
+        test1,
+        test2,
+        player_bullet,
     }
 
     public Source source;
