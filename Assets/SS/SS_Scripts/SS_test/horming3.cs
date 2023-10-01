@@ -21,6 +21,7 @@ public class horming3 : MonoBehaviour
     }
     void faa()
     {
+        SoundManager.Instance.PlaySE(SESoundData.SE.buttai_tobasi, SourceData.Source.mahoutu);
         Vector3 vel_za = new Vector3(0, 0, 0);
         //Debug.Log("a");
         
