@@ -15,6 +15,7 @@ public class TAMIYANOMAR_quest_manager : MonoBehaviour
     [SerializeField] private Vector2 questPosition;
 
     [SerializeField] private GameObject gate;
+    [SerializeField] private GameObject warp_area;
 
     private bool questClear = false;
     private bool questActive = false;
@@ -87,6 +88,10 @@ public class TAMIYANOMAR_quest_manager : MonoBehaviour
                 if (gate != null)
                 {
                     gate.GetComponent<TAMIYANOMAR_gete_manager>().gateDelete();
+                }
+                else if (warp_area != null)
+                {
+                    warp_area.SetActive(true);
                 }
             }
         }
