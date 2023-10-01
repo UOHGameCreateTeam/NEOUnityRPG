@@ -5,16 +5,16 @@ using UnityEngine;
 public class SS_ground_shock : MonoBehaviour
 {
     [SerializeField] private GameObject createObject; // 生成するオブジェクト
-    [SerializeField] private GameObject Player;
+    private GameObject Player;
     [SerializeField] private int itemCount = 40; // 生成するオブジェクトの数
 
-    [SerializeField] private float radius = 5f; // 半径
+    [SerializeField] private float radius = 10f; // 半径
 
     [SerializeField] private float repeat = 2f; // 何周期するか
     [SerializeField] private int e_damage = 30;
     [SerializeField] private float Jump_speed = 2f; // 何周期するか
     [SerializeField] private float speed = 5f;
-    public float jumpForce = 3f;
+    public float jumpForce = 80f;
     public float jumpDelay = 2f;
     public float jumpRange = 50f;
     private float lastJumpTime;
@@ -22,28 +22,39 @@ public class SS_ground_shock : MonoBehaviour
     private Transform player;
     private float ct = 0f;
     private int count = 0;
+    private bool jump_flag = false;
+    private bool ground_flag = false;
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
         ct = 0f;
-
+        
     }
 
     private void Update()
     {
         ct += Time.deltaTime;
-        player = GameObject.FindWithTag("Player").transform; // "Player"タグが付いたオブジェクトを取得
+        player = GameObject.FindWithTag("test_cube_1").transform; 
         float distanceToPlayer = Vector3.Distance(transform.position, player.position);
 
         if (ct >= 2 && count == 0)
         {
-            Jump();
-            count++;
+            if (jump_flag == false) {
+                Jump();
+                count++;
+                jump_flag = true;
+            }
+            
         }
         if (ct >= 4 && count == 1)
         {
-            tackle();
-            count++;
+            if (ground_flag == false)
+            {
+                this.transform.position = new Vector3(player.transform.position.x, this.transform.position.y, player.transform.position.z);
+                tackle();
+                count++;
+                ground_flag = true;
+            }
         }
     }
     public void Initialize()
@@ -52,48 +63,47 @@ public class SS_ground_shock : MonoBehaviour
 
         ct = 0f;
         count = 0;
+        ground_flag = false;
+        jump_flag = false;
     }
     private void Jump()
     {
         rb.angularVelocity = Vector3.zero;
         rb.velocity = Vector3.zero;
-        Vector3 uppow = new Vector3(0, 0, 0);
-        uppow.y += 0.5f;
+        Vector3 uppow = new Vector3(0, 1, 0);
 
 
         rb.AddForce(uppow * jumpForce, ForceMode.Impulse);
         lastJumpTime = Time.time;
     }
+
     private void tackle()
     {
         rb.angularVelocity = Vector3.zero;
         rb.velocity = Vector3.zero;
-        Vector3 downpow = new Vector3(0, 0, 0);
-        downpow.y -= 1;
+        Vector3 downpow = new Vector3(0, -1, 0);
         rb.AddForce(downpow * jumpForce, ForceMode.Impulse);
     }
     void OnCollisionEnter(Collision collision)
     {
-        if (ct >= 2)
-        {
-            if (this.GetComponent<SS_ground_shock>().enabled == true)
+        if (ct >= 2) {
+            Debug.Log("当たったよ");
+            if (collision.gameObject.tag == "ground")
             {
-
-                //Debug.Log("当たったよ");
-                if (collision.gameObject.tag == "ground")
-                {
-                    inpact_object();
-                    rb.velocity = Vector3.zero;
-                    this.GetComponent<SS_ground_shock>().enabled = false;
-                }
-                if (collision.gameObject.tag == "Player")
-                {
-                    rb.velocity = Vector3.zero;
-                    this.GetComponent<SS_ground_shock>().enabled = false;
-                    addDamage(e_damage, Player);
-                }
+                Debug.Log("当たったよ");
+                inpact_object();
+                rb.velocity = Vector3.zero;
+                Initialize();
+            }
+            if (collision.gameObject.tag == "test_cube_1")
+            {
+                inpact_object();
+                rb.velocity = Vector3.zero;
+                Initialize();
             }
         }
+            
+        
         
       
     }
@@ -124,7 +134,7 @@ public class SS_ground_shock : MonoBehaviour
                 Quaternion.identity
             );
 
-            Destroy(inpact, 1.0f);
+            Destroy(inpact, 3.0f);
         }
     }
 }
