@@ -32,6 +32,6 @@ public class Kyui_BackToStartButton : MonoBehaviour
     }
     public void OnClick()
     {
-        SceneManager.LoadScene("Kyui27/Ending_Scenes");
+        SceneManager.LoadScene("Ending_Scenes");
     }
 }

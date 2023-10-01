@@ -86,6 +86,7 @@ public class SS_ground_shock : MonoBehaviour
     }
     void OnCollisionEnter(Collision collision)
     {
+        SoundManager.Instance.PlaySE(SESoundData.SE.devil_jump, SourceData.Source.yellow_devil);
         if (ct >= 2) {
             Debug.Log("“–‚½‚Á‚½‚æ");
             if (collision.gameObject.tag == "ground")
@@ -98,6 +99,7 @@ public class SS_ground_shock : MonoBehaviour
             if (collision.gameObject.tag == "test_cube_1")
             {
                 inpact_object();
+                addDamage(e_damage, collision.gameObject);
                 rb.velocity = Vector3.zero;
                 Initialize();
             }

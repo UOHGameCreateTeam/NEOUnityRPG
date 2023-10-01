@@ -15,9 +15,9 @@ public class SS_tkp_game_manager : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.Z))
         {
-            Debug.Log("Z");
-            Application.Quit();
-            UnityEditor.EditorApplication.isPlaying = false;
+            //Debug.Log("Z");
+            //Application.Quit();
+            //UnityEditor.EditorApplication.isPlaying = false;
         }
     }
 }

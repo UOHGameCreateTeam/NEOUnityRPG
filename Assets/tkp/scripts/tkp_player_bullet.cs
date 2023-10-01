@@ -6,7 +6,7 @@ public class tkp_player_bullet : MonoBehaviour
 {
     public int exist_time = 100;
     private int now_exist_time = 0;
-    public int atk_pow = 5;
+    public int atk_pow = 40;
     public float bullet_v = 1.0f;
 
     private GameObject player_obj;
@@ -45,10 +45,10 @@ public class tkp_player_bullet : MonoBehaviour
     private void OnTriggerEnter(Collider other) 
     {
         int enemy_hp;
+        Debug.Log("hit");
         if (other.gameObject.tag == "Enemy")
         {
             enemy_hp = other.gameObject.GetComponent<SS_enemy_hp>().getHp();
-            
             enemy_hp = enemy_hp - atk_pow;
             
             other.gameObject.GetComponent<SS_enemy_hp>().setHp(enemy_hp);
