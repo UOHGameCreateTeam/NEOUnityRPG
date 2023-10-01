@@ -20,6 +20,7 @@ public class tkp_blow_wave : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        SoundManager.Instance.PlaySE(SESoundData.SE.wave_wave, SourceData.Source.wave);
         wave_obj = this.gameObject;
         enemy_obj = GameObject.Find("tkp_Enemy");
 
@@ -30,14 +31,15 @@ public class tkp_blow_wave : MonoBehaviour
         init_size.y = 0.1f;
 
         // 拡大する倍率
-        expansion_rate.x = 1.0f;
-        expansion_rate.y = 1.0f;
-        expansion_rate.z = 1.0f;
+        expansion_rate.x = 3.0f;
+        expansion_rate.y = 1.5f;
+        expansion_rate.z = 3.0f;
 
         // 吹き飛ばしの強さと向きを設定
         add_force.x = 0;
         add_force.y = blow_away_spd;
         add_force.z = 0;
+
     }
 
     // Update is called once per frame
