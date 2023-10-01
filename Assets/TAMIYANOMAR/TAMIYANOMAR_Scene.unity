@@ -2673,7 +2673,7 @@ GameObject:
   - component: {fileID: 190433478}
   - component: {fileID: 190433477}
   m_Layer: 0
-  m_Name: Cube (3)
+  m_Name: Stage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4486,7 +4486,7 @@ GameObject:
   - component: {fileID: 370448079}
   - component: {fileID: 370448078}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: Stage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6150,7 +6150,7 @@ GameObject:
   - component: {fileID: 484023631}
   - component: {fileID: 484023630}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: Stage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6276,7 +6276,7 @@ GameObject:
   - component: {fileID: 488554175}
   - component: {fileID: 488554174}
   m_Layer: 0
-  m_Name: Cube (1)
+  m_Name: Stage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9445,7 +9445,7 @@ GameObject:
   - component: {fileID: 690903161}
   - component: {fileID: 690903160}
   m_Layer: 0
-  m_Name: Cube (3)
+  m_Name: Stage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9930,7 +9930,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2541452a762d74044bd25176fd2e1250, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 288.4
+      value: -171
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2541452a762d74044bd25176fd2e1250, type: 3}
       propertyPath: m_LocalPosition.y
@@ -9938,7 +9938,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2541452a762d74044bd25176fd2e1250, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 302.3
+      value: -11
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2541452a762d74044bd25176fd2e1250, type: 3}
       propertyPath: m_LocalRotation.w
@@ -11112,7 +11112,7 @@ GameObject:
   - component: {fileID: 799935956}
   - component: {fileID: 799935955}
   m_Layer: 0
-  m_Name: Cube (1)
+  m_Name: Stage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11238,7 +11238,7 @@ GameObject:
   - component: {fileID: 809201657}
   - component: {fileID: 809201656}
   m_Layer: 0
-  m_Name: Cube (2)
+  m_Name: Stage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11335,7 +11335,7 @@ GameObject:
   - component: {fileID: 810096512}
   - component: {fileID: 810096511}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: Stage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12248,7 +12248,7 @@ GameObject:
   - component: {fileID: 850182624}
   - component: {fileID: 850182623}
   m_Layer: 0
-  m_Name: Cube (3)
+  m_Name: Stage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12499,7 +12499,7 @@ GameObject:
   - component: {fileID: 858605830}
   - component: {fileID: 858605829}
   m_Layer: 0
-  m_Name: Cube (3)
+  m_Name: Stage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -23035,11 +23035,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77b1c86944c64ce4aa824a074d8e278e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  walk1: {fileID: 8300000, guid: d2f1784f3dd9a4646aa855c2d0271c56, type: 3}
-  walk2: {fileID: 8300000, guid: b1b82aef298746342aeadbf3f6aa4d42, type: 3}
-  walk3: {fileID: 8300000, guid: 774f527cc3c045949b91e549d3f20c05, type: 3}
-  walk4: {fileID: 8300000, guid: 1b9760b12dddbf94e9c5656dd1751b90, type: 3}
-  jump: {fileID: 8300000, guid: 4249f991cf3096347b6b15c5ede825a3, type: 3}
+  walk1: {fileID: 0}
+  walk2: {fileID: 0}
+  walk3: {fileID: 0}
+  walk4: {fileID: 0}
+  jump: {fileID: 0}
 --- !u!65 &1302416103
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -23053,6 +23053,31 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1302416104
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1302416090}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c66234b86b6e0444ac98573d81884b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioSource: {fileID: 1302416100}
+  tkp: {fileID: 1302416095}
+  inside_siro: {fileID: 6162243356877596469}
+  walk1: {fileID: 8300000, guid: d2f1784f3dd9a4646aa855c2d0271c56, type: 3}
+  walk2: {fileID: 8300000, guid: b1b82aef298746342aeadbf3f6aa4d42, type: 3}
+  walk3: {fileID: 8300000, guid: 774f527cc3c045949b91e549d3f20c05, type: 3}
+  walk4: {fileID: 8300000, guid: 1b9760b12dddbf94e9c5656dd1751b90, type: 3}
+  walk5: {fileID: 8300000, guid: 5f2a2f536be41ec48a6d5853ff4d0b49, type: 3}
+  walk6: {fileID: 8300000, guid: a933ec205e115d241b96c3336e26b678, type: 3}
+  walk7: {fileID: 8300000, guid: dda200b44c99e214aa8bf5ab92661673, type: 3}
+  walk8: {fileID: 8300000, guid: 678388deb6848454b8298a4759f67a4a, type: 3}
+  jump: {fileID: 8300000, guid: 4249f991cf3096347b6b15c5ede825a3, type: 3}
+  landing: {fileID: 8300000, guid: 14d010167cc7e464d93522d1c6495d9e, type: 3}
 --- !u!1 &1302495632
 GameObject:
   m_ObjectHideFlags: 0
@@ -26750,7 +26775,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!65 &1533704619
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -27056,7 +27081,7 @@ GameObject:
   - component: {fileID: 1538189959}
   - component: {fileID: 1538189958}
   m_Layer: 0
-  m_Name: Cube (2)
+  m_Name: Stage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -28350,7 +28375,7 @@ GameObject:
   - component: {fileID: 1637193529}
   - component: {fileID: 1637193528}
   m_Layer: 0
-  m_Name: Cube (1)
+  m_Name: Stage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -30148,7 +30173,7 @@ GameObject:
   - component: {fileID: 1765713358}
   - component: {fileID: 1765713357}
   m_Layer: 0
-  m_Name: Cube (1)
+  m_Name: Stage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -31591,7 +31616,7 @@ GameObject:
   - component: {fileID: 1826681988}
   - component: {fileID: 1826681987}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: Stage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -34031,7 +34056,7 @@ GameObject:
   - component: {fileID: 1982928906}
   - component: {fileID: 1982928905}
   m_Layer: 0
-  m_Name: Cube (2)
+  m_Name: Stage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -37594,7 +37619,7 @@ GameObject:
   - component: {fileID: 2144197788}
   - component: {fileID: 2144197787}
   m_Layer: 0
-  m_Name: Cube (2)
+  m_Name: Stage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -37798,7 +37823,7 @@ GameObject:
   - component: {fileID: 5674260116824925303}
   - component: {fileID: 6831852535746360605}
   m_Layer: 0
-  m_Name: "\u5186\u67F1.028"
+  m_Name: Stage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -37924,7 +37949,7 @@ GameObject:
   - component: {fileID: 1106750202487767216}
   - component: {fileID: 8168975763255135717}
   m_Layer: 0
-  m_Name: "\u5186\u67F1.059"
+  m_Name: Stage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -38459,7 +38484,7 @@ GameObject:
   - component: {fileID: 7716894788113363767}
   - component: {fileID: 8635180656953750200}
   m_Layer: 0
-  m_Name: "\u5186\u67F1.047"
+  m_Name: Stage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -38478,7 +38503,7 @@ GameObject:
   - component: {fileID: 2926145578943788494}
   - component: {fileID: 2926145578943788495}
   m_Layer: 0
-  m_Name: "\u5186\u67F1.042"
+  m_Name: Stage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -38520,7 +38545,7 @@ GameObject:
   - component: {fileID: 2644837084821144301}
   - component: {fileID: 7290375416625423264}
   m_Layer: 0
-  m_Name: "\u5186\u67F1.017"
+  m_Name: Stage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -38539,7 +38564,7 @@ GameObject:
   - component: {fileID: 8807112709989196420}
   - component: {fileID: 8807112709989196421}
   m_Layer: 0
-  m_Name: "\u5186\u67F1.051"
+  m_Name: Stage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -38558,7 +38583,7 @@ GameObject:
   - component: {fileID: 236301867421267323}
   - component: {fileID: 8588463653009805594}
   m_Layer: 0
-  m_Name: "\u5186\u67F1.049"
+  m_Name: Stage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -38650,7 +38675,7 @@ GameObject:
   - component: {fileID: 6609718239174263583}
   - component: {fileID: 6609718239174263582}
   m_Layer: 0
-  m_Name: "\u5186\u67F1.010"
+  m_Name: Stage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -38669,7 +38694,7 @@ GameObject:
   - component: {fileID: 1905720205540333073}
   - component: {fileID: 7240605396295838575}
   m_Layer: 0
-  m_Name: "\u5186\u67F1.030"
+  m_Name: Stage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -38845,7 +38870,7 @@ GameObject:
   - component: {fileID: 6614816964596592324}
   - component: {fileID: 7285410941696764955}
   m_Layer: 0
-  m_Name: "\u5186\u67F1.032"
+  m_Name: Stage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -38971,7 +38996,7 @@ GameObject:
   - component: {fileID: 35701832240081953}
   - component: {fileID: 8858160023177210249}
   m_Layer: 0
-  m_Name: "\u5186\u67F1.014"
+  m_Name: Stage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -38990,7 +39015,7 @@ GameObject:
   - component: {fileID: 2615696292652058975}
   - component: {fileID: 5895591873370827665}
   m_Layer: 0
-  m_Name: "\u5186\u67F1.036"
+  m_Name: Stage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -39231,7 +39256,7 @@ GameObject:
   - component: {fileID: 2377261161859359974}
   - component: {fileID: 6179187756153462327}
   m_Layer: 0
-  m_Name: "\u5186\u67F1.004"
+  m_Name: Stage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -39292,7 +39317,7 @@ GameObject:
   - component: {fileID: 6392388353424063389}
   - component: {fileID: 6824103121778496885}
   m_Layer: 0
-  m_Name: "\u5186\u67F1.060"
+  m_Name: Stage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -39349,7 +39374,7 @@ GameObject:
   - component: {fileID: 5313066955548601907}
   - component: {fileID: 8230617155102206622}
   m_Layer: 0
-  m_Name: "\u5186\u67F1.001"
+  m_Name: Stage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -39517,7 +39542,7 @@ GameObject:
   - component: {fileID: 8622290332472065554}
   - component: {fileID: 8976048502731589884}
   m_Layer: 0
-  m_Name: "\u5186\u67F1.005"
+  m_Name: Stage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -39536,7 +39561,7 @@ GameObject:
   - component: {fileID: 343227241084536035}
   - component: {fileID: 5427425791712324624}
   m_Layer: 0
-  m_Name: "\u5186\u67F1.058"
+  m_Name: Stage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -39677,7 +39702,7 @@ GameObject:
   - component: {fileID: 6077007182634246588}
   - component: {fileID: 8450805254375741451}
   m_Layer: 0
-  m_Name: "\u5186\u67F1.022"
+  m_Name: Stage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -39754,7 +39779,7 @@ GameObject:
   - component: {fileID: 8199190941618839134}
   - component: {fileID: 8199190941618839135}
   m_Layer: 0
-  m_Name: "\u5186\u67F1.027"
+  m_Name: Stage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -39773,7 +39798,7 @@ GameObject:
   - component: {fileID: 1351777275949536185}
   - component: {fileID: 5452781500097465236}
   m_Layer: 0
-  m_Name: "\u5186\u67F1.040"
+  m_Name: Stage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -39792,7 +39817,7 @@ GameObject:
   - component: {fileID: 2462037133530073702}
   - component: {fileID: 4817463264543143147}
   m_Layer: 0
-  m_Name: "\u5186\u67F1.037"
+  m_Name: Stage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -39963,7 +39988,7 @@ GameObject:
   - component: {fileID: 7330864663471507355}
   - component: {fileID: 9184333480368981938}
   m_Layer: 0
-  m_Name: "\u5186\u67F1.019"
+  m_Name: Stage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -39982,7 +40007,7 @@ GameObject:
   - component: {fileID: 6014168469901200210}
   - component: {fileID: 6014168469901200211}
   m_Layer: 0
-  m_Name: "\u5186\u67F1.020"
+  m_Name: Stage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -40001,7 +40026,7 @@ GameObject:
   - component: {fileID: 7670596086129039944}
   - component: {fileID: 7670596086129039945}
   m_Layer: 0
-  m_Name: "\u5186\u67F1.056"
+  m_Name: Stage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -40193,7 +40218,7 @@ GameObject:
   - component: {fileID: 5744255181359349816}
   - component: {fileID: 5744255181359349817}
   m_Layer: 0
-  m_Name: "\u5186\u67F1.044"
+  m_Name: Stage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -40415,7 +40440,7 @@ GameObject:
   - component: {fileID: 5718984385108487052}
   - component: {fileID: 5921840523631744406}
   m_Layer: 0
-  m_Name: "\u5186\u67F1.031"
+  m_Name: Stage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -40434,7 +40459,7 @@ GameObject:
   - component: {fileID: 5826540564452909297}
   - component: {fileID: 5826540564452909298}
   m_Layer: 0
-  m_Name: "\u5186\u67F1.053"
+  m_Name: Stage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -40468,7 +40493,7 @@ GameObject:
   - component: {fileID: 3542500451293903188}
   - component: {fileID: 7611318553162976965}
   m_Layer: 0
-  m_Name: "\u5186\u67F1.007"
+  m_Name: Stage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -40529,7 +40554,7 @@ GameObject:
   - component: {fileID: 8172335096638940742}
   - component: {fileID: 9079652116353526151}
   m_Layer: 0
-  m_Name: "\u5186\u67F1.018"
+  m_Name: Stage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -40563,7 +40588,7 @@ GameObject:
   - component: {fileID: 3984417893847613374}
   - component: {fileID: 9048959297525027346}
   m_Layer: 0
-  m_Name: "\u5186\u67F1.002"
+  m_Name: Stage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -40582,7 +40607,7 @@ GameObject:
   - component: {fileID: 396900226516966491}
   - component: {fileID: 8462066656706464191}
   m_Layer: 0
-  m_Name: "\u5186\u67F1"
+  m_Name: Stage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -40616,7 +40641,7 @@ GameObject:
   - component: {fileID: 3433984128357271766}
   - component: {fileID: 4378898315100373884}
   m_Layer: 0
-  m_Name: "\u5186\u67F1.066"
+  m_Name: Stage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -40722,7 +40747,7 @@ GameObject:
   - component: {fileID: 8100755609006364226}
   - component: {fileID: 8936106244580521184}
   m_Layer: 0
-  m_Name: "\u5186\u67F1.034"
+  m_Name: Stage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -40908,7 +40933,7 @@ GameObject:
   - component: {fileID: 8233251206111248008}
   - component: {fileID: 8233251206111248009}
   m_Layer: 0
-  m_Name: "\u5186\u67F1.043"
+  m_Name: Stage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -40927,7 +40952,7 @@ GameObject:
   - component: {fileID: 709224304032990884}
   - component: {fileID: 6852231943134271684}
   m_Layer: 0
-  m_Name: "\u5186\u67F1.023"
+  m_Name: Stage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -41011,7 +41036,7 @@ GameObject:
   - component: {fileID: 5122504707409293287}
   - component: {fileID: 7464060087983656370}
   m_Layer: 0
-  m_Name: "\u5186\u67F1.067"
+  m_Name: Stage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -41186,7 +41211,7 @@ GameObject:
   - component: {fileID: 3936934986368935662}
   - component: {fileID: 5671078554717930992}
   m_Layer: 0
-  m_Name: "\u5186\u67F1.021"
+  m_Name: Stage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -41255,7 +41280,7 @@ GameObject:
   - component: {fileID: 8716111229862885752}
   - component: {fileID: 8716111229862885753}
   m_Layer: 0
-  m_Name: "\u5186\u67F1.011"
+  m_Name: Stage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -41304,7 +41329,7 @@ GameObject:
   - component: {fileID: 3353824366400416842}
   - component: {fileID: 9104426305170005332}
   m_Layer: 0
-  m_Name: "\u5186\u67F1.008"
+  m_Name: Stage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -41352,7 +41377,7 @@ GameObject:
   - component: {fileID: 282907120647326430}
   - component: {fileID: 5493309908735395964}
   m_Layer: 0
-  m_Name: "\u5186\u67F1.038"
+  m_Name: Stage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -41385,7 +41410,7 @@ GameObject:
   - component: {fileID: 1041216816631425073}
   - component: {fileID: 5580131615243425450}
   m_Layer: 0
-  m_Name: "\u5186\u67F1.003"
+  m_Name: Stage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -41420,7 +41445,7 @@ GameObject:
   - component: {fileID: 6162243356877596470}
   - component: {fileID: 6162243356877596469}
   m_Layer: 0
-  m_Name: building gate
+  m_Name: Stage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -41631,7 +41656,7 @@ GameObject:
   - component: {fileID: 7358089763949267352}
   - component: {fileID: 7358089763949267353}
   m_Layer: 0
-  m_Name: "\u5186\u67F1.025"
+  m_Name: Stage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -41658,7 +41683,7 @@ GameObject:
   - component: {fileID: 2035719832535220319}
   - component: {fileID: 9127056157552749401}
   m_Layer: 0
-  m_Name: "\u5186\u67F1.029"
+  m_Name: Stage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -41841,7 +41866,7 @@ GameObject:
   - component: {fileID: 433756902515307299}
   - component: {fileID: 7053947124935235983}
   m_Layer: 0
-  m_Name: "\u5186\u67F1.068"
+  m_Name: Stage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -41917,7 +41942,7 @@ GameObject:
   - component: {fileID: 5193464346157956073}
   - component: {fileID: 9210827647774654141}
   m_Layer: 0
-  m_Name: "\u5186\u67F1.055"
+  m_Name: Stage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -41936,7 +41961,7 @@ GameObject:
   - component: {fileID: 143830502711186501}
   - component: {fileID: 9213953592141055128}
   m_Layer: 0
-  m_Name: "\u5186\u67F1.063"
+  m_Name: Stage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -42012,7 +42037,7 @@ GameObject:
   - component: {fileID: 403254905628824799}
   - component: {fileID: 7971040118245027175}
   m_Layer: 0
-  m_Name: "\u5186\u67F1.012"
+  m_Name: Stage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -42111,7 +42136,7 @@ GameObject:
   - component: {fileID: 637941312979522986}
   - component: {fileID: 9131339925938682269}
   m_Layer: 0
-  m_Name: "\u5186\u67F1.046"
+  m_Name: Stage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -42153,7 +42178,7 @@ GameObject:
   - component: {fileID: 854688659337074199}
   - component: {fileID: 6533227313411425290}
   m_Layer: 0
-  m_Name: "\u5186\u67F1.026"
+  m_Name: Stage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -42306,7 +42331,7 @@ GameObject:
   - component: {fileID: 5200712919751342012}
   - component: {fileID: 7050068247781366980}
   m_Layer: 0
-  m_Name: "\u5186\u67F1.045"
+  m_Name: Stage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -42325,7 +42350,7 @@ GameObject:
   - component: {fileID: 3111562482154404043}
   - component: {fileID: 9145587493068344810}
   m_Layer: 0
-  m_Name: "\u5186\u67F1.013"
+  m_Name: Stage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -42454,7 +42479,7 @@ GameObject:
   - component: {fileID: 2530960159027464909}
   - component: {fileID: 8752064486086212905}
   m_Layer: 0
-  m_Name: "\u5186\u67F1.065"
+  m_Name: Stage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -42621,7 +42646,7 @@ GameObject:
   - component: {fileID: 2094099877580513520}
   - component: {fileID: 7294252951803020886}
   m_Layer: 0
-  m_Name: "\u5186\u67F1.057"
+  m_Name: Stage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -42774,7 +42799,7 @@ GameObject:
   - component: {fileID: 7504065793400006122}
   - component: {fileID: 7504065793400006123}
   m_Layer: 0
-  m_Name: "\u5186\u67F1.041"
+  m_Name: Stage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -42793,7 +42818,7 @@ GameObject:
   - component: {fileID: 1310844660413102857}
   - component: {fileID: 7493248052484979559}
   m_Layer: 0
-  m_Name: "\u5186\u67F1.033"
+  m_Name: Stage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -42897,7 +42922,7 @@ GameObject:
   - component: {fileID: 4995183603117426175}
   - component: {fileID: 7768254385389644204}
   m_Layer: 0
-  m_Name: "\u5186\u67F1.064"
+  m_Name: Stage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -42960,7 +42985,7 @@ GameObject:
   - component: {fileID: 5001899192972120986}
   - component: {fileID: 9133531293774942845}
   m_Layer: 0
-  m_Name: "\u5186\u67F1.062"
+  m_Name: Stage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -43130,7 +43155,7 @@ GameObject:
   - component: {fileID: 6573063437454029309}
   - component: {fileID: 7890184704800921916}
   m_Layer: 0
-  m_Name: "\u5186\u67F1.024"
+  m_Name: Stage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -43192,7 +43217,7 @@ GameObject:
   - component: {fileID: 958285689404848595}
   - component: {fileID: 8797791236835105932}
   m_Layer: 0
-  m_Name: "\u5186\u67F1.015"
+  m_Name: Stage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -43515,7 +43540,7 @@ GameObject:
   - component: {fileID: 3927684133848745589}
   - component: {fileID: 8262629726001178543}
   m_Layer: 0
-  m_Name: "\u5186\u67F1.052"
+  m_Name: Stage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -43548,7 +43573,7 @@ GameObject:
   - component: {fileID: 8190996844244526131}
   - component: {fileID: 8298007604439426653}
   m_Layer: 0
-  m_Name: "\u5186\u67F1.016"
+  m_Name: Stage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -44003,7 +44028,7 @@ GameObject:
   - component: {fileID: 4682231214460153997}
   - component: {fileID: 8896014395082897429}
   m_Layer: 0
-  m_Name: "\u5186\u67F1.048"
+  m_Name: Stage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -44087,7 +44112,7 @@ GameObject:
   - component: {fileID: 1964204882294164426}
   - component: {fileID: 8991549454339002867}
   m_Layer: 0
-  m_Name: "\u5186\u67F1.054"
+  m_Name: Stage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -44120,7 +44145,7 @@ GameObject:
   - component: {fileID: 4156481249965503314}
   - component: {fileID: 9024446922555975533}
   m_Layer: 0
-  m_Name: "\u5186\u67F1.035"
+  m_Name: Stage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -44153,7 +44178,7 @@ GameObject:
   - component: {fileID: 2743140347917233319}
   - component: {fileID: 9025250604872282041}
   m_Layer: 0
-  m_Name: "\u5186\u67F1.061"
+  m_Name: Stage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -44295,7 +44320,7 @@ GameObject:
   - component: {fileID: 8515237341115845446}
   - component: {fileID: 9131121806183413914}
   m_Layer: 0
-  m_Name: "\u5186\u67F1.039"
+  m_Name: Stage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -44437,7 +44462,7 @@ GameObject:
   - component: {fileID: 85243181746441485}
   - component: {fileID: 9189019662758585740}
   m_Layer: 0
-  m_Name: "\u5186\u67F1.050"
+  m_Name: Stage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
